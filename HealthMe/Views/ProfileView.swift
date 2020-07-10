@@ -9,17 +9,21 @@
 import SwiftUI
 
 struct ProfileView: View {
+    var profile: ProfileData
+    
     var body: some View {
         NavigationView {
-            Text("Account, Settings...")
-                .font(.title)
-                .navigationBarTitle("Profile")
+            VStack {
+                ProfileList(profile: ProfileData())
+                Text("GZ 2020").font(.system(size: 13))
+            }
+            .navigationBarTitle("Profile")
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(profile: ProfileData())
     }
 }

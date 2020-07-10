@@ -1,0 +1,23 @@
+
+[
+    {
+        "id": 1,
+        "name": "Account",
+        "description": "Personal details, subscription type"
+    },
+    {
+        "id": 2,
+        "name": "Privacy",
+        "description": "Shared information, encryption"
+    },
+    {
+        "id": 3,
+        "name": "Settings",
+        "description": "Themes, preferences"
+    },
+    {
+        "id": 4,
+        "name": "About Health Me",
+        "description": "Discover what you can do with Health Me"
+    }
+]

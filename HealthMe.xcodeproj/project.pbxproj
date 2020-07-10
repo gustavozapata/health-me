@@ -17,6 +17,11 @@
 		4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */; };
 		4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDF24B7E34300F5C551 /* NutritionView.swift */; };
 		4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DE124B7E35000F5C551 /* ProfileView.swift */; };
+		4C22513424B8CAA800891773 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513324B8CAA800891773 /* ProfileModel.swift */; };
+		4C22513624B8CD5200891773 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513524B8CD5200891773 /* ProfileData.swift */; };
+		4C22513A24B8CF9000891773 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513924B8CF9000891773 /* Data.swift */; };
+		4C22513C24B8D01100891773 /* profileOptions.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C22513B24B8D01100891773 /* profileOptions.json */; };
+		4C22513F24B8D90700891773 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513E24B8D90700891773 /* ProfileList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodResultsView.swift; sourceTree = "<group>"; };
 		4C217DDF24B7E34300F5C551 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		4C217DE124B7E35000F5C551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C22513324B8CAA800891773 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		4C22513524B8CD5200891773 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		4C22513924B8CF9000891773 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		4C22513B24B8D01100891773 /* profileOptions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileOptions.json; sourceTree = "<group>"; };
+		4C22513E24B8D90700891773 /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,9 @@
 		4C217DC524B7DE7A00F5C551 /* HealthMe */ = {
 			isa = PBXGroup;
 			children = (
+				4C22513D24B8D8F100891773 /* Components */,
+				4C22513224B8CA8E00891773 /* Models */,
+				4C22512F24B8C1B600891773 /* data */,
 				4C217DDA24B7E05C00F5C551 /* Views */,
 				4C217DC624B7DE7A00F5C551 /* AppDelegate.swift */,
 				4C217DC824B7DE7A00F5C551 /* SceneDelegate.swift */,
@@ -93,6 +106,32 @@
 				4C217DE124B7E35000F5C551 /* ProfileView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4C22512F24B8C1B600891773 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				4C22513B24B8D01100891773 /* profileOptions.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		4C22513224B8CA8E00891773 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C22513324B8CAA800891773 /* ProfileModel.swift */,
+				4C22513524B8CD5200891773 /* ProfileData.swift */,
+				4C22513924B8CF9000891773 /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C22513D24B8D8F100891773 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4C22513E24B8D90700891773 /* ProfileList.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C22513C24B8D01100891773 /* profileOptions.json in Resources */,
 				4C217DD324B7DE7E00F5C551 /* LaunchScreen.storyboard in Resources */,
 				4C217DD024B7DE7D00F5C551 /* Preview Assets.xcassets in Resources */,
 				4C217DCD24B7DE7D00F5C551 /* Assets.xcassets in Resources */,
@@ -167,12 +207,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
+				4C22513A24B8CF9000891773 /* Data.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
+				4C22513624B8CD5200891773 /* ProfileData.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
+				4C22513424B8CAA800891773 /* ProfileModel.swift in Sources */,
+				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
