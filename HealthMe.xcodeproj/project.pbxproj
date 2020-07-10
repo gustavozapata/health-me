@@ -13,6 +13,10 @@
 		4C217DCD24B7DE7D00F5C551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C217DCC24B7DE7D00F5C551 /* Assets.xcassets */; };
 		4C217DD024B7DE7D00F5C551 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C217DCF24B7DE7D00F5C551 /* Preview Assets.xcassets */; };
 		4C217DD324B7DE7E00F5C551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C217DD124B7DE7E00F5C551 /* LaunchScreen.storyboard */; };
+		4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */; };
+		4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */; };
+		4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDF24B7E34300F5C551 /* NutritionView.swift */; };
+		4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DE124B7E35000F5C551 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4C217DCF24B7DE7D00F5C551 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C217DD224B7DE7E00F5C551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C217DD424B7DE7E00F5C551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestsView.swift; sourceTree = "<group>"; };
+		4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodResultsView.swift; sourceTree = "<group>"; };
+		4C217DDF24B7E34300F5C551 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
+		4C217DE124B7E35000F5C551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		4C217DC524B7DE7A00F5C551 /* HealthMe */ = {
 			isa = PBXGroup;
 			children = (
+				4C217DDA24B7E05C00F5C551 /* Views */,
 				4C217DC624B7DE7A00F5C551 /* AppDelegate.swift */,
 				4C217DC824B7DE7A00F5C551 /* SceneDelegate.swift */,
 				4C217DCA24B7DE7A00F5C551 /* ContentView.swift */,
@@ -73,6 +82,17 @@
 				4C217DCF24B7DE7D00F5C551 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C217DDA24B7E05C00F5C551 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */,
+				4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */,
+				4C217DDF24B7E34300F5C551 /* NutritionView.swift */,
+				4C217DE124B7E35000F5C551 /* ProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
+				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
+				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
+				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
+				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
