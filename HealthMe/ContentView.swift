@@ -16,10 +16,9 @@ struct ContentView: View {
             BloodTestsView()
                 .tabItem {
                     VStack {
-                        //Text("Health")
+//                        Text("Health")
                         Image(systemName: "waveform.path.ecg")
-                            .font(.system(size: 25.0, weight: .bold))
-                            //.padding(.leading, 50)
+                            .font(.system(size: 25.0, weight: .black))
                     }
             }
             .tag(0)
@@ -28,7 +27,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "doc.plaintext")
-                            .font(.system(size: 25.0, weight: .bold))
+                            .font(.system(size: 25.0, weight: .black))
                     }
             }
             .tag(1)
@@ -37,7 +36,7 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "heart")
-                            .font(.system(size: 25.0, weight: .bold))
+                            .font(.system(size: 25.0, weight: .black))
                     }
             }
             .tag(2)
@@ -47,17 +46,19 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "person")
-                            .font(.system(size: 25.0, weight: .bold))
+                            .font(.system(size: 25.0, weight: .black))
                     }
             }
             .tag(3)
-        }.accentColor(.black)
-        //.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+        }.accentColor(.green)
+//        .accentColor(Color(UIColor(hex: "#F61767ff")!)) //rosa
+//        .accentColor(Color(UIColor(hex: "#3581F2ff")!)) //azul
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//        .environment(\.colorScheme, .dark)
     }
 }

@@ -7,13 +7,13 @@
     },
     {
         "id": 2,
-        "name": "Privacy",
-        "description": "Shared information, encryption"
+        "name": "Settings",
+        "description": "Themes, preferences"
     },
     {
         "id": 3,
-        "name": "Settings",
-        "description": "Themes, preferences"
+        "name": "Privacy",
+        "description": "Shared information, encryption"
     },
     {
         "id": 4,

@@ -12,17 +12,31 @@ struct ProfileList: View {
     var profile: ProfileData
     
     var body: some View {
-        List {
-            ForEach(profile.options){option in
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(option.name).font(.system(size: 20))
-                    //Image(systemName: "chevron.right")
-                        //.resizable()
-                        //.frame(width: 10, height: 15, alignment: .trailing)
-                    Text(option.description).foregroundColor(.gray)
-                }.padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
+        return VStack{
+            Text("2")
+            List {
+                ForEach(profile.options){option in
+                    NavigationLink(destination: renderView(view: option.name)){
+                        ProfileRow(profile: option)
+                    }
+                }
+                //.padding(.trailing, 20)
             }
-        }.padding(.trailing, 20)
+            Text("3")
+        }
+    }
+}
+
+func renderView(view: String) -> some View {
+    switch view {
+    case "Account":
+        return AnyView(AccountView())
+    case "Settings":
+        return AnyView(SettingsView())
+    case "Privacy":
+        return AnyView(PrivacyView())
+    default:
+        return AnyView(AccountView())
     }
 }
 
