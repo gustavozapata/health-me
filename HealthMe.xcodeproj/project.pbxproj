@@ -27,6 +27,8 @@
 		4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034224B9C47C009DB50B /* SettingsView.swift */; };
 		4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034424B9C885009DB50B /* PrivacyView.swift */; };
 		4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034724B9CCAB009DB50B /* UIColor.swift */; };
+		4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034924BA2AAD009DB50B /* Model_Profile.swift */; };
+		4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034B24BA2E00009DB50B /* HelperFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		4C74034224B9C47C009DB50B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C74034424B9C885009DB50B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		4C74034724B9CCAB009DB50B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4C74034924BA2AAD009DB50B /* Model_Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Profile.swift; sourceTree = "<group>"; };
+		4C74034B24BA2E00009DB50B /* HelperFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4C22513B24B8D01100891773 /* profileOptions.json */,
+				4C74034924BA2AAD009DB50B /* Model_Profile.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4C74034724B9CCAB009DB50B /* UIColor.swift */,
+				4C74034B24BA2E00009DB50B /* HelperFunc.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,8 +245,10 @@
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
+				4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
+				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C22513424B8CAA800891773 /* ProfileModel.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,

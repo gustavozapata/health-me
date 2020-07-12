@@ -51,6 +51,7 @@ struct ContentView: View {
             }
             .tag(3)
         }.accentColor(.green)
+//            .padding(.all)
 //        .accentColor(Color(UIColor(hex: "#F61767ff")!)) //rosa
 //        .accentColor(Color(UIColor(hex: "#3581F2ff")!)) //azul
     }

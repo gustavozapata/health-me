@@ -22,6 +22,7 @@ struct ProfileList: View {
                 }
                 //.padding(.trailing, 20)
             }
+//            Spacer()
             Text("3")
         }
     }
