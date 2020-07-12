@@ -13,17 +13,13 @@ struct ProfileList: View {
     
     var body: some View {
         return VStack{
-            Text("2")
             List {
                 ForEach(profile.options){option in
                     NavigationLink(destination: renderView(view: option.name)){
                         ProfileRow(profile: option)
                     }
                 }
-                //.padding(.trailing, 20)
             }
-//            Spacer()
-            Text("3")
         }
     }
 }
@@ -37,7 +33,7 @@ func renderView(view: String) -> some View {
     case "Privacy":
         return AnyView(PrivacyView())
     default:
-        return AnyView(AccountView())
+        return AnyView(MessagesView(message: MessagesData()))
     }
 }
 

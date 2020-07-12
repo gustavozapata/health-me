@@ -6,10 +6,13 @@
 //  Copyright © 2020 Gustavo Zapata. All rights reserved.
 //
 
-//import UIKit
+import UIKit
 import SwiftUI
+import Foundation
 
 let profileData: [ProfileModel] = load("profileOptions.json")
+//let messagesData: [MessagesModel] = load("messages.json")
+let messagesData: [MessagesModel] = load("messagesBackup.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

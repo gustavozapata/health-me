@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "sender": "Blood Station",
+        "message": "Your appointment has been successfully booked. This is one step closer to a better health",
+        "date": "Now"
+    },
+    {
+        "id": 2,
+        "sender": "Health Me",
+        "message": "Thanks for joining this Healthy community. We would love to see you soon",
+        "date": "2d"
+    },
+    {
+        "id": 3,
+        "sender": "Health Me",
+        "message": "Just a step away from becoming a customer.",
+        "date": "4d"
+        
+    }
+]

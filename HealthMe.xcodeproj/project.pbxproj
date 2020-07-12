@@ -29,6 +29,13 @@
 		4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034724B9CCAB009DB50B /* UIColor.swift */; };
 		4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034924BA2AAD009DB50B /* Model_Profile.swift */; };
 		4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034B24BA2E00009DB50B /* HelperFunc.swift */; };
+		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
+		4CBF948024BB221600252DB8 /* Messages_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF947F24BB221600252DB8 /* Messages_Model.swift */; };
+		4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948324BB2DA600252DB8 /* MessagesView.swift */; };
+		4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948524BB337500252DB8 /* MessagesList.swift */; };
+		4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948724BB33E700252DB8 /* MessagesRow.swift */; };
+		4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948924BB34F500252DB8 /* MessagesDetail.swift */; };
+		4CBF948C24BB54B000252DB8 /* messagesBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF948B24BB54B000252DB8 /* messagesBackup.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,13 @@
 		4C74034724B9CCAB009DB50B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4C74034924BA2AAD009DB50B /* Model_Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Profile.swift; sourceTree = "<group>"; };
 		4C74034B24BA2E00009DB50B /* HelperFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunc.swift; sourceTree = "<group>"; };
+		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		4CBF947F24BB221600252DB8 /* Messages_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages_Model.swift; sourceTree = "<group>"; };
+		4CBF948324BB2DA600252DB8 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		4CBF948524BB337500252DB8 /* MessagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesList.swift; sourceTree = "<group>"; };
+		4CBF948724BB33E700252DB8 /* MessagesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRow.swift; sourceTree = "<group>"; };
+		4CBF948924BB34F500252DB8 /* MessagesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDetail.swift; sourceTree = "<group>"; };
+		4CBF948B24BB54B000252DB8 /* messagesBackup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messagesBackup.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,8 @@
 				4C22514024B8EFEB00891773 /* AccountView.swift */,
 				4C74034224B9C47C009DB50B /* SettingsView.swift */,
 				4C74034424B9C885009DB50B /* PrivacyView.swift */,
+				4CBF948324BB2DA600252DB8 /* MessagesView.swift */,
+				4CBF948924BB34F500252DB8 /* MessagesDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +147,8 @@
 			children = (
 				4C22513B24B8D01100891773 /* profileOptions.json */,
 				4C74034924BA2AAD009DB50B /* Model_Profile.swift */,
+				4CBF947D24BB219800252DB8 /* messages.json */,
+				4CBF948B24BB54B000252DB8 /* messagesBackup.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 				4C22513324B8CAA800891773 /* ProfileModel.swift */,
 				4C22513924B8CF9000891773 /* Data.swift */,
 				4C22513524B8CD5200891773 /* ProfileData.swift */,
+				4CBF947F24BB221600252DB8 /* Messages_Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +169,8 @@
 			children = (
 				4C22513E24B8D90700891773 /* ProfileList.swift */,
 				4C22514224B8F28800891773 /* ProfileRow.swift */,
+				4CBF948524BB337500252DB8 /* MessagesList.swift */,
+				4CBF948724BB33E700252DB8 /* MessagesRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,10 +242,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBF947E24BB219800252DB8 /* messages.json in Resources */,
 				4C22513C24B8D01100891773 /* profileOptions.json in Resources */,
 				4C217DD324B7DE7E00F5C551 /* LaunchScreen.storyboard in Resources */,
 				4C217DD024B7DE7D00F5C551 /* Preview Assets.xcassets in Resources */,
 				4C217DCD24B7DE7D00F5C551 /* Assets.xcassets in Resources */,
+				4CBF948C24BB54B000252DB8 /* messagesBackup.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,9 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBF948024BB221600252DB8 /* Messages_Model.swift in Sources */,
 				4C22514124B8EFEB00891773 /* AccountView.swift in Sources */,
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
 				4C22513A24B8CF9000891773 /* Data.swift in Sources */,
+				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
 				4C22513624B8CD5200891773 /* ProfileData.swift in Sources */,
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
@@ -245,7 +270,10 @@
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
+				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
+				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
 				4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */,
+				4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,

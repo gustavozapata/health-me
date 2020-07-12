@@ -12,26 +12,36 @@ struct Profile {
     let id: Int
     let name: String
     let description: String
+    let isRead: Bool
 }
 extension Profile: Hashable {
     static func all() -> [Profile] {
         return [
-            Profile(id: 1, name: "Account", description: "Profile, privacy"),
-            Profile(id: 2, name: "Settings", description: "Themes, encryption"),
-            Profile(id: 3, name: "Privacy", description: "Shared info, blocked contacts")
+            Profile(id: 1, name: "Account", description: "Profile, privacy", isRead: false),
+            Profile(id: 2, name: "Settings", description: "Themes, encryption", isRead: true),
+            Profile(id: 3, name: "Privacy", description: "Shared info, blocked contacts, extras", isRead: true)
         ]
     }
 }
 
 //VIEW
 struct View_Profile: View {
-    @State var isList = false
+    @State var isList = true
+    @State var isRead = false
     let profiles = Profile.all()
+    
+    init() {
+        //UITableView.appearance().separatorStyle = .none
+        UITableView.appearance().tableFooterView = UIView()
+    }
     
     var body: some View {
         NavigationView {
             VStack{
                 HStack {
+                    Toggle(isOn: $isRead) {
+                        Text("Read")
+                    }.frame(width: 100, height: 20)
                     Spacer()
                     Image(systemName: "list.dash").onTapGesture {
                         self.isList.toggle()
@@ -41,9 +51,10 @@ struct View_Profile: View {
                     }) {
                         Text("Change")
                     }
+                    
                 }.padding(.all)
                 List(self.profiles.chunks(size: isList ? 1 : 2), id: \.self){ chunk in
-                    ForEach(chunk, id: \.self){profile in
+                    ForEach(chunk.filter{ $0.isRead == self.isRead}, id: \.self){profile in
                         NavigationLink(destination: ProfileDetail(profile: profile)){
                             ProfileCell(profile: profile)
                         }
@@ -64,8 +75,12 @@ struct ProfileCell: View {
     
     var body: some View {
         HStack {
+            if(profile.isRead){
+                Circle().fill(Color.green).frame(width: 10, height:10)
+            }
             Image(profile.name.lowercased()).resizable().frame(width: 50, height: 50).cornerRadius(16)
             VStack(alignment: .leading) {
+                
                 Text(profile.name)
                 Text(profile.description)
             }

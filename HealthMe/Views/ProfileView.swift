@@ -13,9 +13,16 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack{
+                HStack{
+                    Spacer()
+                    NavigationLink(destination: MessagesView(message: MessagesData())) {
+                        Image(systemName: "message").font(.system(size: 28.0, weight: .bold)).foregroundColor(Color.black)
+                        Circle().fill(Color.green).frame(width: 13, height: 13).offset(x: -18, y: -12)
+                    }
+                }.padding(.horizontal)
+                
                 ProfileList(profile: ProfileData())
-                Text("GZ 2020").font(.system(size: 13))
             }
             .navigationBarTitle("Profile")
         }
