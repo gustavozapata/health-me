@@ -36,6 +36,7 @@
 		4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948724BB33E700252DB8 /* MessagesRow.swift */; };
 		4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948924BB34F500252DB8 /* MessagesDetail.swift */; };
 		4CBF948C24BB54B000252DB8 /* messagesBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF948B24BB54B000252DB8 /* messagesBackup.json */; };
+		4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		4CBF948724BB33E700252DB8 /* MessagesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRow.swift; sourceTree = "<group>"; };
 		4CBF948924BB34F500252DB8 /* MessagesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDetail.swift; sourceTree = "<group>"; };
 		4CBF948B24BB54B000252DB8 /* messagesBackup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messagesBackup.json; sourceTree = "<group>"; };
+		4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		4C217DC524B7DE7A00F5C551 /* HealthMe */ = {
 			isa = PBXGroup;
 			children = (
+				4CC5A57D24BBC8E30033F10B /* Modifiers */,
 				4C74034624B9CC86009DB50B /* Utils */,
 				4C22513D24B8D8F100891773 /* Components */,
 				4C22513224B8CA8E00891773 /* Models */,
@@ -184,6 +187,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4CC5A57D24BBC8E30033F10B /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +273,7 @@
 				4C22514124B8EFEB00891773 /* AccountView.swift in Sources */,
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
 				4C22513A24B8CF9000891773 /* Data.swift in Sources */,
+				4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */,
 				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
 				4C22513624B8CD5200891773 /* ProfileData.swift in Sources */,

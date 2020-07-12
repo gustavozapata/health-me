@@ -23,10 +23,9 @@ struct MessagesDetail: View {
                         }
                     } else {
                         VStack(alignment: .trailing, spacing: 10) {
-                            
-                            VStack{
-                                Text(mensaje.missa).foregroundColor(Color.white)
-                            }.frame(width: 220, height: 30).background(Color.purple).cornerRadius(20).font(.system(size: 16, weight: .bold))
+                            Text(mensaje.missa)
+                                .padding(10)
+                                .foregroundColor(Color.white).messagesOptions()
                             Text(mensaje.fecha).foregroundColor(Color.gray).font(.system(size: 14))
                         }
                     }
@@ -36,6 +35,12 @@ struct MessagesDetail: View {
             Spacer()
                 .navigationBarTitle(message.sender)
         }
+    }
+}
+
+extension View {
+    func messagesOptions() -> some View {
+        return self.modifier(MessagesOptions())
     }
 }
 

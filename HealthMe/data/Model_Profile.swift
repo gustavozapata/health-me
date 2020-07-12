@@ -39,6 +39,10 @@ struct View_Profile: View {
         NavigationView {
             VStack{
                 HStack {
+                    ZStack {
+                        Circle().fill(Color.red).frame(width: 20, height: 20)
+                        Rectangle().fill(Color.green).frame(width: 20, height: 20).offset(x:10)
+                    }
                     Toggle(isOn: $isRead) {
                         Text("Read")
                     }.frame(width: 100, height: 20)
