@@ -5,5 +5,5 @@
 
 ## Technologies & Tools
  - iOS
- - Swift 5.0
+ - SwiftUI
  - Xcode 11
