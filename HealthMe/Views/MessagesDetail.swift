@@ -47,6 +47,6 @@ extension View {
 struct MessagesDetail_Previews: PreviewProvider {
     static var previews: some View {
         let messagesData = MessagesData()
-        return MessagesDetail(message: messagesData.messages[0]).environmentObject(messagesData)
+        return MessagesDetail(message: messagesData.messages[0])
     }
 }

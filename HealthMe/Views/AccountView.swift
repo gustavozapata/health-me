@@ -22,7 +22,7 @@ struct AccountView: View {
                     ForEach(accountDetails, id: \.self){ accountDetail in
                         VStack {
                             Text(accountDetail.field).font(.system(size: 16, weight: .bold)).frame(width: 350, height: 20, alignment: .topLeading)
-                            Text(accountDetail.value).font(.system(size: 20, weight: .regular)).frame(width: 350, height: 30, alignment: .topLeading).lineLimit(nil)
+                            Text(accountDetail.value).font(.system(size: 20, weight: .regular)).frame(width: 350, height: 30, alignment: .topLeading).lineLimit(nil).fixedSize()
                         }
                     }
                     .padding(.all)

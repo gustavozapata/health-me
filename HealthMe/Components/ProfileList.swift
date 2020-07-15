@@ -33,7 +33,7 @@ func renderView(view: String) -> some View {
     case "Privacy":
         return AnyView(PrivacyView())
     default:
-        return AnyView(MessagesView(message: MessagesData()))
+        return AnyView(AssetView())
     }
 }
 

@@ -14,7 +14,7 @@ struct Profile {
     let description: String
     let isRead: Bool
 }
-extension Profile: Hashable {
+extension Profile: Hashable { //this part can be inside the 'struc' but this just separate them but this part belongs to the 'struct'
     static func all() -> [Profile] {
         return [
             Profile(id: 1, name: "Account", description: "Profile, privacy", isRead: false),
@@ -28,6 +28,8 @@ extension Profile: Hashable {
 struct View_Profile: View {
     @State var isList = true
     @State var isRead = false
+    @State var testBinding = "hi binding"
+//    @EnvironmentObject var testEnvironment = "ola"
     let profiles = Profile.all()
     
     init() {
@@ -41,7 +43,7 @@ struct View_Profile: View {
                 HStack {
                     ZStack {
                         Circle().fill(Color.red).frame(width: 20, height: 20)
-                        Rectangle().fill(Color.green).frame(width: 20, height: 20).offset(x:10)
+                        Rectangle().fill(Color.green).frame(width: 20, height: 20).offset(x:5)
                     }
                     Toggle(isOn: $isRead) {
                         Text("Read")
@@ -57,9 +59,10 @@ struct View_Profile: View {
                     }
                     
                 }.padding(.all)
+                Text("\(self.testBinding)")
                 List(self.profiles.chunks(size: isList ? 1 : 2), id: \.self){ chunk in
                     ForEach(chunk.filter{ $0.isRead == self.isRead}, id: \.self){profile in
-                        NavigationLink(destination: ProfileDetail(profile: profile)){
+                        NavigationLink(destination: ProfileDetail(profile: profile, getBinding: self.$testBinding)){
                             ProfileCell(profile: profile)
                         }
                     }
@@ -95,6 +98,7 @@ struct ProfileCell: View {
 struct ProfileDetail: View {
     let profile: Profile
     @State private var zoomed: Bool = false
+    @Binding var getBinding: String
     
     var body: some View {
         VStack{
@@ -106,6 +110,7 @@ struct ProfileDetail: View {
             }
             Text(profile.description)
                 .navigationBarTitle(Text(profile.name), displayMode: .inline)
+            Text("\(self.getBinding)")
         }
     }
 }
