@@ -29,13 +29,15 @@ struct BloodTestsView: View {
                 VStack(alignment: .center, spacing: 30) {
                     Text("Book Test").font(.system(size: 28, weight: .bold))
                     Text("Book an appointment to the nearest blood station quick and easy").multilineTextAlignment(.center)
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    
+                    NavigationLink(destination: BookTestView()){
                         Text("Book blood test").padding(12)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(conic, lineWidth: 4)
                         ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.black)
                     }
+                    
                 }.padding(.top, 35)
                 Spacer()
             }
