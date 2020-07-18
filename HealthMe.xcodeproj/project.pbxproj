@@ -24,24 +24,10 @@
 		4C22513F24B8D90700891773 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513E24B8D90700891773 /* ProfileList.swift */; };
 		4C22514124B8EFEB00891773 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514024B8EFEB00891773 /* AccountView.swift */; };
 		4C22514324B8F28800891773 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514224B8F28800891773 /* ProfileRow.swift */; };
-		4C6B2D5C24C2733500FD47F1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B2D5B24C2733500FD47F1 /* Category.swift */; };
-		4C6B2D5E24C273A500FD47F1 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B2D5D24C273A500FD47F1 /* CategoryViewModel.swift */; };
-		4C6B2D6024C2747100FD47F1 /* KappService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B2D5F24C2747100FD47F1 /* KappService.swift */; };
-		4C6B2D6224C277A900FD47F1 /* KappView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B2D6124C277A900FD47F1 /* KappView.swift */; };
-		4C6B2D6424C27DC700FD47F1 /* DocListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6B2D6324C27DC700FD47F1 /* DocListView.swift */; };
 		4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034224B9C47C009DB50B /* SettingsView.swift */; };
 		4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034424B9C885009DB50B /* PrivacyView.swift */; };
 		4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034724B9CCAB009DB50B /* UIColor.swift */; };
-		4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034924BA2AAD009DB50B /* Model_Profile.swift */; };
 		4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034B24BA2E00009DB50B /* HelperFunc.swift */; };
-		4CA4012024BDCF11009DA1F5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4011F24BDCF11009DA1F5 /* Item.swift */; };
-		4CA4012324BDD2F6009DA1F5 /* Item_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4012224BDD2F6009DA1F5 /* Item_Service.swift */; };
-		4CA4012624BDE186009DA1F5 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4012524BDE186009DA1F5 /* ItemViewModel.swift */; };
-		4CA4012824BDE3B7009DA1F5 /* Item_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4012724BDE3B7009DA1F5 /* Item_View.swift */; };
-		4CA4012D24BE3399009DA1F5 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4012C24BE3399009DA1F5 /* Asset.swift */; };
-		4CA4012F24BE33CE009DA1F5 /* AssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4012E24BE33CE009DA1F5 /* AssetViewModel.swift */; };
-		4CA4013124BE33ED009DA1F5 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013024BE33ED009DA1F5 /* AssetView.swift */; };
-		4CA4013324BE33F9009DA1F5 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013224BE33F9009DA1F5 /* AssetService.swift */; };
 		4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013924BE441C009DA1F5 /* locals.swift */; };
 		4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */; };
 		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
@@ -73,24 +59,10 @@
 		4C22513E24B8D90700891773 /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
 		4C22514024B8EFEB00891773 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		4C22514224B8F28800891773 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
-		4C6B2D5B24C2733500FD47F1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		4C6B2D5D24C273A500FD47F1 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		4C6B2D5F24C2747100FD47F1 /* KappService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KappService.swift; sourceTree = "<group>"; };
-		4C6B2D6124C277A900FD47F1 /* KappView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KappView.swift; sourceTree = "<group>"; };
-		4C6B2D6324C27DC700FD47F1 /* DocListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocListView.swift; sourceTree = "<group>"; };
 		4C74034224B9C47C009DB50B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C74034424B9C885009DB50B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		4C74034724B9CCAB009DB50B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		4C74034924BA2AAD009DB50B /* Model_Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Profile.swift; sourceTree = "<group>"; };
 		4C74034B24BA2E00009DB50B /* HelperFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunc.swift; sourceTree = "<group>"; };
-		4CA4011F24BDCF11009DA1F5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		4CA4012224BDD2F6009DA1F5 /* Item_Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_Service.swift; sourceTree = "<group>"; };
-		4CA4012524BDE186009DA1F5 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
-		4CA4012724BDE3B7009DA1F5 /* Item_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item_View.swift; sourceTree = "<group>"; };
-		4CA4012C24BE3399009DA1F5 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
-		4CA4012E24BE33CE009DA1F5 /* AssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewModel.swift; sourceTree = "<group>"; };
-		4CA4013024BE33ED009DA1F5 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
-		4CA4013224BE33F9009DA1F5 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		4CA4013924BE441C009DA1F5 /* locals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locals.swift; sourceTree = "<group>"; };
 		4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestView.swift; sourceTree = "<group>"; };
 		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
@@ -133,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				4CA4013624BE4288009DA1F5 /* local */,
-				4CA4012B24BE337B009DA1F5 /* Examples */,
 				4CA4012424BDE171009DA1F5 /* View Models */,
 				4CA4012124BDD2E1009DA1F5 /* Services */,
 				4CC5A57D24BBC8E30033F10B /* Modifiers */,
@@ -209,18 +180,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4C6B2D5A24C272D100FD47F1 /* KappApp */ = {
-			isa = PBXGroup;
-			children = (
-				4C6B2D5B24C2733500FD47F1 /* Category.swift */,
-				4C6B2D5D24C273A500FD47F1 /* CategoryViewModel.swift */,
-				4C6B2D5F24C2747100FD47F1 /* KappService.swift */,
-				4C6B2D6124C277A900FD47F1 /* KappView.swift */,
-				4C6B2D6324C27DC700FD47F1 /* DocListView.swift */,
-			);
-			path = KappApp;
-			sourceTree = "<group>";
-		};
 		4C74034624B9CC86009DB50B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,39 +201,6 @@
 			children = (
 			);
 			path = "View Models";
-			sourceTree = "<group>";
-		};
-		4CA4012B24BE337B009DA1F5 /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				4C6B2D5A24C272D100FD47F1 /* KappApp */,
-				4C74034924BA2AAD009DB50B /* Model_Profile.swift */,
-				4CA4013524BE368D009DA1F5 /* AssetFetch */,
-				4CA4013424BE34A0009DA1F5 /* ItemFetch */,
-			);
-			path = Examples;
-			sourceTree = "<group>";
-		};
-		4CA4013424BE34A0009DA1F5 /* ItemFetch */ = {
-			isa = PBXGroup;
-			children = (
-				4CA4012524BDE186009DA1F5 /* ItemViewModel.swift */,
-				4CA4012224BDD2F6009DA1F5 /* Item_Service.swift */,
-				4CA4011F24BDCF11009DA1F5 /* Item.swift */,
-				4CA4012724BDE3B7009DA1F5 /* Item_View.swift */,
-			);
-			path = ItemFetch;
-			sourceTree = "<group>";
-		};
-		4CA4013524BE368D009DA1F5 /* AssetFetch */ = {
-			isa = PBXGroup;
-			children = (
-				4CA4012E24BE33CE009DA1F5 /* AssetViewModel.swift */,
-				4CA4013024BE33ED009DA1F5 /* AssetView.swift */,
-				4CA4013224BE33F9009DA1F5 /* AssetService.swift */,
-				4CA4012C24BE3399009DA1F5 /* Asset.swift */,
-			);
-			path = AssetFetch;
 			sourceTree = "<group>";
 		};
 		4CA4013624BE4288009DA1F5 /* local */ = {
@@ -370,11 +296,7 @@
 				4C22514124B8EFEB00891773 /* AccountView.swift in Sources */,
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
 				4C22513A24B8CF9000891773 /* Data.swift in Sources */,
-				4C6B2D6224C277A900FD47F1 /* KappView.swift in Sources */,
 				4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */,
-				4CA4012624BDE186009DA1F5 /* ItemViewModel.swift in Sources */,
-				4C6B2D5C24C2733500FD47F1 /* Category.swift in Sources */,
-				4CA4013124BE33ED009DA1F5 /* AssetView.swift in Sources */,
 				4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */,
 				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
@@ -382,28 +304,18 @@
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
 				4C22514324B8F28800891773 /* ProfileRow.swift in Sources */,
 				4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */,
-				4CA4012824BDE3B7009DA1F5 /* Item_View.swift in Sources */,
-				4C6B2D5E24C273A500FD47F1 /* CategoryViewModel.swift in Sources */,
-				4CA4012324BDD2F6009DA1F5 /* Item_Service.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
-				4CA4012F24BE33CE009DA1F5 /* AssetViewModel.swift in Sources */,
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
 				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
 				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
-				4CA4012024BDCF11009DA1F5 /* Item.swift in Sources */,
-				4C74034A24BA2AAD009DB50B /* Model_Profile.swift in Sources */,
 				4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,
-				4CA4012D24BE3399009DA1F5 /* Asset.swift in Sources */,
-				4C6B2D6424C27DC700FD47F1 /* DocListView.swift in Sources */,
-				4C6B2D6024C2747100FD47F1 /* KappService.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C22513424B8CAA800891773 /* ProfileModel.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
-				4CA4013324BE33F9009DA1F5 /* AssetService.swift in Sources */,
 				4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
