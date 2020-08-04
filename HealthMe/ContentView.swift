@@ -21,9 +21,9 @@ struct ContentView: View {
             BloodTestsView()
                 .tabItem {
                     VStack {
-                        //Text("Health")
-                        Image(systemName: "waveform.path.ecg")
-                            .font(.system(size: 25.0, weight: .black))
+                        //                        Text("Health")
+                        Image("blood")
+                            .font(.system(size: 32.0, weight: .black))
                     }
             }
             .tag(0)
@@ -31,7 +31,7 @@ struct ContentView: View {
             BloodResultsView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "doc.plaintext")
+                        Image(systemName: "waveform.path.ecg")//doc.plaintext
                             .font(.system(size: 25.0, weight: .black))
                     }
             }
@@ -50,21 +50,18 @@ struct ContentView: View {
             ProfileView(profile: ProfileData())
                 .tabItem {
                     VStack {
-                        Image(systemName: "person")
+                        Image("profile") //systemName: "person"
                             .font(.system(size: 25.0, weight: .black))
                     }
             }
             .tag(3)
-        }.accentColor(.green)
-        //                    .padding(.horizontal)
-        //        .accentColor(Color(UIColor(hex: "#F61767ff")!)) //rosa
-        //        .accentColor(Color(UIColor(hex: "#3581F2ff")!)) //azul
+        }.accentColor(.green) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//                        .environment(\.colorScheme, .dark)
+        //                        .environment(\.colorScheme, .dark)
     }
 }

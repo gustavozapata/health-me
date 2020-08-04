@@ -18,7 +18,7 @@ struct MessagesList: View {
                     destination: MessagesDetail(message: message)
                 ){
                     MessagesRow(message: message)
-                }
+                }.isDetailLink(false)
             }
         }
     }

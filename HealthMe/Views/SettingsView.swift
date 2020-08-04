@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State var isDarkMode = false
     var body: some View {
-        Text("Setings")
+        Form {
+            Section(header: Text("THEME"), footer: Text("Display the dark mode for better readibility when you are in a dark environment")){
+                Toggle(isOn: self.$isDarkMode){
+                 Text("Dark Mode")
+                }
+            }
+        }
         .navigationBarTitle("Settings")
     }
 }

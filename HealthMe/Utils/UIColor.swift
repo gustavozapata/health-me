@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-
+// Below is another way of using rgb colors
+//.accentColor(Color(red: 6/255, green: 20/255, blue: 250/255))
 extension UIColor {
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat

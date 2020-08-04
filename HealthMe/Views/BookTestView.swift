@@ -11,10 +11,22 @@ import SwiftUI
 struct BookTestView: View {
     
     var body: some View {
-        VStack {
-         Text("Select a date")
-        }
-    .navigationBarTitle("Book Test")
+        
+//        VStack(alignment: .center, spacing: 15) {
+//                           VStack {
+//                               VStack(alignment: .leading, spacing: 5) {
+        
+        VStack(alignment: .leading, spacing: 30) {
+            
+            VStack(alignment: .leading) {
+                Text("Where").font(.system(size: 25, weight: .bold))
+                Text("Select a blood station").font(.system(size: 16))
+            }
+            
+            StationList()
+            
+        }.padding().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+            .navigationBarTitle("Book Test")
     }
 }
 
