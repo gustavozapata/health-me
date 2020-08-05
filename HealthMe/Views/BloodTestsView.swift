@@ -27,8 +27,8 @@ struct BloodTestsView: View {
                     //BOOK TEST
                     VStack{
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("Book Test").font(.system(size: 28, weight: .bold))
-                            Text("Book an appointment to the nearest blood station quick and easy").font(.system(size: 16)).padding(.bottom, 20)
+                            Text("Book Blood Test").font(.system(size: 28, weight: .bold))
+                            Text("Book an appointment to the nearest blood station quick and easy").font(.system(size: 16))
                         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading).padding()
                         
                         VStack {
@@ -42,9 +42,7 @@ struct BloodTestsView: View {
                                 ).font(.system(size: 17, weight: .semibold)).foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             }
                         }
-                        
-                        
-                    }
+                    }.padding(.bottom, 30)
                     
                     Divider().frame(width: UIScreen.main.bounds.width - 40)
                     
@@ -53,7 +51,6 @@ struct BloodTestsView: View {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("Past Tests").font(.system(size: 28, weight: .bold))
                             Text("See your blood tests booking history").font(.system(size: 16))
-                            
                             
                         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading).padding()
                         Text("You don’t have any blood test booked")

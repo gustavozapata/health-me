@@ -13,23 +13,25 @@ struct StationList: View {
         VStack {
             VStack {
                 HStack {
-                    Image("station").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(.horizontal)
+                    Image("station").resizable().aspectRatio(contentMode: .fit).frame(width: 90).padding(.horizontal)
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Kingston").font(.system(size: 20, weight: .bold))
-                        Text("32 Richmond road").font(.system(size: 19, weight: .medium))
-                        Text("KT2 7PQ")
+                        Text("Kingston").font(.system(size: 18, weight: .bold))
+                        Text("32 Richmond road").font(.system(size: 16, weight: .medium))
+                        Text("KT2 7PQ").font(.system(size: 16))
                     }.padding(.trailing)
+                    Spacer()
                 }
             }.frame(width: 320).background(Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
             
             VStack {
                 HStack {
-                    Image("station").resizable().aspectRatio(contentMode: .fit).frame(width: 100).padding(.horizontal)
+                    Image("station").resizable().aspectRatio(contentMode: .fit).frame(width: 90).padding(.horizontal)
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Surbiton").font(.system(size: 20, weight: .bold))
-                        Text("12 Happy avenue").font(.system(size: 19, weight: .medium))
-                        Text("KT3 4XD")
+                        Text("Surbiton").font(.system(size: 18, weight: .bold))
+                        Text("12 Happy avenue").font(.system(size: 16, weight: .medium))
+                        Text("KT3 4XD").font(.system(size: 16))
                     }.padding(.trailing)
+                    Spacer()
                 }
             }.frame(width: 320).background(Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }
