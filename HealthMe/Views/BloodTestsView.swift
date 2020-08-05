@@ -42,9 +42,7 @@ struct BloodTestsView: View {
                                 ).font(.system(size: 17, weight: .semibold)).foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             }
                         }
-                        
-                        
-                    }
+                    }.padding(.bottom, 30)
                     
                     Divider().frame(width: UIScreen.main.bounds.width - 40)
                     
