@@ -57,7 +57,7 @@ struct BloodTestsView: View {
                         Text("You don’t have any blood test booked")
                             .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.top, 22)
                         
-                    }
+                    }.padding(.top, 20)
                     
                     Spacer()
                 }
