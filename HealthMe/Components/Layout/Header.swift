@@ -25,3 +25,9 @@ struct Header: View {
         }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 70, alignment: .topLeading).padding()
     }
 }
+
+struct Header_Previews: PreviewProvider {
+    static var previews: some View {
+        Header(title: "Title", subtitle: "Text")
+    }
+}

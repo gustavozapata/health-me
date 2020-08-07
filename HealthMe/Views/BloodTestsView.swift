@@ -44,7 +44,7 @@ struct BloodTestsView: View {
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 25)
                                             .stroke(conic, lineWidth: 4)
-                                ).font(.system(size: 17, weight: .semibold)).foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                                ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
                             }
                             
                         }
@@ -73,5 +73,6 @@ struct BloodTestsView: View {
 struct BloodTestsView_Previews: PreviewProvider {
     static var previews: some View {
         BloodTestsView()
+//        BloodTestsView().environment(\.colorScheme, .dark)
     }
 }

@@ -25,6 +25,7 @@
 		4C22514124B8EFEB00891773 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514024B8EFEB00891773 /* AccountView.swift */; };
 		4C22514324B8F28800891773 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514224B8F28800891773 /* ProfileRow.swift */; };
 		4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47D46224DA1F89006ECC51 /* StationList.swift */; };
+		4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B5AA24DE052E002C3CBF /* DateSelect.swift */; };
 		4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034224B9C47C009DB50B /* SettingsView.swift */; };
 		4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034424B9C885009DB50B /* PrivacyView.swift */; };
 		4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74034724B9CCAB009DB50B /* UIColor.swift */; };
@@ -35,6 +36,8 @@
 		4C9D89D424DC5B89001A7831 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D89D324DC5B89001A7831 /* Header.swift */; };
 		4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013924BE441C009DA1F5 /* locals.swift */; };
 		4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */; };
+		4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE636F24DD823A008068CA /* ElementsModifier.swift */; };
+		4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE637224DDBF43008068CA /* BloodStations.swift */; };
 		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
 		4CBF948024BB221600252DB8 /* Messages_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF947F24BB221600252DB8 /* Messages_Model.swift */; };
 		4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948324BB2DA600252DB8 /* MessagesView.swift */; };
@@ -65,6 +68,7 @@
 		4C22514024B8EFEB00891773 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		4C22514224B8F28800891773 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		4C47D46224DA1F89006ECC51 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		4C65B5AA24DE052E002C3CBF /* DateSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelect.swift; sourceTree = "<group>"; };
 		4C74034224B9C47C009DB50B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C74034424B9C885009DB50B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		4C74034724B9CCAB009DB50B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		4C9D89D324DC5B89001A7831 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4CA4013924BE441C009DA1F5 /* locals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locals.swift; sourceTree = "<group>"; };
 		4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestView.swift; sourceTree = "<group>"; };
+		4CAE636F24DD823A008068CA /* ElementsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModifier.swift; sourceTree = "<group>"; };
+		4CAE637224DDBF43008068CA /* BloodStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStations.swift; sourceTree = "<group>"; };
 		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		4CBF947F24BB221600252DB8 /* Messages_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages_Model.swift; sourceTree = "<group>"; };
 		4CBF948324BB2DA600252DB8 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		4C217DC524B7DE7A00F5C551 /* HealthMe */ = {
 			isa = PBXGroup;
 			children = (
+				4CAE637124DDBED3008068CA /* Content */,
 				4CA4013624BE4288009DA1F5 /* local */,
 				4CA4012424BDE171009DA1F5 /* View Models */,
 				4CA4012124BDD2E1009DA1F5 /* Services */,
@@ -147,9 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */,
-				4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */,
 				4C9D89CF24DC57D2001A7831 /* BookDate.swift */,
 				4C47D46224DA1F89006ECC51 /* StationList.swift */,
+				4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */,
 				4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */,
 				4C217DDF24B7E34300F5C551 /* NutritionView.swift */,
 				4C217DE124B7E35000F5C551 /* ProfileView.swift */,
@@ -190,6 +197,7 @@
 				4C22514224B8F28800891773 /* ProfileRow.swift */,
 				4CBF948524BB337500252DB8 /* MessagesList.swift */,
 				4CBF948724BB33E700252DB8 /* MessagesRow.swift */,
+				4C65B5AA24DE052E002C3CBF /* DateSelect.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -234,10 +242,19 @@
 			path = local;
 			sourceTree = "<group>";
 		};
+		4CAE637124DDBED3008068CA /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				4CAE637224DDBF43008068CA /* BloodStations.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		4CC5A57D24BBC8E30033F10B /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */,
+				4CAE636F24DD823A008068CA /* ElementsModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -325,6 +342,8 @@
 				4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */,
 				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
+				4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */,
+				4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */,
 				4C22513624B8CD5200891773 /* ProfileData.swift in Sources */,
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
 				4C22514324B8F28800891773 /* ProfileRow.swift in Sources */,
@@ -337,6 +356,7 @@
 				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
 				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
 				4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */,
+				4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,

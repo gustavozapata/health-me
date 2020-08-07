@@ -25,14 +25,19 @@ struct BookTestView: View {
                     Spacer()
                     
                     NavigationLink(destination: BookDate()){
-                        Text("Next").font(.system(size: 18, weight: .bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 8, leading: 22, bottom: 8, trailing: 22)).overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color.black, lineWidth: 2)).background(Color.white)
+//                        Text("Next").buttonModifier()
+                        Text("Next").modifier(ButtonModifier())
                     }.padding(.top, 30)
                 }
             }
             .navigationBarTitle("Book Test")
         }
+    }
+}
+
+extension View {
+    func buttonModifier() -> some View {
+        return self.modifier(ButtonModifier())
     }
 }
 
