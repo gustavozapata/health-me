@@ -36,3 +36,7 @@ extension UIColor {
         return nil
     }
 }
+
+extension Color {
+    static let selectedItem = Color("selectedItem")
+}

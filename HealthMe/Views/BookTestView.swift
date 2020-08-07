@@ -12,22 +12,26 @@ struct BookTestView: View {
     
     var body: some View {
         
-        VStack {
+        ScrollView {
             
-            VStack(alignment: .leading, spacing: 30) {
-                
-                VStack(alignment: .leading) {
-                    Text("Where").font(.system(size: 25, weight: .bold))
-                    Text("Select a blood station").font(.system(size: 16))
+            VStack {
+                VStack(alignment: .leading, spacing: 30) {
+                    Header(title: "Where", subtitle: "Select a blood station")
                 }
                 
-            }.padding().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, alignment: .topLeading)
-                .navigationBarTitle("Book Test")
-            
-            VStack(alignment: .center) {
-                StationList()
+                VStack(alignment: .center) {
+                    StationList()
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: BookDate()){
+                        Text("Next").font(.system(size: 18, weight: .bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 8, leading: 22, bottom: 8, trailing: 22)).overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.black, lineWidth: 2)).background(Color.white)
+                    }.padding(.top, 30)
+                }
             }
-            Spacer()
+            .navigationBarTitle("Book Test")
         }
     }
 }

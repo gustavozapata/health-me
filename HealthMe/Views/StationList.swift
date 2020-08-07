@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct StationList: View {
+    
+    @State var stationSelected = ""
+    
     var body: some View {
         VStack {
             VStack {
@@ -18,22 +21,26 @@ struct StationList: View {
                         Text("Kingston").font(.system(size: 18, weight: .bold))
                         Text("32 Richmond road").font(.system(size: 16, weight: .medium))
                         Text("KT2 7PQ").font(.system(size: 16))
-                    }.padding(.trailing)
+                    }.padding([.trailing, .bottom, .top], 10)
                     Spacer()
                 }
-            }.frame(width: 320).background(Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
+            }.frame(width: 320).background(self.stationSelected == "kingston" ? Color.selectedItem : Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10).onTapGesture {
+                self.stationSelected = "kingston"
+            }
             
             VStack {
                 HStack {
                     Image("station").resizable().aspectRatio(contentMode: .fit).frame(width: 85).padding(.horizontal)
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Surbiton").font(.system(size: 18, weight: .bold)).foregroundColor(Color.white)
-                        Text("12 Happy avenue").font(.system(size: 16, weight: .medium)).foregroundColor(Color.white)
-                        Text("KT3 4XD").font(.system(size: 16)).foregroundColor(Color.white)
-                    }.padding(.trailing)
+                        Text("Surbiton").font(.system(size: 18, weight: .bold))
+                        Text("12 Happy avenue").font(.system(size: 16, weight: .medium))
+                        Text("KT3 4XD").font(.system(size: 16))
+                    }.padding([.trailing, .bottom, .top], 10)
                     Spacer()
                 }
-            }.frame(width: 320).background(Color.black).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).border(Color.green).padding(.bottom, 10)
+            }.frame(width: 320).background(self.stationSelected == "surbiton" ? Color.selectedItem : Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10).onTapGesture {
+                self.stationSelected = "surbiton"
+            }
         }
     }
 }

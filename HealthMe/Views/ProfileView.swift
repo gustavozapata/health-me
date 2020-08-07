@@ -17,7 +17,7 @@ struct ProfileView: View {
                 HStack{
                     Spacer()
                     NavigationLink(destination: MessagesView(message: MessagesData())) {
-                        Image(systemName: "message").font(.system(size: 28.0, weight: .bold)).foregroundColor(Color.black)
+                        Image(systemName: "message").font(.system(size: 28.0, weight: .bold)).foregroundColor(Color.primary)
                         Circle().fill(Color.green).frame(width: 13, height: 13).offset(x: -18, y: -12)
                     }
                 }.padding(.horizontal)

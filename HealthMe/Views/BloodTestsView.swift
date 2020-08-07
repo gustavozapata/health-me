@@ -20,49 +20,52 @@ struct BloodTestsView: View {
     
     var body: some View {
         NavigationView {
+            
             ScrollView {
                 
-                VStack(alignment: .center, spacing: 15) {
+                //Container
+                VStack {
                     
-                    //BOOK TEST
-                    VStack{
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("Book Test").font(.system(size: 28, weight: .bold))
-                            Text("Book an appointment to the nearest blood station quick and easy").font(.system(size: 16)).padding(.bottom, 20)
-                        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading).padding()
+                    //Section - Book Test
+                    VStack {
                         
-                        VStack {
-                            Image("nobookings").resizable().aspectRatio(contentMode: .fit).frame(width: CGFloat(w - 50), height: 220).clipped()
+                        Header(title: "Book Test", subtitle: "Book an appointment to the nearest blood station quick and easy")
+                        
+                        //Image and button
+                        VStack(alignment: .center) {
+//                            GeometryReader{ geo in
+//                                Image("nobookings").resizable().aspectRatio(contentMode: .fit).frame(width: geo.size.width)
+//                            }
+                            
+                            Image("nobookings").resizable().aspectRatio(contentMode: .fit).frame(minWidth: 100, maxWidth: CGFloat(w-40), minHeight: 250, maxHeight: .infinity)
                             
                             NavigationLink(destination: BookTestView()){
-                                Text("Book blood test").padding(12)
+                                Text("Book blood test").padding(14)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 25)
                                             .stroke(conic, lineWidth: 4)
                                 ).font(.system(size: 17, weight: .semibold)).foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             }
+                            
                         }
-                    }.padding(.bottom, 30)
+                        //Image and button
+                        
+                    }.padding(.bottom, 40) //Section
                     
                     Divider().frame(width: UIScreen.main.bounds.width - 40)
                     
-                    //PAST TESTS
+                    //Section - Past Tests
                     VStack {
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("Past Tests").font(.system(size: 28, weight: .bold))
-                            Text("See your blood tests booking history").font(.system(size: 16))
-                            
-                            
-                        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading).padding()
-                        Text("You don’t have any blood test booked")
-                            .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.top, 22)
+                        Header(title: "Past Tests", subtitle: "See your blood tests booking history")
                         
+                        Text("You don’t have any blood test booked")
+                            .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
                     }.padding(.top, 20)
                     
-                    Spacer()
-                }
+                }.padding(.bottom, 30) //Container
+                
+            } //ScrollView
                 .navigationBarTitle("Blood Tests")
-            }
         }
     }
 }
