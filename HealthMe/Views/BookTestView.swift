@@ -20,7 +20,7 @@ struct BookTestView: View {
                 }
                 
                 VStack(alignment: .center) {
-                    StationList()
+                    StationList(stations: BloodStationData())
                     
                     Spacer()
                     

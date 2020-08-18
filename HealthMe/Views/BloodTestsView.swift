@@ -39,7 +39,6 @@ struct Card: View {
     var title: String
     var image: String
     var text: String
-    var action: String
     
     var body: some View {
         VStack {
@@ -47,17 +46,16 @@ struct Card: View {
                 if self.initialView {
                     Text(self.title).font(.system(size: 20, weight: .bold))
                     Text(self.text).multilineTextAlignment(.center).padding()
-                    Text("swipe >>>").foregroundColor(Color(red: 23/255, green: 108/255, blue: 236/255)).fontWeight(.semibold)
+                    Text("<<< swipe").foregroundColor(Color(red: 23/255, green: 108/255, blue: 236/255)).fontWeight(.semibold)
                 } else {
                     HStack(alignment: .top) {
-                        Text(self.title).font(.system(size: 20, weight: .bold))
+                        Text(self.title).font(.system(size: 20, weight: .bold)).padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8)).overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                         Spacer()
-                        Image(self.image).resizable().aspectRatio(contentMode: .fit)
-                        if self.action.isEmpty {
-                            Spacer()
-                        } else {
-                            Text(self.action).font(.system(size: 12, weight: .medium)).foregroundColor(Color("azul")).underline()
-                        }
+                        Image(self.image).resizable().aspectRatio(contentMode: .fit).offset(x: -10)
+                        Spacer()
                     }
                     Text(self.text).multilineTextAlignment(.center).padding().font(.system(size: 16, weight: .medium))
                 }
@@ -70,8 +68,8 @@ struct Card: View {
 struct DiscoverHealthMe: View {
     var body: some View {
         VStack {
-            PageView([Card(initialView: true, title: "Discover Health Me", image: "", text: "Swipe right to discover the power of Health Me in our lifes and how it can improve our overall health.", action: ""), Card(initialView: false, title: "1", image: "discover01", text: "Attend to the nearest blood station", action: "Book now"), Card(initialView: false, title: "2", image: "discover02", text: "Book a blood test appointment", action: ""), Card(initialView: false, title: "3", image: "discover03", text: "Your blood is analysed in the lab", action: "")]).frame(height: 250)
-        }
+            PageView([Card(initialView: true, title: "Discover Health Me", image: "", text: "Swipe right to discover the power of Health Me in our lifes and how it can improve our overall health."), Card(initialView: false, title: "1", image: "discover01", text: "Book a blood test appointment"), Card(initialView: false, title: "2", image: "discover02", text: "Attend to the nearest blood station"), Card(initialView: false, title: "3", image: "discover03", text: "Your blood is analysed in the lab"), Card(initialView: false, title: "4", image: "discover04", text: "Get a Health Me report to your phone")]).frame(height: 250)
+        }.padding([.top, .bottom], 35)
     }
 }
 
@@ -101,8 +99,9 @@ struct BloodTestsView: View {
                     VStack {
                         Header(title: "Past Tests", subtitle: "See your blood tests booking history")
                         
-                        Text("You haven’t booked any blood test") //You don’t have any blood test booked
-                            .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
+                        PastTestsList(pastTests: BloodTestData())
+//                        Text("You haven’t booked any blood test") //You don’t have any blood test booked
+//                            .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
                     }.padding(.top, 20)
                     
                 }.padding(.bottom, 30)

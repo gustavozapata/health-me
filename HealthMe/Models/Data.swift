@@ -12,6 +12,8 @@ import Foundation
 
 let profileData: [ProfileModel] = load("profileOptions.json")
 let messagesData: [MessagesModel] = load("messages.json")
+let pastTestsData: [BloodTestModel] = load("pastTests.json")
+let bloodStationsData: [BloodStationModel] = load("bloodStations.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
