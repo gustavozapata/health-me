@@ -39,4 +39,5 @@ extension UIColor {
 
 extension Color {
     static let selectedItem = Color("selectedItem")
+    static let azul = Color("azul")
 }
