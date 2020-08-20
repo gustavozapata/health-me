@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C18239624EF2A1400CD187A /* BloodStationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239524EF2A1400CD187A /* BloodStationRow.swift */; };
+		4C18239824EF328900CD187A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239724EF328900CD187A /* Card.swift */; };
+		4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */; };
+		4C18239C24EF32FC00CD187A /* BookTestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239B24EF32FC00CD187A /* BookTestCard.swift */; };
 		4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DC624B7DE7A00F5C551 /* AppDelegate.swift */; };
 		4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DC824B7DE7A00F5C551 /* SceneDelegate.swift */; };
 		4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DCA24B7DE7A00F5C551 /* ContentView.swift */; };
@@ -49,7 +53,6 @@
 		4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE636F24DD823A008068CA /* ElementsModifier.swift */; };
 		4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE637224DDBF43008068CA /* BloodStations.swift */; };
 		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
-		4CBF948024BB221600252DB8 /* Messages_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF947F24BB221600252DB8 /* Messages_Model.swift */; };
 		4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948324BB2DA600252DB8 /* MessagesView.swift */; };
 		4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948524BB337500252DB8 /* MessagesList.swift */; };
 		4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948724BB33E700252DB8 /* MessagesRow.swift */; };
@@ -58,6 +61,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C18239524EF2A1400CD187A /* BloodStationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStationRow.swift; sourceTree = "<group>"; };
+		4C18239724EF328900CD187A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHealthMe.swift; sourceTree = "<group>"; };
+		4C18239B24EF32FC00CD187A /* BookTestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestCard.swift; sourceTree = "<group>"; };
 		4C217DC324B7DE7A00F5C551 /* HealthMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C217DC624B7DE7A00F5C551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C217DC824B7DE7A00F5C551 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +109,6 @@
 		4CAE636F24DD823A008068CA /* ElementsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModifier.swift; sourceTree = "<group>"; };
 		4CAE637224DDBF43008068CA /* BloodStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStations.swift; sourceTree = "<group>"; };
 		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
-		4CBF947F24BB221600252DB8 /* Messages_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages_Model.swift; sourceTree = "<group>"; };
 		4CBF948324BB2DA600252DB8 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		4CBF948524BB337500252DB8 /* MessagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesList.swift; sourceTree = "<group>"; };
 		4CBF948724BB33E700252DB8 /* MessagesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRow.swift; sourceTree = "<group>"; };
@@ -193,10 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				4C22513B24B8D01100891773 /* profileOptions.json */,
-				4CBF947D24BB219800252DB8 /* messages.json */,
-				4C7EB3DF24EC54A200AD3C00 /* pastTests.json */,
 				4C7EB3E124EC563700AD3C00 /* bloodStations.json */,
-				4C7EB3E324EC576B00AD3C00 /* dataModels.swift */,
+				4C7EB3DF24EC54A200AD3C00 /* pastTests.json */,
+				4CBF947D24BB219800252DB8 /* messages.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -204,8 +209,8 @@
 		4C22513224B8CA8E00891773 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C7EB3E324EC576B00AD3C00 /* dataModels.swift */,
 				4C22513924B8CF9000891773 /* Data.swift */,
-				4CBF947F24BB221600252DB8 /* Messages_Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,13 +221,17 @@
 				4C9D89D524DC72AA001A7831 /* Layout */,
 				4C7EB3DC24EC53FC00AD3C00 /* Lists */,
 				4C47D46224DA1F89006ECC51 /* StationList.swift */,
+				4C18239524EF2A1400CD187A /* BloodStationRow.swift */,
 				4C7EB3E724EC750100AD3C00 /* StationRow.swift */,
+				4C18239724EF328900CD187A /* Card.swift */,
 				4C7EB3E524EC654400AD3C00 /* PastTestRow.swift */,
 				4C22513E24B8D90700891773 /* ProfileList.swift */,
 				4C22514224B8F28800891773 /* ProfileRow.swift */,
 				4CBF948524BB337500252DB8 /* MessagesList.swift */,
 				4CBF948724BB33E700252DB8 /* MessagesRow.swift */,
 				4C65B5AA24DE052E002C3CBF /* DateSelect.swift */,
+				4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */,
+				4C18239B24EF32FC00CD187A /* BookTestCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -381,8 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBF948024BB221600252DB8 /* Messages_Model.swift in Sources */,
 				4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */,
+				4C18239C24EF32FC00CD187A /* BookTestCard.swift in Sources */,
 				4C22514124B8EFEB00891773 /* AccountView.swift in Sources */,
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
 				4C7EB3DE24EC541500AD3C00 /* PastTestsList.swift in Sources */,
@@ -404,6 +413,7 @@
 				4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
+				4C18239624EF2A1400CD187A /* BloodStationRow.swift in Sources */,
 				4C9D89D224DC5A30001A7831 /* Modifiers.swift in Sources */,
 				4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */,
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
@@ -417,6 +427,8 @@
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,
 				4C9D89D424DC5B89001A7831 /* Header.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
+				4C18239824EF328900CD187A /* Card.swift in Sources */,
+				4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */,
 				4C22513424B8CAA800891773 /* ContentModels.swift in Sources */,
 				4C7EB3E824EC750100AD3C00 /* StationRow.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,

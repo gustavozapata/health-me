@@ -26,7 +26,26 @@ struct BloodStationModel: Decodable, Identifiable {
     var location: String
     var address: String
     var postcode: String
+    var telephone: String
 }
 final class BloodStationData: ObservableObject {
     @Published var stations = bloodStationsData
+}
+
+//MESSAGES
+struct MessagesModel: Codable, Hashable, Identifiable {
+    var id: Int
+    var sender: String
+    var message: String
+    var date: String
+    var mensajes: [Mensaje]
+    
+    struct Mensaje: Codable, Hashable {
+        var missa: String
+        var fecha: String
+        var sender: String
+    }
+}
+final class MessagesData: ObservableObject {
+    @Published var messages = messagesData
 }

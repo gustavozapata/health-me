@@ -3,18 +3,21 @@
         "id": 1,
         "location": "Kingston upon Thames",
         "address": "32 Richmond Road",
-        "postcode": "KT2 7PQ"
+        "postcode": "KT2 7PQ",
+        "telephone": "07474559923"
     },
     {
         "id": 2,
         "location": "Richmond",
-        "address": "49 Rumsey Close",
-        "postcode": "TW12 7XY"
+        "address": "49 Rumsey Close and the other",
+        "postcode": "TW12 7XY",
+        "telephone": "0208577466"
     },
     {
         "id": 3,
         "location": "Surbiton",
         "address": "12 Happy Avenue",
-        "postcode": "KT3 4RG"
+        "postcode": "KT3 4RG",
+        "telephone": "0208523112"
     }
 ]

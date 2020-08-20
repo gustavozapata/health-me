@@ -16,7 +16,7 @@ struct BookTestView: View {
             
             VStack {
                 VStack(alignment: .leading, spacing: 30) {
-                    Header(title: "Where", subtitle: "Select a blood station")
+                    Header(title: "Blood Station", subtitle: "Select a blood station")
                 }
                 
                 VStack(alignment: .center) {

@@ -14,9 +14,10 @@ struct StationList: View {
     @State var stationSelected = ""
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 30) {
             ForEach(stations.stations){ station in
-                StationRow(bloodStation: station, stationSelected: .constant(""))
+                BloodStationRow(bloodStation: station)
+//                StationRow(bloodStation: station, stationSelected: .constant(""))
             }
         }
     }
