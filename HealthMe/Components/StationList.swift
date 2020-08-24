@@ -11,13 +11,12 @@ import SwiftUI
 struct StationList: View {
     
     var stations: BloodStationData
-    @State var stationSelected = ""
+    @Binding var stationId: Int
     
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
+        VStack(alignment: .center, spacing: 10) {
             ForEach(stations.stations){ station in
-                BloodStationRow(bloodStation: station)
-//                StationRow(bloodStation: station, stationSelected: .constant(""))
+                BloodStationRow(bloodStation: station, selectedStation: self.$stationId)
             }
         }
     }
@@ -25,6 +24,6 @@ struct StationList: View {
 
 struct StationList_Previews: PreviewProvider {
     static var previews: some View {
-        StationList(stations: BloodStationData())
+        StationList(stations: BloodStationData(), stationId: .constant(1))
     }
 }

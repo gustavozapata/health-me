@@ -29,8 +29,16 @@
 		4C22514124B8EFEB00891773 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514024B8EFEB00891773 /* AccountView.swift */; };
 		4C22514324B8F28800891773 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514224B8F28800891773 /* ProfileRow.swift */; };
 		4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2733D824E2D985009E53AE /* FigmaToCode.swift */; };
+		4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */; };
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
 		4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47D46224DA1F89006ECC51 /* StationList.swift */; };
+		4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EBE24F2682000046C4C /* AppointmentCard.swift */; };
+		4C502EC124F2796300046C4C /* CardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC024F2796300046C4C /* CardSection.swift */; };
+		4C502EC324F27A7800046C4C /* BookTestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC224F27A7800046C4C /* BookTestButton.swift */; };
+		4C502EC524F283F300046C4C /* bookings.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C502EC424F283F300046C4C /* bookings.json */; };
+		4C502EC724F288F300046C4C /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC624F288F300046C4C /* DatePicker.swift */; };
+		4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC824F2AE4200046C4C /* TimePicker.swift */; };
+		4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502ECA24F3188000046C4C /* ConfirmButton.swift */; };
 		4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B5AA24DE052E002C3CBF /* DateSelect.swift */; };
 		4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */; };
 		4C720FB024EBCDBB00EF17B9 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAF24EBCDBB00EF17B9 /* PageView.swift */; };
@@ -49,7 +57,7 @@
 		4C9D89D224DC5A30001A7831 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D89D124DC5A30001A7831 /* Modifiers.swift */; };
 		4C9D89D424DC5B89001A7831 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D89D324DC5B89001A7831 /* Header.swift */; };
 		4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013924BE441C009DA1F5 /* locals.swift */; };
-		4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */; };
+		4CA4013C24BFC46D009DA1F5 /* BookStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013B24BFC46D009DA1F5 /* BookStation.swift */; };
 		4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE636F24DD823A008068CA /* ElementsModifier.swift */; };
 		4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE637224DDBF43008068CA /* BloodStations.swift */; };
 		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
@@ -58,6 +66,10 @@
 		4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948724BB33E700252DB8 /* MessagesRow.swift */; };
 		4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948924BB34F500252DB8 /* MessagesDetail.swift */; };
 		4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */; };
+		4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8C24F409360012C23C /* PaymentView.swift */; };
+		4CDCAA8F24F413DA0012C23C /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8E24F413DA0012C23C /* IconButton.swift */; };
+		4CDCAA9124F415FC0012C23C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA9024F415FC0012C23C /* MapView.swift */; };
+		4CDCAA9324F4168D0012C23C /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA9224F4168D0012C23C /* CardDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,8 +97,16 @@
 		4C22514024B8EFEB00891773 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		4C22514224B8F28800891773 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		4C2733D824E2D985009E53AE /* FigmaToCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaToCode.swift; sourceTree = "<group>"; };
+		4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestInfo.swift; sourceTree = "<group>"; };
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
 		4C47D46224DA1F89006ECC51 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		4C502EBE24F2682000046C4C /* AppointmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCard.swift; sourceTree = "<group>"; };
+		4C502EC024F2796300046C4C /* CardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSection.swift; sourceTree = "<group>"; };
+		4C502EC224F27A7800046C4C /* BookTestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestButton.swift; sourceTree = "<group>"; };
+		4C502EC424F283F300046C4C /* bookings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bookings.json; sourceTree = "<group>"; };
+		4C502EC624F288F300046C4C /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		4C502EC824F2AE4200046C4C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		4C502ECA24F3188000046C4C /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
 		4C65B5AA24DE052E002C3CBF /* DateSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelect.swift; sourceTree = "<group>"; };
 		4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4C720FAF24EBCDBB00EF17B9 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -105,7 +125,7 @@
 		4C9D89D124DC5A30001A7831 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		4C9D89D324DC5B89001A7831 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4CA4013924BE441C009DA1F5 /* locals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locals.swift; sourceTree = "<group>"; };
-		4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestView.swift; sourceTree = "<group>"; };
+		4CA4013B24BFC46D009DA1F5 /* BookStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStation.swift; sourceTree = "<group>"; };
 		4CAE636F24DD823A008068CA /* ElementsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModifier.swift; sourceTree = "<group>"; };
 		4CAE637224DDBF43008068CA /* BloodStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStations.swift; sourceTree = "<group>"; };
 		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
@@ -114,6 +134,10 @@
 		4CBF948724BB33E700252DB8 /* MessagesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRow.swift; sourceTree = "<group>"; };
 		4CBF948924BB34F500252DB8 /* MessagesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDetail.swift; sourceTree = "<group>"; };
 		4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesOptions.swift; sourceTree = "<group>"; };
+		4CDCAA8C24F409360012C23C /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		4CDCAA8E24F413DA0012C23C /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		4CDCAA9024F415FC0012C23C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4CDCAA9224F4168D0012C23C /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +205,12 @@
 			isa = PBXGroup;
 			children = (
 				4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */,
-				4CA4013B24BFC46D009DA1F5 /* BookTestView.swift */,
+				4CDCAA8C24F409360012C23C /* PaymentView.swift */,
 				4C9D89CF24DC57D2001A7831 /* BookDate.swift */,
+				4CDCAA9224F4168D0012C23C /* CardDetailsView.swift */,
+				4CA4013B24BFC46D009DA1F5 /* BookStation.swift */,
+				4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */,
+				4CDCAA9024F415FC0012C23C /* MapView.swift */,
 				4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */,
 				4C217DDF24B7E34300F5C551 /* NutritionView.swift */,
 				4C217DE124B7E35000F5C551 /* ProfileView.swift */,
@@ -202,6 +230,7 @@
 				4C7EB3E124EC563700AD3C00 /* bloodStations.json */,
 				4C7EB3DF24EC54A200AD3C00 /* pastTests.json */,
 				4CBF947D24BB219800252DB8 /* messages.json */,
+				4C502EC424F283F300046C4C /* bookings.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -221,7 +250,12 @@
 				4C9D89D524DC72AA001A7831 /* Layout */,
 				4C7EB3DC24EC53FC00AD3C00 /* Lists */,
 				4C47D46224DA1F89006ECC51 /* StationList.swift */,
+				4C502EC624F288F300046C4C /* DatePicker.swift */,
+				4C502EC824F2AE4200046C4C /* TimePicker.swift */,
+				4C65B5AA24DE052E002C3CBF /* DateSelect.swift */,
+				4C502EBE24F2682000046C4C /* AppointmentCard.swift */,
 				4C18239524EF2A1400CD187A /* BloodStationRow.swift */,
+				4C18239B24EF32FC00CD187A /* BookTestCard.swift */,
 				4C7EB3E724EC750100AD3C00 /* StationRow.swift */,
 				4C18239724EF328900CD187A /* Card.swift */,
 				4C7EB3E524EC654400AD3C00 /* PastTestRow.swift */,
@@ -229,9 +263,10 @@
 				4C22514224B8F28800891773 /* ProfileRow.swift */,
 				4CBF948524BB337500252DB8 /* MessagesList.swift */,
 				4CBF948724BB33E700252DB8 /* MessagesRow.swift */,
-				4C65B5AA24DE052E002C3CBF /* DateSelect.swift */,
 				4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */,
-				4C18239B24EF32FC00CD187A /* BookTestCard.swift */,
+				4C502EC224F27A7800046C4C /* BookTestButton.swift */,
+				4C502ECA24F3188000046C4C /* ConfirmButton.swift */,
+				4CDCAA8E24F413DA0012C23C /* IconButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9D89D324DC5B89001A7831 /* Header.swift */,
+				4C502EC024F2796300046C4C /* CardSection.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -374,6 +410,7 @@
 			files = (
 				4C7EB3E024EC54A200AD3C00 /* pastTests.json in Resources */,
 				4CBF947E24BB219800252DB8 /* messages.json in Resources */,
+				4C502EC524F283F300046C4C /* bookings.json in Resources */,
 				4C22513C24B8D01100891773 /* profileOptions.json in Resources */,
 				4C217DD324B7DE7E00F5C551 /* LaunchScreen.storyboard in Resources */,
 				4C9D89CE24DC532F001A7831 /* Colors.xcassets in Resources */,
@@ -397,13 +434,16 @@
 				4C7EB3DE24EC541500AD3C00 /* PastTestsList.swift in Sources */,
 				4C22513A24B8CF9000891773 /* Data.swift in Sources */,
 				4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */,
+				4CDCAA9324F4168D0012C23C /* CardDetailsView.swift in Sources */,
 				4C7EB3E624EC654400AD3C00 /* PastTestRow.swift in Sources */,
+				4C502EC324F27A7800046C4C /* BookTestButton.swift in Sources */,
 				4C7EB3E424EC576B00AD3C00 /* dataModels.swift in Sources */,
 				4C9D89D024DC57D2001A7831 /* BookDate.swift in Sources */,
-				4CA4013C24BFC46D009DA1F5 /* BookTestView.swift in Sources */,
+				4CA4013C24BFC46D009DA1F5 /* BookStation.swift in Sources */,
 				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
 				4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */,
+				4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */,
 				4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */,
 				4C22513624B8CD5200891773 /* ContentDatas.swift in Sources */,
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
@@ -411,6 +451,7 @@
 				4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */,
 				4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */,
 				4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */,
+				4C502EC724F288F300046C4C /* DatePicker.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
 				4C18239624EF2A1400CD187A /* BloodStationRow.swift in Sources */,
@@ -419,19 +460,26 @@
 				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
 				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
 				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
+				4CDCAA8F24F413DA0012C23C /* IconButton.swift in Sources */,
 				4C720FB024EBCDBB00EF17B9 /* PageView.swift in Sources */,
 				4CBF948A24BB34F500252DB8 /* MessagesDetail.swift in Sources */,
 				4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */,
 				4C217DC924B7DE7A00F5C551 /* SceneDelegate.swift in Sources */,
+				4CDCAA9124F415FC0012C23C /* MapView.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
+				4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */,
+				4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */,
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,
 				4C9D89D424DC5B89001A7831 /* Header.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C18239824EF328900CD187A /* Card.swift in Sources */,
+				4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */,
 				4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */,
 				4C22513424B8CAA800891773 /* ContentModels.swift in Sources */,
+				4C502EC124F2796300046C4C /* CardSection.swift in Sources */,
 				4C7EB3E824EC750100AD3C00 /* StationRow.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
+				4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */,
 				4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

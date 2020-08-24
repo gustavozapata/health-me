@@ -9,67 +9,41 @@
 import SwiftUI
 
 struct BookDate: View {
+    
+    @State var isDateSelected = false
+    @State var isTimeSelected = false
+    
     var body: some View {
-        ScrollView {
-            VStack { //Container
+        
+        VStack {
+            
+            ScrollView {
                 
-                
-                VStack { //Section
-                    Header(title: "When", subtitle: "Select a date and time")
-                }//Section
-                
-                //Datepicker
                 VStack {
                     
-                    HStack(alignment: .center, spacing: 5) {
-                        Image(systemName: "chevron.left").padding(.trailing, 8).font(.system(size: 20, weight: .semibold))
-                        DateSelect(state: "selected")
-                        DateSelect(state: "noavailable")
-                        DateSelect(state: "")
-                        DateSelect(state: "")
-                        Image(systemName: "chevron.right").padding(.leading, 8).font(.system(size: 20, weight: .semibold))
-                    }.padding()
+                    VStack {
+                        Header(title: "Date & Time", subtitle: "Select a date and time")
+                    }
                     
-                    
-                    VStack { //Section
-                        Text("Friday, August 19th 2020").font(.system(size: 18, weight: .semibold))
-                        Spacer()
-                        VStack(alignment: .trailing) {
-                            HStack {
-                                Text("AM").fontWeight(.bold)
-                                Text("09:00")
-                                Text("09:30")
-                                Text("10:00")
-                            }.padding()
-                            
-                            HStack {
-                                Text("09:00")
-                                Text("09:30")
-                                Text("10:00")
-                            }.padding()
-                        }.padding().font(.system(size: 18, weight: .medium))
+                    VStack {
                         
-                        VStack(alignment: .trailing) {
-                            HStack {
-                                Text("PM").fontWeight(.bold)
-                                Text("02:00")
-                                Text("02:30")
-                                Text("03:00")
-                            }.padding()
-                            
-                            HStack {
-                                Text("03:00")
-                                Text("04:30")
-                                Text("04:00")
-                            }.padding()
-                        }.padding().font(.system(size: 18, weight: .medium))
+                        DatePicker(isSelected: $isDateSelected)
                         
-                    }.padding() //Section
+                        Text("Friday, August 19th 2020").font(.system(size: 18, weight: .semibold)).padding(30)
+                        
+                        TimePicker(isSelected: $isTimeSelected)
+                        
+                    }.padding(.bottom, 30)
                     
-                } //Datepicker
-                
-            } //Container
+                }
                 .navigationBarTitle("Book Test")
+            }
+            
+            if isDateSelected && isTimeSelected {
+                NavigationLink(destination: PaymentView()){
+                    ConfirmButton()
+                }
+            }
         }
     }
 }

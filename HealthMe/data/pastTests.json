@@ -3,22 +3,30 @@
     {
         "id": 1,
         "date": "June 24, 2020",
-        "location": "Kingston upon Thames"
+        "time": "2:00 p.m.",
+        "location": "Kingston upon Thames",
+        "address": "34 Rumsey Close"
     },
     {
         "id": 2,
         "date": "May 19, 2020",
-        "location": "Surbiton"
+        "time": "14:00",
+        "location": "Surbiton",
+        "address": "12 Happy Ave"
     },
     {
         "id": 3,
         "date": "February 10, 2020",
-        "location": "Richmond"
+        "time": "09:00",
+        "location": "Richmond",
+        "address": "20 Penrhyn Road"
     },
     {
         "id": 4,
         "date": "January 05, 2020",
-        "location": "Kingston upon Thames"
+        "time": "12:00",
+        "location": "Kingston upon Thames",
+        "address": "50 Berystede"
     }
 ]
 

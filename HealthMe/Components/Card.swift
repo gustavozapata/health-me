@@ -46,6 +46,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(initialView: false, title: "2", image: "discover02", text: "description")
+        Card(initialView: false, title: "2", image: "discover01", text: "description")
     }
 }

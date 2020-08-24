@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct BloodTestsView: View {
+    
     var conic: LinearGradient
     var w: Int
     @Environment(\.colorScheme) var colorScheme
+    
+    @State var isUpcomingTest = true
+    
     init() {
         let colors = Gradient(colors: [.green, .orange, .pink, .red, .purple])
         conic = LinearGradient(gradient: colors, startPoint: .leading, endPoint: .trailing)
@@ -26,13 +30,24 @@ struct BloodTestsView: View {
                 //Container
                 VStack {
                     
-                    BookTestCard().padding(.bottom, 30)
-                    
-                    DiscoverHealthMe()
-                    
+                    if isUpcomingTest {
+                        Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
+                        AppointmentCard().padding(.bottom, 30)
+                        CardSection().padding([.top, .bottom], 30)
+                    } else {
+                        BookTestCard().padding(.bottom, 30).onAppear{
+                            print("apareciendo...")
+                        }.onDisappear{
+                            print("desapareciendo...")
+                        }
+                        DiscoverHealthMe()
+                    }
+                    Text("test").foregroundColor(Color.red).onTapGesture{
+                        self.isUpcomingTest.toggle()
+                    }
                     //Section - Past Tests
                     VStack {
-                        Header(title: "Past Tests", subtitle: "See your blood tests booking history")
+                        Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 40)
                         
                         PastTestsList(pastTests: BloodTestData())
 //                        Text("You haven’t booked any blood test") //You don’t have any blood test booked

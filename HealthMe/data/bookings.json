@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 19,
+        "time": "14:00"
+    },
+    {
+        "id": 2,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 19,
+        "time": "11:00"
+    },
+    {
+        "id": 3,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 20,
+        "time": "15:00"
+    },
+    {
+        "id": 4,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 18,
+        "time": "10:00"
+    },
+    {
+        "id": 5,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 20,
+        "time": "13:00"
+    },
+    {
+        "id": 6,
+        "station": 2,
+        "user": 4,
+        "month": "Aug",
+        "day": 25,
+        "time": "12:00"
+    }
+]
+

@@ -15,7 +15,7 @@ struct PastTestsList: View {
         VStack{
             List {
                 ForEach(pastTests.pastTests){ test in
-                    NavigationLink(destination: Text("hi")){
+                    NavigationLink(destination: BloodTestInfo(test: test)){
                         PastTestRow(pastTest: test)
                     }
                 }

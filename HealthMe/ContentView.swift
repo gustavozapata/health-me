@@ -21,7 +21,7 @@ struct ContentView: View {
             BloodTestsView()
                 .tabItem {
                     VStack {
-                        //                        Text("Health")
+//                                                Text("Health")
                         Image("blood")
                             .font(.system(size: 32.0, weight: .black))
                     }

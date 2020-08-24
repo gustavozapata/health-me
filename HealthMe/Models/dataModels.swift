@@ -14,7 +14,9 @@ import Combine
 struct BloodTestModel: Decodable, Identifiable {
     var id: Int
     var date: String
+    var time: String
     var location: String
+    var address: String
 }
 final class BloodTestData: ObservableObject {
     @Published var pastTests = pastTestsData
@@ -30,6 +32,19 @@ struct BloodStationModel: Decodable, Identifiable {
 }
 final class BloodStationData: ObservableObject {
     @Published var stations = bloodStationsData
+}
+
+//BOOKINGS
+struct BookingsModel: Decodable, Identifiable {
+    var id: Int
+    var station: Int
+    var user: Int
+    var month: String
+    var day: Int
+    var time: String
+}
+final class BookingsData: ObservableObject {
+    @Published var bookings = bookingsData
 }
 
 //MESSAGES
