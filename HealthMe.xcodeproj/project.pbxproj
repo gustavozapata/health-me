@@ -33,6 +33,7 @@
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
 		4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A770B24F7A9C100679E59 /* CreditCard.swift */; };
 		4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47D46224DA1F89006ECC51 /* StationList.swift */; };
+		4C4975E024F95D370011D8D6 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4975DF24F95D370011D8D6 /* ReviewView.swift */; };
 		4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EBE24F2682000046C4C /* AppointmentCard.swift */; };
 		4C502EC124F2796300046C4C /* CardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC024F2796300046C4C /* CardSection.swift */; };
 		4C502EC324F27A7800046C4C /* BookTestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC224F27A7800046C4C /* BookTestButton.swift */; };
@@ -102,6 +103,7 @@
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
 		4C3A770B24F7A9C100679E59 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		4C47D46224DA1F89006ECC51 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		4C4975DF24F95D370011D8D6 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		4C502EBE24F2682000046C4C /* AppointmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCard.swift; sourceTree = "<group>"; };
 		4C502EC024F2796300046C4C /* CardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSection.swift; sourceTree = "<group>"; };
 		4C502EC224F27A7800046C4C /* BookTestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTestButton.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */,
 				4CDCAA9224F4168D0012C23C /* CardDetailsView.swift */,
+				4C4975DF24F95D370011D8D6 /* ReviewView.swift */,
 				4CDCAA8C24F409360012C23C /* PaymentView.swift */,
 				4C9D89CF24DC57D2001A7831 /* BookDate.swift */,
 				4CA4013B24BFC46D009DA1F5 /* BookStation.swift */,
@@ -478,6 +481,7 @@
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C18239824EF328900CD187A /* Card.swift in Sources */,
 				4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */,
+				4C4975E024F95D370011D8D6 /* ReviewView.swift in Sources */,
 				4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */,
 				4C22513424B8CAA800891773 /* ContentModels.swift in Sources */,
 				4C502EC124F2796300046C4C /* CardSection.swift in Sources */,
