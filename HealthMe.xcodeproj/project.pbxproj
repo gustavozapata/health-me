@@ -209,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */,
+				4CDCAA8C24F409360012C23C /* PaymentView.swift */,
 				4CDCAA9224F4168D0012C23C /* CardDetailsView.swift */,
 				4C4975DF24F95D370011D8D6 /* ReviewView.swift */,
-				4CDCAA8C24F409360012C23C /* PaymentView.swift */,
 				4C9D89CF24DC57D2001A7831 /* BookDate.swift */,
 				4CA4013B24BFC46D009DA1F5 /* BookStation.swift */,
 				4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */,

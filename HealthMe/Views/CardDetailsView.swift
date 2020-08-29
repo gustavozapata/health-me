@@ -88,11 +88,14 @@ struct CardDetailsView: View {
                         }.padding(.bottom, 30)
                         
                         //BookTestButton()
-                        Text("Next").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.white).cornerRadius(22).font(.system(size: 20, weight: .bold))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 22)
-                                    .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 67/255, blue: 66/255), Color(red: 255/255, green: 150/255, blue: 1/255), Color(red: 1/255, green: 167/255, blue: 167/255), Color(red: 1/255, green: 135/255, blue: 144/255), Color(red: 239/255, green: 55/255, blue: 11/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
-                        ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
+                        NavigationLink(destination: ReviewView()){
+                            Text("Next").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.white).cornerRadius(22).font(.system(size: 20, weight: .bold))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 22)
+                                        .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 67/255, blue: 66/255), Color(red: 255/255, green: 150/255, blue: 1/255), Color(red: 1/255, green: 167/255, blue: 167/255), Color(red: 1/255, green: 135/255, blue: 144/255), Color(red: 239/255, green: 55/255, blue: 11/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
+                            ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
+                        }
+                        
                         Text("You won’t be charged. Next to review page").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 10)
                         
                     }.padding(28)
@@ -101,6 +104,7 @@ struct CardDetailsView: View {
                     .edgesIgnoringSafeArea(.bottom)
                     .animation(.easeOut(duration: 0.16))
             }
+            .navigationBarTitle("Book Test")
         }
     }
 }

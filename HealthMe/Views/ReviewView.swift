@@ -72,9 +72,9 @@ struct ReviewView: View {
                         RoundedRectangle(cornerRadius: 22)
                             .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 80/255, green: 25/255, blue: 235/255), Color(red: 135/255, green: 49/255, blue: 234/255), Color(red: 214/255, green: 66/255, blue: 188/255), Color(red: 255/255, green: 86/255, blue: 135/255), Color(red: 255/255, green: 151/255, blue: 114/255), Color(red: 255/255, green: 220/255, blue: 120/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
                 ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
-                Text("You'll be charged £10").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 10)
+                Text("You'll be charged £10").font(.system(size: 14)).foregroundColor(Color.gray).padding(.vertical, 15)
             }.padding(.top, 25)
-            
+            .navigationBarTitle("Book Test")
         }
     }
 }
