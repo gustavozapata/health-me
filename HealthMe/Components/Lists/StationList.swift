@@ -11,6 +11,7 @@ import SwiftUI
 struct StationList: View {
     
     var stations: BloodStationData
+    
     @Binding var stationId: Int
     
     var body: some View {

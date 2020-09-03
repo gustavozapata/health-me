@@ -15,6 +15,7 @@ let messagesData: [MessagesModel] = load("messages.json")
 let pastTestsData: [BloodTestModel] = load("pastTests.json")
 let bloodStationsData: [BloodStationModel] = load("bloodStations.json")
 let bookingsData: [BookingsModel] = load("bookings.json")
+let resultsData: [ResultModel] = load("results.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

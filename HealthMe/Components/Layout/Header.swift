@@ -22,7 +22,7 @@ struct Header: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(self.title).font(.system(size: 25, weight: .bold)).fixedSize(horizontal: false, vertical: true)
             Text(self.subtitle).font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).lineSpacing(3)
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 70, alignment: .topLeading).padding()
+        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 60, alignment: .topLeading).padding()
     }
 }
 

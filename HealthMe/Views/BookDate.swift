@@ -36,8 +36,8 @@ struct BookDate: View {
                     }.padding(.bottom, 30)
                     
                 }
-                .navigationBarTitle("Book Test")
-            }
+                
+            }.navigationBarTitle("Book Test")
             
             if isDateSelected && isTimeSelected {
                 NavigationLink(destination: PaymentView()){

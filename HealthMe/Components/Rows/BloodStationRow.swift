@@ -11,7 +11,7 @@ import SwiftUI
 struct BloodStationRow: View {
     
     var bloodStation: BloodStationModel
-    
+
     @Binding var selectedStation: Int
     @State var showMap = false
     
@@ -40,8 +40,10 @@ struct BloodStationRow: View {
                         Text(bloodStation.telephone).font(.system(size: 13)).underline()
                     }
                 }.frame(width: 110,height: 100)
-            }.padding().frame(width: 320).background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.white).cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
-            //TODO: border style
+            }.padding().frame(width: 320)
+                .background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.white)
+                .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
+            //TODO: border style black solid version
             //            .padding(10).overlay(
             //                RoundedRectangle(cornerRadius: 9)
             //                    .stroke(Color.black, lineWidth: 1)
@@ -54,7 +56,6 @@ struct BloodStationRow: View {
 
 struct BloodStationRow_Previews: PreviewProvider {
     static var previews: some View {
-        //        BloodStationRow(bloodStation: bloodStationsData[0])
         BloodStationRow(bloodStation: bloodStationsData[0], selectedStation: .constant(-1))
     }
 }

@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct StationRow: View {
+//FIXME: FIRST VERSION
+struct OLDStationRow: View {
     var bloodStation: BloodStationModel
     @Binding var stationSelected: String
     
@@ -40,11 +41,5 @@ struct StationRow: View {
         //                Spacer()
         //            }
         //        }
-    }
-}
-
-struct StationRow_Previews: PreviewProvider {
-    static var previews: some View {
-        StationRow(bloodStation: bloodStationsData[0], stationSelected: .constant(""))
     }
 }

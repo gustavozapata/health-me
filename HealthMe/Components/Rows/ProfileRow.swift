@@ -13,7 +13,7 @@ struct ProfileRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(profile.name).font(.system(size: 16))
+            Text(profile.name).font(.system(size: 17, weight: .semibold))
             Text(profile.description).foregroundColor(.gray).font(.system(size: 15))
         }.padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
     }

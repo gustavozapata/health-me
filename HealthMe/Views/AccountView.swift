@@ -10,25 +10,32 @@ import SwiftUI
 
 struct AccountView: View {
     let accountDetails = Account.all()
+    @State private var loggingOut = false
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
-                Spacer()
-                VStack(alignment: .center) {
-                    Text("You haven't confirmed your email").foregroundColor(Color.white).padding().font(.system(size: 16, weight: .bold)).frame(width: 300, height: 35, alignment: .center)
-                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center).background(Color.green)
-                Group {
-                    ForEach(accountDetails, id: \.self){ accountDetail in
-                        VStack {
-                            Text(accountDetail.field).font(.system(size: 16, weight: .bold)).frame(width: 350, height: 20, alignment: .topLeading)
-                            Text(accountDetail.value).font(.system(size: 20, weight: .regular)).frame(width: 350, height: 30, alignment: .topLeading).lineLimit(nil).fixedSize()
-                        }
-                    }
-                    .padding(.all)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    Text("Edit").foregroundColor(Color.green).fontWeight(.bold).underline()
+                }.offset(y: 20)
+                ForEach(accountDetails, id: \.self){ accountDetail in
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(accountDetail.field).fontWeight(.bold)
+                        Text(accountDetail.value)
+                    }.padding(.bottom, 30)
                 }
-                //                Spacer()
-            }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+            }.padding().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+            
+            Text("Log out").bold().foregroundColor(Color.gray).padding().onTapGesture{
+                self.loggingOut.toggle()
+            }.alert(isPresented: $loggingOut) {
+                Alert(title: Text("Log out"), message: Text("Are you sure you want to log out?"), primaryButton: .destructive(Text("Yes")) {
+                    print("Canceling...")
+                    }, secondaryButton: .cancel(Text("No")))
+            }
+            Text("Delete account").bold().foregroundColor(Color.gray).padding()
         }
         .navigationBarTitle("Account")
     }
@@ -44,15 +51,6 @@ extension Account: Hashable {
             Account(field: "Name", value: "Gustavo Zapata"),
             Account(field: "Email", value: "tavo@hotmail.com"),
             Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "074745599233373737377373737737373"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923"),
-            Account(field: "Telephone", value: "07474559923")
         ]
     }
 }

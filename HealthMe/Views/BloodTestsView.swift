@@ -32,7 +32,11 @@ struct BloodTestsView: View {
                     
                     if isUpcomingTest {
                         Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
-                        AppointmentCard().padding(.bottom, 30)
+                        
+                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
+                            AppointmentCard().padding(.bottom, 30)
+                        }.buttonStyle(PlainButtonStyle())
+                        
                         CardSection().padding([.top, .bottom], 30)
                     } else {
                         BookTestCard().padding(.bottom, 30).onAppear{
@@ -42,16 +46,19 @@ struct BloodTestsView: View {
                         }
                         DiscoverHealthMe()
                     }
-                    Text("test").foregroundColor(Color.red).onTapGesture{
-                        self.isUpcomingTest.toggle()
+                    
+                    HStack {
+                        Text("use-case").foregroundColor(Color.red).onTapGesture{
+                            self.isUpcomingTest.toggle()
+                        }
                     }
+                    
                     //Section - Past Tests
                     VStack {
                         Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 40)
                         
                         PastTestsList(pastTests: BloodTestData())
-//                        Text("You haven’t booked any blood test") //You don’t have any blood test booked
-//                            .font(.system(size: 18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
+//                        Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
                     }.padding(.top, 20)
                     
                 }.padding(.bottom, 30)
@@ -66,6 +73,6 @@ struct BloodTestsView: View {
 struct BloodTestsView_Previews: PreviewProvider {
     static var previews: some View {
         BloodTestsView()
-        //                BloodTestsView().environment(\.colorScheme, .dark)
+        //BloodTestsView().environment(\.colorScheme, .dark)
     }
 }

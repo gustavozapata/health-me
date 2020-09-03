@@ -10,30 +10,33 @@ import SwiftUI
 
 struct BookStation: View {
     
-    @State var stationId = -1
+    @State var stationId = ""
+    @ObservedObject var stationListVM = StationListViewModel()
     
     //    @ViewBuilder
     var body: some View {
         
         VStack {
-            
             ScrollView {
-                
                 VStack {
-                    VStack(alignment: .leading, spacing: 30) {
+                    VStack {
                         Header(title: "Blood Station", subtitle: "Select a blood station")
-                    }
+                    }.padding(.bottom, -10)
+                    
+                    SearchBar().padding(.bottom, 10)
                     
                     VStack(alignment: .center) {
-                        StationList(stations: BloodStationData(), stationId: self.$stationId)
-                        
+                        ///Hardcoded version
+//                        StationList(stations: BloodStationData(), stationId: self.$stationId)
+                        ///Fetch version
+                        StationListView(bloodStations: stationListVM.stations, stationId: self.$stationId)
                         Spacer()
                     }
                 }
-                .navigationBarTitle("Book Test")
-                }
+                
+            }.navigationBarTitle("Book Test")
             
-            if stationId > -1 {
+            if stationId != "" {
                 NavigationLink(destination: BookDate()){
                     ConfirmButton()
                 }

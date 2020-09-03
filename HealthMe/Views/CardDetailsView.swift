@@ -45,14 +45,14 @@ struct CardDetailsView: View {
                                 .padding([.leading, .trailing], 4)
                                 .cornerRadius(16)
                                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
-                        }.padding(.bottom, 10)
+                        }.padding(.bottom, 6)
                         VStack(alignment: .leading, spacing: 7) {
                             Text("CARD HOLDER").fontWeight(.bold).font(.system(size: 15))
                             TextField("", text: $cardHolder).frame(height: 42)
                                 .padding([.leading, .trailing], 4)
                                 .cornerRadius(16)
                                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
-                        }.padding(.bottom, 10)
+                        }.padding(.bottom, 6)
                         HStack {
                             VStack(alignment: .leading, spacing: 7) {
                                 Text("EXPIRES").fontWeight(.bold).font(.system(size: 15))
@@ -96,9 +96,9 @@ struct CardDetailsView: View {
                             ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
                         }
                         
-                        Text("You won’t be charged. Next to review page").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 10)
+                        Text("You won’t be charged. Next to review page").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 15)
                         
-                    }.padding(28)
+                    }.padding(25)
                     
                 }.padding(.bottom, keyboard.currentHeight)
                     .edgesIgnoringSafeArea(.bottom)

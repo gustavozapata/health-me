@@ -62,7 +62,7 @@ extension View {
         return rotation3DEffect(Angle(degrees: degrees), axis: (x: 0.0, y: 1.0, z: 0.0))
     }
     func placedOnCard() -> some View {
-        return frame(width: 290, height: 180).background(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 182/255, blue: 43/255), Color(red: 255/255, green: 22/255, blue: 87/255), Color(red: 255/255, green: 2/255, blue: 155/255)]), startPoint: .bottomLeading, endPoint: .topTrailing)).cornerRadius(16).shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).padding().animation(.easeInOut(duration: 0.8))
+        return frame(width: 290, height: 180).background(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 182/255, blue: 43/255), Color(red: 255/255, green: 22/255, blue: 87/255), Color(red: 255/255, green: 2/255, blue: 155/255)]), startPoint: .bottomLeading, endPoint: .topTrailing)).cornerRadius(16).shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).padding()
     }
 }
 

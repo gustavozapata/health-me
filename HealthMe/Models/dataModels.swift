@@ -30,6 +30,7 @@ struct BloodStationModel: Decodable, Identifiable {
     var postcode: String
     var telephone: String
 }
+
 final class BloodStationData: ObservableObject {
     @Published var stations = bloodStationsData
 }
@@ -53,14 +54,30 @@ struct MessagesModel: Codable, Hashable, Identifiable {
     var sender: String
     var message: String
     var date: String
+    var unread: Bool
     var mensajes: [Mensaje]
     
     struct Mensaje: Codable, Hashable {
         var missa: String
         var fecha: String
         var sender: String
+        var sent: Bool
     }
 }
 final class MessagesData: ObservableObject {
     @Published var messages = messagesData
+}
+
+
+//RESULTS
+struct ResultModel: Decodable, Identifiable {
+    var id: Int
+    var name: String
+    var date: String
+    var summary: [String]
+    var bloodType: String
+    var cells: String
+}
+final class ResultData: ObservableObject {
+    @Published var results = resultsData
 }

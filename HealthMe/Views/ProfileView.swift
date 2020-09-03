@@ -18,9 +18,9 @@ struct ProfileView: View {
                     Spacer()
                     NavigationLink(destination: MessagesView(message: MessagesData())) {
                         Image(systemName: "message").font(.system(size: 28.0, weight: .bold)).foregroundColor(Color.primary)
-                        Circle().fill(Color.green).frame(width: 13, height: 13).offset(x: -18, y: -12)
+                        Circle().fill(Color.red).frame(width: 13, height: 13).offset(x: -18, y: -12)
                     }
-                }.padding(.horizontal)
+                }.padding(.bottom, 0)
                 
                 ProfileList(profile: ProfileData())
             }

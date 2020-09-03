@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct MessagesList: View {
+    
     var messageData: MessagesData
     
     var body: some View {
-        List{
+        List {
             ForEach(messagesData){message in
                 NavigationLink(
                     destination: MessagesDetail(message: message)

@@ -9,11 +9,27 @@
 import SwiftUI
 
 struct BloodResultsView: View {
+    
+    @State var listSelected = 0
+    
     var body: some View {
         NavigationView {
-            Text("Your blood results")
-                .font(.title)
-                .navigationBarTitle("Blood Results")
+            ScrollView {
+                
+                Picker(selection: $listSelected, label: Text("View")) {
+                    Text("Detailed").tag(0)
+                    Text("List").tag(1)
+                }.pickerStyle(SegmentedPickerStyle()).padding()
+                
+                if listSelected == 0 {
+                    ResultsList(results: ResultData(), type: "detailed")
+                } else {
+                    ResultsList(results: ResultData(), type: "list")
+                }
+                
+                
+                
+            }.navigationBarTitle("Blood Results")
         }
     }
 }
