@@ -6,4 +6,4 @@
 ## Technologies & Tools
  - iOS
  - SwiftUI
- - Xcode 11
+ - Xcode
