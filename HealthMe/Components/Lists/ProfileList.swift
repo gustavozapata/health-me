@@ -12,12 +12,10 @@ struct ProfileList: View {
     var profile: ProfileData
     
     var body: some View {
-        return VStack{
-            List {
-                ForEach(profile.options){option in
-                    NavigationLink(destination: renderView(view: option.name)){
-                        ProfileRow(profile: option)
-                    }
+        List {
+            ForEach(profile.options){option in
+                NavigationLink(destination: renderView(view: option.name)){
+                    ProfileRow(profile: option)
                 }
             }
         }

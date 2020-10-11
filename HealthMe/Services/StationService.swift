@@ -12,7 +12,7 @@ class StationService {
     
     func getStations(completion: @escaping ([StationModel]?) -> ()) {
         
-        guard let url = URL(string: "\(LocalVars.host)/api/v1/stations") else {
+        guard let url = URL(string: "\(LocalVars.externalHost)/api/v1/stations") else {
             completion(nil)
             return
         }
@@ -30,7 +30,7 @@ class StationService {
                 completion(stations?.data)
             }
             
-            print("Fetch failed: \(error?.localizedDescription ?? "unknown error")")
+            print("Fetch failed: \(error?.localizedDescription ?? "error desconocido")")
         }.resume()
     }
 }

@@ -24,7 +24,7 @@ final class BloodTestData: ObservableObject {
 
 //BLOOD STATIONS
 struct BloodStationModel: Decodable, Identifiable {
-    var id: Int
+    var id: String
     var location: String
     var address: String
     var postcode: String

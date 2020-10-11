@@ -26,10 +26,13 @@ struct BookStation: View {
                     SearchBar().padding(.bottom, 10)
                     
                     VStack(alignment: .center) {
-                        ///Hardcoded version
-//                        StationList(stations: BloodStationData(), stationId: self.$stationId)
-                        ///Fetch version
-                        StationListView(bloodStations: stationListVM.stations, stationId: self.$stationId)
+                        if stationListVM.hasFetched {
+                            ///Fetch version
+                            StationListView(bloodStations: stationListVM.stations, stationId: self.$stationId)
+                        } else {
+                            ///Hardcoded version
+                            StationList(stations: BloodStationData(), stationId: self.$stationId)
+                        }
                         Spacer()
                     }
                 }

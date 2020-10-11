@@ -58,14 +58,14 @@ struct BloodTestsView: View {
                         Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 40)
                         
                         PastTestsList(pastTests: BloodTestData())
-//                        Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
+                        //                        Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
                     }.padding(.top, 20)
                     
                 }.padding(.bottom, 30)
                 //Container
                 
             } //ScrollView
-                .navigationBarTitle("Blood Tests")
+            .navigationBarTitle("Blood Tests")
         }
     }
 }

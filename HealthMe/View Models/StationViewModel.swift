@@ -36,15 +36,28 @@ class StationViewModel {
 class StationListViewModel: ObservableObject {
     @Published var stations = [StationViewModel]()
     
+    @Published var hasFetched = true
+    
     init() {
         fetchStations()
     }
     
     func fetchStations() {
         StationService().getStations { stations in
-            if let stations = stations {
-                self.stations = stations.map(StationViewModel.init)
+            ///Update (if data from DB map it, else get the json file)
+            if (stations != nil) {
+                self.hasFetched = true
+                if let stations = stations {
+                    self.stations = stations.map(StationViewModel.init)
+                }
+            } else {
+                self.hasFetched = false
             }
+            
+            ///Original (without else hardcoded data)
+            //if let stations = stations {
+                //self.stations = stations.map(StationViewModel.init)
+            //}
         }
     }
 }

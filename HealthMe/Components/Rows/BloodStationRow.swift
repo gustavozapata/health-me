@@ -12,7 +12,7 @@ struct BloodStationRow: View {
     
     var bloodStation: BloodStationModel
 
-    @Binding var selectedStation: Int
+    @Binding var selectedStation: String
     @State var showMap = false
     
     var body: some View {
@@ -56,6 +56,6 @@ struct BloodStationRow: View {
 
 struct BloodStationRow_Previews: PreviewProvider {
     static var previews: some View {
-        BloodStationRow(bloodStation: bloodStationsData[0], selectedStation: .constant(-1))
+        BloodStationRow(bloodStation: bloodStationsData[0], selectedStation: .constant(""))
     }
 }

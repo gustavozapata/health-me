@@ -12,8 +12,10 @@ struct MessagesView: View {
     var message: MessagesData
     
     var body: some View {
-        MessagesList(messageData: MessagesData())
-            .navigationBarTitle("Messages")
+        NavigationView {
+            MessagesList(messageData: MessagesData())
+                .navigationBarTitle("Messages")
+        }
     }
 }
 

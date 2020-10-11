@@ -30,7 +30,7 @@ struct BookStationFetch: View {
     
     func loadData() {
         print("fetching data...")
-        if let url = URL(string: "\(LocalVars.host)/api/v1/stations") {
+        if let url = URL(string: "\(LocalVars.externalHost)/api/v1/stations") {
             if let data = try? Data(contentsOf: url){
                 if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data){
                     results = decodedResponse.data
@@ -40,7 +40,7 @@ struct BookStationFetch: View {
     }
     
     func loadData2() {
-        guard let url = URL(string: "\(LocalVars.host)/api/v1/stations") else {
+        guard let url = URL(string: "\(LocalVars.externalHost)/api/v1/stations") else {
             print("Invalid URL")
             return
         }

@@ -13,18 +13,8 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
-                HStack{
-                    Spacer()
-                    NavigationLink(destination: MessagesView(message: MessagesData())) {
-                        Image(systemName: "message").font(.system(size: 28.0, weight: .bold)).foregroundColor(Color.primary)
-                        Circle().fill(Color.red).frame(width: 13, height: 13).offset(x: -18, y: -12)
-                    }
-                }.padding(.bottom, 0)
-                
-                ProfileList(profile: ProfileData())
-            }
-            .navigationBarTitle("Profile")
+            ProfileList(profile: ProfileData())
+                .navigationBarTitle("Profile")
         }
     }
 }

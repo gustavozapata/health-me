@@ -22,11 +22,12 @@ struct ContentView: View {
                 .tabItem {
                     VStack {
                         //                                                Text("Health")
-                        Image("blood")
+                        //                        Image("blood")
+                        Image(systemName: "circle.bottomthird.split")
                             .font(.system(size: 32.0, weight: .black))
                     }
-            }
-            .tag(0)
+                }
+                .tag(0)
             
             BloodResultsView()
                 .tabItem {
@@ -34,27 +35,30 @@ struct ContentView: View {
                         Image(systemName: "waveform.path.ecg")//doc.plaintext
                             .font(.system(size: 25.0, weight: .black))
                     }
-            }
-            .tag(1)
+                }
+                .tag(1)
             
-            NutritionView()
+//            NutritionView()
+            MessagesView(message: MessagesData())
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart")
+//                        Image(systemName: "heart")
+                        Image(systemName: "message")
                             .font(.system(size: 25.0, weight: .black))
                     }
-            }
-            .tag(2)
+                }
+                .tag(2)
             
             
             ProfileView(profile: ProfileData())
                 .tabItem {
                     VStack {
-                        Image("profile") //systemName: "person"
+                        //                        Image("profile")
+                        Image(systemName: "person")
                             .font(.system(size: 25.0, weight: .black))
                     }
-            }
-            .tag(3)
+                }
+                .tag(3)
         }.accentColor(.green) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
     }
 }
