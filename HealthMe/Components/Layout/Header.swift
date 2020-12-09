@@ -28,6 +28,6 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header(title: "Title", subtitle: "Text")
+        Header(title: "Title", subtitle: "Subtitle")
     }
 }

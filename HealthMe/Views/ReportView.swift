@@ -9,18 +9,24 @@
 import SwiftUI
 
 struct ReportView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var backButton : some View {
+        Image(systemName: "arrow.left").font(.system(size: 30, weight: .bold)).foregroundColor(Color.green).padding(.leading).onTapGesture {
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                //                NavigationLink(destination: BloodResultsView()){
-                Image(systemName: "arrow.left").font(.system(size: 30, weight: .bold)).foregroundColor(Color.green).padding(.leading)
-                //                }
+                backButton
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("CBC Blood Test").font(.system(size: 25, weight: .bold)).fixedSize(horizontal: false, vertical: true)
                     Text("12 May, 2020").bold().font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.green)
                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 70, alignment: .topLeading).padding()
-            }.padding(.top, 30)
+            }.padding(.top, 5)
             
             //Report
             VStack {
@@ -45,7 +51,7 @@ struct ReportView: View {
                     }.padding().frame(width: 270)
                 }.padding(.vertical, 20)
             }
-        }.navigationBarTitle("").navigationBarHidden(true)
+        }.navigationBarHidden(true)
     }
 }
 
