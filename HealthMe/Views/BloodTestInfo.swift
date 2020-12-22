@@ -32,7 +32,7 @@ struct BloodTestInfo: View {
                     }){
                         Text("Modify").foregroundColor(Color.green).fontWeight(.semibold).underline()
                     }.sheet(isPresented: $isModified){
-                        BookStation()
+                        BookStation(modify: true)
                     }
                 }
                 VStack(alignment: .leading, spacing: 7) {
