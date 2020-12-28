@@ -29,7 +29,8 @@ func renderView(view: String) -> some View {
     case "Settings":
         return AnyView(SettingsView())
     case "Privacy":
-        return AnyView(PrivacyView())
+//        return AnyView(PrivacyView())
+        return AnyView(SignUpView())
     case "About Health Me":
         return AnyView(AboutView())
     default:
