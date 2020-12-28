@@ -60,7 +60,12 @@ struct SignUpView: View {
                             .stroke(Color.gray, lineWidth: 1)
                     )
                     .padding(.bottom, 20)
-                Text("Sign Up")
+                Text("Sign Up").padding(10)
+                    .cornerRadius(30)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.blue, lineWidth: 1)
+                    )
                 
             }.padding(25)
             
