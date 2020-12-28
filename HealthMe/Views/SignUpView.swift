@@ -60,6 +60,7 @@ struct SignUpView: View {
                             .stroke(Color.gray, lineWidth: 1)
                     )
                     .padding(.bottom, 20)
+                Text("Sign Up")
                 
             }.padding(25)
             
