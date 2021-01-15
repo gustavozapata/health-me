@@ -43,6 +43,7 @@
 		4C502EC724F288F300046C4C /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC624F288F300046C4C /* DatePicker.swift */; };
 		4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC824F2AE4200046C4C /* TimePicker.swift */; };
 		4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502ECA24F3188000046C4C /* ConfirmButton.swift */; };
+		4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5ECF4B25A3733B00B322F8 /* LoginView.swift */; };
 		4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B5AA24DE052E002C3CBF /* DateSelect.swift */; };
 		4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */; };
 		4C720FB024EBCDBB00EF17B9 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAF24EBCDBB00EF17B9 /* PageView.swift */; };
@@ -130,6 +131,7 @@
 		4C502EC624F288F300046C4C /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		4C502EC824F2AE4200046C4C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		4C502ECA24F3188000046C4C /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		4C5ECF4B25A3733B00B322F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4C65B5AA24DE052E002C3CBF /* DateSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelect.swift; sourceTree = "<group>"; };
 		4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4C720FAF24EBCDBB00EF17B9 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				4CBF948324BB2DA600252DB8 /* MessagesView.swift */,
 				4CBF948924BB34F500252DB8 /* MessagesDetail.swift */,
 				4C39A2612599472200D84E16 /* SignUpView.swift */,
+				4C5ECF4B25A3733B00B322F8 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C8EB74024FBF59200BEF8A7 /* SearchBar.swift in Sources */,
 				4CE07EBC24FE6EBF00211618 /* BloodResultCard.swift in Sources */,
+				4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */,
 				4C18239824EF328900CD187A /* Card.swift in Sources */,
 				4C7B34FF25004D8B006AE008 /* StationListView.swift in Sources */,
 				4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */,

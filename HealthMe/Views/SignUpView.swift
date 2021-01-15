@@ -15,16 +15,9 @@ let blueGray = Color(red: 143/255, green: 157/255, blue: 181/255)
 struct SignUpView: View {
     
     @State var fullname: String = ""
-    @State var telephone: String = ""
     @State var email: String = ""
     @State var password: String = ""
-    
-    init(fullname: String = "", telephone: String = "", email: String = "", password: String = ""){
-        self.fullname = fullname
-        self.telephone = telephone
-        self.email = email
-        self.password = password
-    }
+    @State var showLogin = false
     
     var body: some View {
         ScrollView {
@@ -66,8 +59,12 @@ struct SignUpView: View {
                             .stroke(Color.green, lineWidth: 2)
                     ).padding(.bottom, 8)
                 HStack {
-                    Text("Have an account?").foregroundColor(blueGray)
-                    Text("Log in").underline().foregroundColor(.green)
+                    Text("Already have an account?").foregroundColor(blueGray)
+                    Text("Log in").underline().foregroundColor(.green).onTapGesture {
+                        self.showLogin.toggle()
+                    }.sheet(isPresented: $showLogin){
+                        LoginView(showLogin: self.$showLogin)
+                    }
                 }.font(.system(size: 13.5))
             }.padding(25)
         }.navigationBarTitle("Create Account")
