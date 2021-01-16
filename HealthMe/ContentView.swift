@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
+    @State private var skip = false
     
     init() {
         //Make List only the height of its content
@@ -17,49 +18,54 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView(selection: $selection){
-            BloodTestsView()
-                .tabItem {
-                    VStack {
-                        //                        Text("Health")
-                        //                        Image("blood")
-                        Image(systemName: "circle.bottomthird.split")
-                            .font(.system(size: 32.0, weight: .black))
-                    }
-                }
-                .tag(0)
+        if !self.skip {
+            OnboardingView(skip: $skip)
+        } else {
             
-            BloodResultsView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "waveform.path.ecg")//doc.plaintext
-                            .font(.system(size: 25.0, weight: .black))
+            TabView(selection: $selection){
+                BloodTestsView()
+                    .tabItem {
+                        VStack {
+                            //                        Text("Health")
+                            //                        Image("blood")
+                            Image(systemName: "circle.bottomthird.split")
+                                .font(.system(size: 32.0, weight: .black))
+                        }
                     }
-                }
-                .tag(1)
-            
-            //            NutritionView()
-            MessagesView(message: MessagesData())
-                .tabItem {
-                    VStack {
-                        //                        Image(systemName: "heart")
-                        Image(systemName: "message")
-                            .font(.system(size: 25.0, weight: .black))
+                    .tag(0)
+                
+                BloodResultsView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "waveform.path.ecg")//doc.plaintext
+                                .font(.system(size: 25.0, weight: .black))
+                        }
                     }
-                }
-                .tag(2)
-            
-            
-            ProfileView(profile: ProfileData())
-                .tabItem {
-                    VStack {
-                        //                        Image("profile")
-                        Image(systemName: "person")
-                            .font(.system(size: 25.0, weight: .black))
+                    .tag(1)
+                
+                //            NutritionView()
+                MessagesView(message: MessagesData())
+                    .tabItem {
+                        VStack {
+                            //                        Image(systemName: "heart")
+                            Image(systemName: "message")
+                                .font(.system(size: 25.0, weight: .black))
+                        }
                     }
-                }
-                .tag(3)
-        }.accentColor(.green) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
+                    .tag(2)
+                
+                
+                ProfileView(profile: ProfileData())
+                    .tabItem {
+                        VStack {
+                            //                        Image("profile")
+                            Image(systemName: "person")
+                                .font(.system(size: 25.0, weight: .black))
+                        }
+                    }
+                    .tag(3)
+            }.accentColor(.green) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
+        }
     }
 }
 

@@ -8,16 +8,13 @@
 
 import SwiftUI
 
-let lightGrey = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-let lightBorder = Color(red: 211/255, green: 225/255, blue: 230/255)
-let blueGray = Color(red: 143/255, green: 157/255, blue: 181/255)
-
 struct SignUpView: View {
     
     @State var fullname: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var showLogin = false
+    @Binding var skip: Bool
     
     var body: some View {
         ScrollView {
@@ -66,6 +63,10 @@ struct SignUpView: View {
                         LoginView(showLogin: self.$showLogin)
                     }
                 }.font(.system(size: 13.5))
+                Spacer().padding(50)
+                Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).onTapGesture {
+                    self.skip.toggle()
+                }
             }.padding(25)
         }.navigationBarTitle("Create Account")
     }
@@ -73,6 +74,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(skip: .constant(false))
     }
 }

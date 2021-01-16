@@ -28,6 +28,7 @@
 		4C22513F24B8D90700891773 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513E24B8D90700891773 /* ProfileList.swift */; };
 		4C22514124B8EFEB00891773 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514024B8EFEB00891773 /* AccountView.swift */; };
 		4C22514324B8F28800891773 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514224B8F28800891773 /* ProfileRow.swift */; };
+		4C23971425B20AEE00904210 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23971325B20AEE00904210 /* OnboardingView.swift */; };
 		4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2733D824E2D985009E53AE /* FigmaToCode.swift */; };
 		4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */; };
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
@@ -116,6 +117,7 @@
 		4C22513E24B8D90700891773 /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
 		4C22514024B8EFEB00891773 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		4C22514224B8F28800891773 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
+		4C23971325B20AEE00904210 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4C2733D824E2D985009E53AE /* FigmaToCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaToCode.swift; sourceTree = "<group>"; };
 		4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestInfo.swift; sourceTree = "<group>"; };
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				4CBF948924BB34F500252DB8 /* MessagesDetail.swift */,
 				4C39A2612599472200D84E16 /* SignUpView.swift */,
 				4C5ECF4B25A3733B00B322F8 /* LoginView.swift */,
+				4C23971325B20AEE00904210 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				4C7B34FF25004D8B006AE008 /* StationListView.swift in Sources */,
 				4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */,
 				4C4975E024F95D370011D8D6 /* ReviewView.swift in Sources */,
+				4C23971425B20AEE00904210 /* OnboardingView.swift in Sources */,
 				4C39A25F259941BE00D84E16 /* ModifyBanner.swift in Sources */,
 				4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */,
 				4C22513424B8CAA800891773 /* ContentModels.swift in Sources */,
