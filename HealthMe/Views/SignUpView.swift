@@ -18,6 +18,7 @@ struct SignUpView: View {
     
     var body: some View {
         ScrollView {
+            Header(title: "Register", subtitle: "Create an account")
             VStack{
                 VStack(alignment: .leading){
                     Text("Full Name").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(blueGray)
@@ -46,7 +47,7 @@ struct SignUpView: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color.gray, lineWidth: 1)
                         )
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 35)
                 }
                 Text("Create account").fontWeight(.medium).padding(9)
                     .font(.system(size: 16))
@@ -63,12 +64,12 @@ struct SignUpView: View {
                         LoginView(showLogin: self.$showLogin)
                     }
                 }.font(.system(size: 13.5))
-                Spacer().padding(50)
+                Spacer().padding(10)
                 Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).onTapGesture {
                     self.skip.toggle()
                 }
-            }.padding(25)
-        }.navigationBarTitle("Create Account")
+            }.padding(EdgeInsets(top: 10, leading: 25, bottom: 25, trailing: 25))
+        }
     }
 }
 
