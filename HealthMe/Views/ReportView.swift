@@ -31,24 +31,24 @@ struct ReportView: View {
             //Report
             VStack {
                 VStack{
-                    Image(systemName: "pencil.tip.crop.circle.badge.plus").font(.system(size: 60)).padding()
-                    Text("Your blood type is B and it’s in 18% of people in the world").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
+                    Image("bloodtype").font(.system(size: 60)).padding()
+                    Text("Your blood type is B and it’s in 10% of people in the world, one of the least common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
                 }.padding(.vertical, 25).frame(width: 270)
                 
                 HStack {
                     VStack {
-                        Image(systemName: "pencil.tip.crop.circle.badge.plus").font(.system(size: 60)).padding()
-                        Text("The heart is the part of our body where we always want to take care of and be able to live").fontWeight(.medium).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                        Image("vessel").resizable().frame(width: 80, height: 80).padding()
+                        Text("The blood vessels are the components of the circulatory system that transport blood throughout the human body").fontWeight(.medium).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
                     }.padding().frame(width: 270)
                     Spacer()
                 }.padding(.vertical, 20)
                 
-                HStack {
-                    Spacer()
-                    VStack {
-                        Image(systemName: "pencil.tip.crop.circle.badge.plus").font(.system(size: 60)).padding()
-                        Text("The heart is the part of our body where we always want to take care of and be able to live").fontWeight(.medium).multilineTextAlignment(.trailing).fixedSize(horizontal: false, vertical: true)
-                    }.padding().frame(width: 270)
+                VStack {
+                    Text("Red blood cells").font(.system(size: 20, weight: .semibold))
+                    HStack{
+                        Image("bloodcells").resizable().frame(width: 90, height: 80).padding()
+                        Text("9,450").font(.system(size: 45, weight: .semibold))
+                    }
                 }.padding(.vertical, 20)
             }
         }.navigationBarHidden(true)

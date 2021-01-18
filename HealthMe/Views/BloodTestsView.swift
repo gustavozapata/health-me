@@ -14,7 +14,7 @@ struct BloodTestsView: View {
     var w: Int
     @Environment(\.colorScheme) var colorScheme
     
-    @State var isUpcomingTest = true
+    @State var isUpcomingTest = false
     
     init() {
         let colors = Gradient(colors: [.green, .orange, .pink, .red, .purple])

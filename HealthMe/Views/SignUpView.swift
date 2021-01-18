@@ -17,7 +17,7 @@ struct SignUpView: View {
     @Binding var skip: Bool
     
     var body: some View {
-        ScrollView {
+        VStack {
             Header(title: "Register", subtitle: "Create an account")
             VStack{
                 VStack(alignment: .leading){
@@ -68,6 +68,7 @@ struct SignUpView: View {
                 Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).onTapGesture {
                     self.skip.toggle()
                 }
+                
             }.padding(EdgeInsets(top: 10, leading: 25, bottom: 25, trailing: 25))
         }
     }

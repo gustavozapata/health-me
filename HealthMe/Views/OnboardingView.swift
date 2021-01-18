@@ -18,11 +18,14 @@ struct OnboardingView: View {
             SignUpView(skip: $skip)
         } else {
             VStack {
-                VStack{
-                    Text("Health Me").font(.system(size: 30, weight: .bold)).padding(3)
+                VStack(spacing: 0){
+                    Text("Health Me").font(.system(size: 30, weight: .bold)).padding(25)
                     Text("Blood test results that are\n easier to understand").font(.system(size: 20, weight: .medium)).foregroundColor(blueGray).multilineTextAlignment(.center).lineSpacing(4)
+                    Image("highlight").resizable().frame(width: 190, height: 20)
                 }
-                Image("onboarding2").resizable().aspectRatio(contentMode: .fit).frame(width: 220, height: 220).padding(.bottom)
+                Spacer()
+                Image("onboarding2").resizable().aspectRatio(contentMode: .fit).frame(width: 240, height: 240).padding(.bottom)
+                Spacer()
                 VStack {
                     Button(action: {
                         self.showRegister.toggle()
@@ -36,7 +39,7 @@ struct OnboardingView: View {
                                     .fill(Color.white)
                                     .shadow(color: lightBorder, radius: 5, x: 4, y: 4)
                             )
-                    }.padding(8)
+                    }.padding(18)
                     HStack {
                         Text("Already have an account?").foregroundColor(blueGray)
                         Text("Log in").underline().foregroundColor(.green).onTapGesture {
@@ -46,7 +49,8 @@ struct OnboardingView: View {
                         }
                     }.font(.system(size: 13.5))
                 }.padding(.bottom)
-                Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing, 22).onTapGesture {
+                Spacer()
+                Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 22)).onTapGesture {
                     self.skip.toggle()
                 }
             }
