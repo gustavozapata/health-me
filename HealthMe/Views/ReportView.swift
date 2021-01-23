@@ -50,6 +50,14 @@ struct ReportView: View {
                         Text("9,450").font(.system(size: 45, weight: .semibold))
                     }
                 }.padding(.vertical, 20)
+                
+                VStack {
+                    Text("White blood cells").font(.system(size: 20, weight: .semibold))
+                    HStack{
+                        Image("bloodcells").resizable().frame(width: 90, height: 80).padding()
+                        Text("6,450").font(.system(size: 45, weight: .semibold))
+                    }
+                }.padding(.vertical, 20)
             }
         }.navigationBarHidden(true)
     }
