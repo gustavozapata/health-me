@@ -30,6 +30,8 @@
 		4C22514324B8F28800891773 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22514224B8F28800891773 /* ProfileRow.swift */; };
 		4C23971425B20AEE00904210 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23971325B20AEE00904210 /* OnboardingView.swift */; };
 		4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2733D824E2D985009E53AE /* FigmaToCode.swift */; };
+		4C2D7E4B25BD9F090007FBDF /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D7E4A25BD9F090007FBDF /* AccountViewModel.swift */; };
+		4C2D7E4E25BDA1140007FBDF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D7E4D25BDA1140007FBDF /* AuthService.swift */; };
 		4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */; };
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
 		4C39A25F259941BE00D84E16 /* ModifyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A25E259941BE00D84E16 /* ModifyBanner.swift */; };
@@ -119,6 +121,8 @@
 		4C22514224B8F28800891773 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		4C23971325B20AEE00904210 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4C2733D824E2D985009E53AE /* FigmaToCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaToCode.swift; sourceTree = "<group>"; };
+		4C2D7E4A25BD9F090007FBDF /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		4C2D7E4D25BDA1140007FBDF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestInfo.swift; sourceTree = "<group>"; };
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
 		4C39A25E259941BE00D84E16 /* ModifyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyBanner.swift; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDF616824FF035A009E3F96 /* StationService.swift */,
+				4C2D7E4D25BDA1140007FBDF /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDF616A24FF06EA009E3F96 /* StationViewModel.swift */,
+				4C2D7E4A25BD9F090007FBDF /* AccountViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				4CDCAA9324F4168D0012C23C /* CardDetailsView.swift in Sources */,
 				4C7EB3E624EC654400AD3C00 /* PastTestRow.swift in Sources */,
 				4C502EC324F27A7800046C4C /* BookTestButton.swift in Sources */,
+				4C2D7E4B25BD9F090007FBDF /* AccountViewModel.swift in Sources */,
 				4C7EB3E424EC576B00AD3C00 /* dataModels.swift in Sources */,
 				4C9D89D024DC57D2001A7831 /* BookDate.swift in Sources */,
 				4CA4013C24BFC46D009DA1F5 /* BookStation.swift in Sources */,
@@ -532,6 +539,7 @@
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
 				4C22514324B8F28800891773 /* ProfileRow.swift in Sources */,
 				4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */,
+				4C2D7E4E25BDA1140007FBDF /* AuthService.swift in Sources */,
 				4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */,
 				4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */,
 				4C502EC724F288F300046C4C /* DatePicker.swift in Sources */,
