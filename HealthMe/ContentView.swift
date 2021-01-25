@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
-    @State private var skip = false
+    
+    @ObservedObject var account: AccountViewModel = .account
     
     init() {
         //Make List only the height of its content
@@ -18,10 +19,9 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if !self.skip {
-            OnboardingView(skip: $skip)
+        if !self.account.showApp {
+            OnboardingView()
         } else {
-            
             TabView(selection: $selection){
                 BloodTestsView()
                     .tabItem {

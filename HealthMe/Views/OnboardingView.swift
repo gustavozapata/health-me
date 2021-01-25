@@ -11,11 +11,12 @@ import SwiftUI
 struct OnboardingView: View {
     @State var showLogin = false
     @State var showRegister = false
-    @Binding var skip: Bool
+    
+    @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
         if showRegister {
-            SignUpView(skip: $skip)
+            SignUpView()
         } else {
             VStack {
                 VStack(spacing: 0){
@@ -51,7 +52,7 @@ struct OnboardingView: View {
                 }.padding(.bottom)
                 Spacer()
                 Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 22)).onTapGesture {
-                    self.skip.toggle()
+                    self.account.showApp = true
                 }
             }
         }
@@ -60,6 +61,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(skip: .constant(false))
+        OnboardingView()
     }
 }

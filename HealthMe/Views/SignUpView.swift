@@ -14,7 +14,16 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var showLogin = false
-    @Binding var skip: Bool
+    
+    @ObservedObject var account: AccountViewModel = .account
+    
+    private func signup() {
+        account.signup(fullname, email, password) { //if login correct:
+            if account.isLogged {
+                account.showApp = true //show main app (hide start screen)
+            }
+        }
+    }
     
     var body: some View {
         VStack {
@@ -55,7 +64,9 @@ struct SignUpView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.green, lineWidth: 2)
-                    ).padding(.bottom, 8)
+                    ).padding(.bottom, 8).onTapGesture {
+                        self.signup()
+                    }
                 HStack {
                     Text("Already have an account?").foregroundColor(blueGray)
                     Text("Log in").underline().foregroundColor(.green).onTapGesture {
@@ -66,7 +77,7 @@ struct SignUpView: View {
                 }.font(.system(size: 13.5))
                 Spacer().padding(10)
                 Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).onTapGesture {
-                    self.skip.toggle()
+                    self.account.showApp = true
                 }
                 
             }.padding(EdgeInsets(top: 10, leading: 25, bottom: 25, trailing: 25))
@@ -76,6 +87,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(skip: .constant(false))
+        SignUpView()
     }
 }

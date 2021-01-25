@@ -11,15 +11,21 @@ import SwiftUI
 struct PastTestsList: View {
     var pastTests: BloodTestData
     
+    @ObservedObject var account: AccountViewModel = .account
+    
     var body: some View {
         VStack{
-            List {
-                ForEach(pastTests.pastTests){ test in
-                    NavigationLink(destination: BloodTestInfo(test: test)){
-                        PastTestRow(pastTest: test)
+            if account.isLogged {
+                List {
+                    ForEach(pastTests.pastTests){ test in
+                        NavigationLink(destination: BloodTestInfo(test: test)){
+                            PastTestRow(pastTest: test)
+                        }
                     }
-                }
-            }.frame(height: CGFloat(pastTests.pastTests.count) * CGFloat(95))
+                }.frame(height: CGFloat(pastTests.pastTests.count) * CGFloat(95))
+            } else {
+                Text("Login to see your bookings")
+            }
         }
     }
 }

@@ -14,6 +14,17 @@ struct LoginView: View {
     @State var password: String = ""
     @Binding var showLogin: Bool
     
+    @ObservedObject var account: AccountViewModel = .account
+    
+    private func login() {
+        account.login(email, password) { //if login correct:
+            if account.isLogged {
+                self.showLogin.toggle() //hide login sheet
+                self.account.showApp = true //show main app (hide start screen)
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView{
             VStack{
@@ -48,7 +59,9 @@ struct LoginView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.green, lineWidth: 2)
-                    ).padding(.bottom, 8)
+                    ).padding(.bottom, 8).onTapGesture {
+                        self.login()
+                    }
                 HStack {
                     Text("Don't have an account?").foregroundColor(blueGray)
                     Text("Sign up").underline().foregroundColor(.green).onTapGesture {

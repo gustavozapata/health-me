@@ -12,6 +12,8 @@ struct AccountView: View {
     let accountDetails = Account.all()
     @State private var loggingOut = false
     
+    @ObservedObject var account: AccountViewModel = .account
+    
     var body: some View {
         ScrollView {
             
@@ -32,7 +34,7 @@ struct AccountView: View {
                 self.loggingOut.toggle()
             }.alert(isPresented: $loggingOut) {
                 Alert(title: Text("Log out"), message: Text("Are you sure you want to log out?"), primaryButton: .destructive(Text("Yes")) {
-                    print("Canceling...")
+                    account.logout()
                     }, secondaryButton: .cancel(Text("No")))
             }
             Text("Delete account").bold().foregroundColor(Color.gray).padding()
