@@ -64,7 +64,9 @@ struct ContentView: View {
                         }
                     }
                     .tag(3)
-            }.accentColor(.green) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
+            }.accentColor(.green).onAppear(perform: {
+                selection = 0 //show initial view when logging in
+            }) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
         }
     }
 }

@@ -41,6 +41,8 @@ struct SignUpView: View {
                         .padding(.bottom, 12)
                     Text("Email").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(blueGray)
                     TextField("user@email.com", text: $email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
                         .padding(10)
                         .cornerRadius(50)
                         .overlay(

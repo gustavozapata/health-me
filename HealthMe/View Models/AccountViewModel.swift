@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: LOGIN USING UserDefaults  ******
 class UserStore: ObservableObject {
     @Published var isLogged: Bool = UserDefaults.standard.bool(forKey: "isLogged") {
         didSet {
@@ -16,14 +17,45 @@ class UserStore: ObservableObject {
     }
     @Published var showLogin = false
 }
-
-struct BookingzModel: Decodable, Identifiable {
+struct BookingModelz: Decodable, Identifiable {
     var id: Int
     var location: String
     var address: String
     var date: String
     var time: String
 }
+//BOOKINGS
+/*{
+    "id": 1,
+    "station": 2,
+    "user": 4,
+    "month": "Aug",
+    "day": 19,
+    "time": "14:00"
+}*/
+struct VookingsModel: Decodable, Identifiable {
+    var id: Int
+    var station: Int
+    var user: Int
+    var month: String
+    var day: Int
+    var time: String
+}
+//var pastTests: BloodTestData - ForEach(pastTests.pastTests)
+final class VookingsData: ObservableObject {
+    @Published var bookings = bookingsData
+    
+//    let bookingsData: [BookingsModel] = load("bookings.json")
+    func load<T: Decodable>(_ filename: String) -> T {
+        let data: Data
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+            else {fatalError("Couldn't find \(filename) in main bundle.")}
+        do {data = try Data(contentsOf: file)} catch {fatalError("Couldn't load \(filename) from main bundle:\n\(error)")}
+        do {let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)} catch {fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")}
+    }
+}
+//*******
 
 class AccountViewModel: ObservableObject {
     
@@ -31,9 +63,10 @@ class AccountViewModel: ObservableObject {
     static let account = AccountViewModel()
     
     @Published var user: String?
-    @Published var isLogged: Bool = false
+    @Published var isLogged: Bool = true
+    @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
-    //    @Published var bookingz = [BookingzModel]()
+    @Published var bookingz = [BookingModelz]()
     
     func logout() {
         self.isLogged = false
@@ -64,7 +97,11 @@ class AccountViewModel: ObservableObject {
             if let responseJSON = responseJSON as? [String: Any] {
                 DispatchQueue.main.async {
                     self.isLogged = responseJSON["isLogged"] as! Bool
-                    //                    self.bookingz = responseJSON["data"] as! [BookingzModel]
+                    if self.isLogged {
+                        self.bookingz = responseJSON["bookings"] as! [BookingModelz]
+                    } else {
+                        self.appMsg = responseJSON["message"] as? String
+                    }
                     completion()
                 }
                 

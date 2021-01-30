@@ -18,11 +18,13 @@ struct PastTestsList: View {
             if account.isLogged {
                 List {
                     ForEach(pastTests.pastTests){ test in
+//                    ForEach(account.bookingz){ test in
                         NavigationLink(destination: BloodTestInfo(test: test)){
                             PastTestRow(pastTest: test)
                         }
                     }
-                }.frame(height: CGFloat(pastTests.pastTests.count) * CGFloat(95))
+                }
+                .frame(height: CGFloat(pastTests.pastTests.count) * CGFloat(95))
             } else {
                 Text("Login to see your bookings")
             }

@@ -34,6 +34,8 @@ struct LoginView: View {
                     VStack(alignment: .leading){
                         Text("Email").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(blueGray)
                         TextField("user@email.com", text: $email)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
                             .padding(10)
                             .cornerRadius(50)
                             .overlay(
@@ -51,6 +53,7 @@ struct LoginView: View {
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.gray, lineWidth: 1)
                             )
+                        Text("\(account.appMsg!)").foregroundColor(.red).font(.system(size: 12))
                     }.padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
                 }
                 Text("Log in").fontWeight(.medium).padding(EdgeInsets(top: 9, leading: 20, bottom: 9, trailing: 20))
