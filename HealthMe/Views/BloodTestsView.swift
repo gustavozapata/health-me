@@ -14,6 +14,8 @@ struct BloodTestsView: View {
     var w: Int
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var account: AccountViewModel = .account
+    
     @State var isUpcomingTest = false
     
     init() {
@@ -33,16 +35,17 @@ struct BloodTestsView: View {
                     if isUpcomingTest {
                         Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
                         
-                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
+//                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
+                        NavigationLink(destination: BloodTestInfo(test: account.userModel!.bookings[0])){
                             AppointmentCard().padding(.bottom, 30)
                         }.buttonStyle(PlainButtonStyle())
                         
                         CardSection().padding([.top, .bottom], 30)
                     } else {
                         BookTestCard().padding(.bottom, 30).onAppear{
-                            print("apareciendo...")
+                            print("onAppear...")
                         }.onDisappear{
-                            print("desapareciendo...")
+                            print("onDisappear...")
                         }
                         DiscoverHealthMe()
                     }
@@ -57,7 +60,7 @@ struct BloodTestsView: View {
                     VStack {
                         Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 40)
                         
-                        PastTestsList(pastTests: BloodTestData())
+                        PastTestsList()
                         //                        Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
                     }.padding(.top, 20)
                     

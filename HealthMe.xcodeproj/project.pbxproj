@@ -37,6 +37,8 @@
 		4C39A25F259941BE00D84E16 /* ModifyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A25E259941BE00D84E16 /* ModifyBanner.swift */; };
 		4C39A2622599472200D84E16 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A2612599472200D84E16 /* SignUpView.swift */; };
 		4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A770B24F7A9C100679E59 /* CreditCard.swift */; };
+		4C44A3DB25C6D88300D9BCEC /* useDefaults_localStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44A3DA25C6D88300D9BCEC /* useDefaults_localStorage.swift */; };
+		4C44A3DF25C7179E00D9BCEC /* Fetch_JSON_Varios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44A3DE25C7179E00D9BCEC /* Fetch_JSON_Varios.swift */; };
 		4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47D46224DA1F89006ECC51 /* StationList.swift */; };
 		4C4975E024F95D370011D8D6 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4975DF24F95D370011D8D6 /* ReviewView.swift */; };
 		4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EBE24F2682000046C4C /* AppointmentCard.swift */; };
@@ -128,6 +130,8 @@
 		4C39A25E259941BE00D84E16 /* ModifyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyBanner.swift; sourceTree = "<group>"; };
 		4C39A2612599472200D84E16 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4C3A770B24F7A9C100679E59 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		4C44A3DA25C6D88300D9BCEC /* useDefaults_localStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = useDefaults_localStorage.swift; sourceTree = "<group>"; };
+		4C44A3DE25C7179E00D9BCEC /* Fetch_JSON_Varios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_JSON_Varios.swift; sourceTree = "<group>"; };
 		4C47D46224DA1F89006ECC51 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
 		4C4975DF24F95D370011D8D6 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		4C502EBE24F2682000046C4C /* AppointmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCard.swift; sourceTree = "<group>"; };
@@ -324,6 +328,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4C44A3D925C6D85F00D9BCEC /* login */ = {
+			isa = PBXGroup;
+			children = (
+				4C44A3DA25C6D88300D9BCEC /* useDefaults_localStorage.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 		4C720FAC24EBCC1200EF17B9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +360,7 @@
 			children = (
 				4CD6DC6A24FFCD2000CEE326 /* FetchDataSample.swift */,
 				4CD6DC6C24FFEE8600CEE326 /* BookStationFetch.swift */,
+				4C44A3DE25C7179E00D9BCEC /* Fetch_JSON_Varios.swift */,
 			);
 			path = fetch;
 			sourceTree = "<group>";
@@ -395,6 +408,7 @@
 		4CA4013624BE4288009DA1F5 /* local */ = {
 			isa = PBXGroup;
 			children = (
+				4C44A3D925C6D85F00D9BCEC /* login */,
 				4C7B35022500EDC5006AE008 /* fetch */,
 				4CAE637224DDBF43008068CA /* BloodStations.swift */,
 				4CA4013924BE441C009DA1F5 /* locals.swift */,
@@ -515,6 +529,7 @@
 			files = (
 				4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */,
 				4C18239C24EF32FC00CD187A /* BookTestCard.swift in Sources */,
+				4C44A3DB25C6D88300D9BCEC /* useDefaults_localStorage.swift in Sources */,
 				4C22514124B8EFEB00891773 /* AccountView.swift in Sources */,
 				4C217DC724B7DE7A00F5C551 /* AppDelegate.swift in Sources */,
 				4C7EB3DE24EC541500AD3C00 /* PastTestsList.swift in Sources */,
@@ -532,6 +547,7 @@
 				4CE07EBE24FE7FC700211618 /* ReportView.swift in Sources */,
 				4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */,
 				4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */,
+				4C44A3DF25C7179E00D9BCEC /* Fetch_JSON_Varios.swift in Sources */,
 				4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */,
 				4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */,
 				4CE07EC524FEB42400211618 /* ResultRow.swift in Sources */,

@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct MessagesList: View {
-    
-    var messageData: MessagesData
+    @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
         List {
-            ForEach(messagesData){message in
+            ForEach(account.userModel!.messages, id: \.self){ message in
                 NavigationLink(
                     destination: MessagesDetail(message: message)
                 ){
@@ -27,6 +26,6 @@ struct MessagesList: View {
 
 struct MessagesList_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesList(messageData: MessagesData())
+        MessagesList()
     }
 }

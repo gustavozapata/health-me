@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct BloodTestInfo: View {
-    var test: BloodTestModel
+    var test: BookingModel
     
     @State var isModified = false
     @State var isCanceled = false
@@ -65,8 +65,8 @@ struct BloodTestInfo: View {
     }
 }
 
-struct BloodTestInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        BloodTestInfo(test: pastTestsData[0])
-    }
-}
+//struct BloodTestInfo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BloodTestInfo(test: pastTestsData[0])
+//    }
+//}

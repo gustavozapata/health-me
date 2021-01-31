@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PastTestRow: View {
-    var pastTest: BloodTestModel
+    var pastTest: BookingModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -19,9 +19,9 @@ struct PastTestRow: View {
     }
 }
 
-struct PastTestRow_Previews: PreviewProvider {
-    static var previews: some View {
-        PastTestRow(pastTest: pastTestsData[0])
-            .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct PastTestRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PastTestRow(pastTest: )
+//            .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

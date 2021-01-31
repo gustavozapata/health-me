@@ -35,7 +35,6 @@ class StationViewModel {
 
 class StationListViewModel: ObservableObject {
     @Published var stations = [StationViewModel]()
-    
     @Published var hasFetched = true
     
     init() {

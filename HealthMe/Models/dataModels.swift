@@ -21,6 +21,18 @@ struct BloodTestModel: Decodable, Identifiable {
 final class BloodTestData: ObservableObject {
     @Published var pastTests = pastTestsData
 }
+//BOOKINGS (this one and blood tests should be the same??)
+struct BookingsModel: Decodable, Identifiable {
+    var id: Int
+    var station: Int
+    var user: Int
+    var month: String
+    var day: Int
+    var time: String
+}
+final class BookingsData: ObservableObject {
+    @Published var bookings = bookingsData
+}
 
 //BLOOD STATIONS
 struct BloodStationModel: Decodable, Identifiable {
@@ -33,19 +45,6 @@ struct BloodStationModel: Decodable, Identifiable {
 
 final class BloodStationData: ObservableObject {
     @Published var stations = bloodStationsData
-}
-
-//BOOKINGS
-struct BookingsModel: Decodable, Identifiable {
-    var id: Int
-    var station: Int
-    var user: Int
-    var month: String
-    var day: Int
-    var time: String
-}
-final class BookingsData: ObservableObject {
-    @Published var bookings = bookingsData
 }
 
 //MESSAGES

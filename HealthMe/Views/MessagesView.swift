@@ -9,11 +9,9 @@
 import SwiftUI
 
 struct MessagesView: View {
-    var message: MessagesData
-    
     var body: some View {
         NavigationView {
-            MessagesList(messageData: MessagesData())
+            MessagesList()
                 .navigationBarTitle("Messages")
         }
     }
@@ -21,6 +19,6 @@ struct MessagesView: View {
 
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesView(message: MessagesData())
+        MessagesView()
     }
 }

@@ -43,8 +43,7 @@ struct ContentView: View {
                     }
                     .tag(1)
                 
-                //            NutritionView()
-                MessagesView(message: MessagesData())
+                MessagesView()
                     .tabItem {
                         VStack {
                             //                        Image(systemName: "heart")

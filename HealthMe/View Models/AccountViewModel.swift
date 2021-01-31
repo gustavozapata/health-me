@@ -8,54 +8,49 @@
 
 import Foundation
 
-//TODO: LOGIN USING UserDefaults  ******
-class UserStore: ObservableObject {
-    @Published var isLogged: Bool = UserDefaults.standard.bool(forKey: "isLogged") {
-        didSet {
-            UserDefaults.standard.set(self.isLogged, forKey: "isLogged")
-        }
-    }
-    @Published var showLogin = false
+//******
+struct ServerResponse<Model: Decodable>: Decodable {
+    var data: Model
 }
-struct BookingModelz: Decodable, Identifiable {
-    var id: Int
+struct UserModel: Decodable {
+    var fullname: String
+    var email: String
+    var password: String
+    var bookings: [BookingModel]
+    var results: [ResultsModel]
+    var messages: [MessageModel]
+}
+struct BookingModel: Decodable, Hashable {
     var location: String
     var address: String
     var date: String
     var time: String
 }
-//BOOKINGS
-/*{
-    "id": 1,
-    "station": 2,
-    "user": 4,
-    "month": "Aug",
-    "day": 19,
-    "time": "14:00"
-}*/
-struct VookingsModel: Decodable, Identifiable {
-    var id: Int
-    var station: Int
-    var user: Int
-    var month: String
-    var day: Int
+///replace for the ResultModel (without 's')
+struct ResultsModel: Decodable, Hashable {
+    var blood_type: String
+    var test: String
+    var date: String
+    var red_blood_cells: Int
+    var whiteBloodCells:Int
+    var cholesterolLevel:Int
+    var glucose_level:Int
+    var hemoglobin:Int
+    var plateletCount:Int
+}
+struct MessageModel: Decodable, Hashable {
+    var sender: String
+    var read: Bool
+    var threads: [ThreadModel]
+}
+struct ThreadModel: Decodable, Hashable {
+    var date: String
     var time: String
+    var text: String
+    var user: Bool
+    var options: [String]
 }
-//var pastTests: BloodTestData - ForEach(pastTests.pastTests)
-final class VookingsData: ObservableObject {
-    @Published var bookings = bookingsData
-    
-//    let bookingsData: [BookingsModel] = load("bookings.json")
-    func load<T: Decodable>(_ filename: String) -> T {
-        let data: Data
-        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-            else {fatalError("Couldn't find \(filename) in main bundle.")}
-        do {data = try Data(contentsOf: file)} catch {fatalError("Couldn't load \(filename) from main bundle:\n\(error)")}
-        do {let decoder = JSONDecoder()
-            return try decoder.decode(T.self, from: data)} catch {fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")}
-    }
-}
-//*******
+//******
 
 class AccountViewModel: ObservableObject {
     
@@ -66,7 +61,7 @@ class AccountViewModel: ObservableObject {
     @Published var isLogged: Bool = true
     @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
-    @Published var bookingz = [BookingModelz]()
+    @Published var userModel: UserModel?
     
     func logout() {
         self.isLogged = false
@@ -76,8 +71,8 @@ class AccountViewModel: ObservableObject {
     func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
         
         // prepare json data
-        let json: [String: Any] = ["email": "\(email)", "password": "\(password)"]
-        let loginData = try? JSONSerialization.data(withJSONObject: json)
+        let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
+        let loginData = try? JSONSerialization.data(withJSONObject: params)
         
         // create post request
         let url = URL(string: "\(LocalVars.localHost)/api/v1/users/login")!
@@ -89,22 +84,19 @@ class AccountViewModel: ObservableObject {
         request.httpBody = loginData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                DispatchQueue.main.async {
-                    self.isLogged = responseJSON["isLogged"] as! Bool
-                    if self.isLogged {
-                        self.bookingz = responseJSON["bookings"] as! [BookingModelz]
-                    } else {
-                        self.appMsg = responseJSON["message"] as? String
+            
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        self.isLogged = true
+                        completion()
                     }
-                    completion()
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error.localizedDescription)")
                 }
-                
+                return
             }
         }
         task.resume()
