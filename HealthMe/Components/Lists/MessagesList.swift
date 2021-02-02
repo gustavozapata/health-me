@@ -12,14 +12,18 @@ struct MessagesList: View {
     @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
-        List {
-            ForEach(account.userModel!.messages, id: \.self){ message in
-                NavigationLink(
-                    destination: MessagesDetail(message: message)
-                ){
-                    MessagesRow(message: message)
-                }.isDetailLink(false)
+        if account.isLogged {
+            List {
+                ForEach(account.userModel!.messages, id: \.self){ message in
+                    NavigationLink(
+                        destination: MessagesDetail(message: message)
+                    ){
+                        MessagesRow(message: message)
+                    }.isDetailLink(false)
+                }
             }
+        } else {
+            Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray)
         }
     }
 }

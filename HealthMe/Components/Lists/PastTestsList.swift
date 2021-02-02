@@ -13,20 +13,13 @@ struct PastTestsList: View {
     
     var body: some View {
         VStack{
-            if account.isLogged {
-                List {
-                    ForEach(account.userModel!.bookings, id: \.self){ test in
-                        NavigationLink(destination: BloodTestInfo(test: test)){
-                            PastTestRow(pastTest: test)
-                        }
+            List {
+                ForEach(account.userModel!.bookings, id: \.self){ test in
+                    NavigationLink(destination: BloodTestInfo(test: test)){
+                        PastTestRow(pastTest: test)
                     }
                 }
-                .frame(height: CGFloat(account.userModel!.bookings.count) * CGFloat(95))
-                Text("Epa: \(account.userModel!.fullname)")
-                
-            } else {
-                Text("Login to see your bookings")
-            }
+            }.frame(height: CGFloat(account.userModel!.bookings.count) * CGFloat(95))
         }
     }
 }

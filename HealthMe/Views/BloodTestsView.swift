@@ -35,35 +35,36 @@ struct BloodTestsView: View {
                     if isUpcomingTest {
                         Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
                         
-//                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
+                        //                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
                         NavigationLink(destination: BloodTestInfo(test: account.userModel!.bookings[0])){
                             AppointmentCard().padding(.bottom, 30)
                         }.buttonStyle(PlainButtonStyle())
                         
                         CardSection().padding([.top, .bottom], 30)
                     } else {
-                        BookTestCard().padding(.bottom, 30).onAppear{
-                            print("onAppear...")
-                        }.onDisappear{
-                            print("onDisappear...")
-                        }
+                        BookTestCard().padding(.bottom, 30)
                         DiscoverHealthMe()
                     }
                     
-                    HStack {
-                        Text("use-case").foregroundColor(Color.red).onTapGesture{
-                            self.isUpcomingTest.toggle()
-                        }
-                    }
+                    //                    HStack {
+                    //                        Text("use-case").foregroundColor(Color.red).onTapGesture{
+                    //                            self.isUpcomingTest.toggle()
+                    //                        }
+                    //                    }
                     
                     //Section - Past Tests
-                    VStack {
-                        Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 40)
-                        
-                        PastTestsList()
-                        //                        Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)).multilineTextAlignment(.center).padding(.bottom, 20)
-                    }.padding(.top, 20)
-                    
+                    if account.isLogged {
+                        VStack {
+                            Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 20)
+                            if account.userModel!.bookings.count > 0 {
+                                PastTestsList()
+                            } else {
+                                Text("You haven’t booked any blood test").font(.system(size:18)).foregroundColor(.gray).multilineTextAlignment(.center).padding(.bottom, 20)
+                            }
+                        }.padding(.top, 20)
+                    } else {
+                        Text("Register or login to see your bookings").fontWeight(.semibold).foregroundColor(.gray).padding(.vertical, 30)
+                    }
                 }.padding(.bottom, 30)
                 //Container
                 

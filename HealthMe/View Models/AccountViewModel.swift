@@ -58,7 +58,7 @@ class AccountViewModel: ObservableObject {
     static let account = AccountViewModel()
     
     @Published var user: String?
-    @Published var isLogged: Bool = true
+    @Published var isLogged: Bool = false
     @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?

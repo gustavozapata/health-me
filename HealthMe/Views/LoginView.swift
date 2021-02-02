@@ -36,6 +36,7 @@ struct LoginView: View {
                         TextField("user@email.com", text: $email)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
+                            .disableAutocorrection(true)
                             .padding(10)
                             .cornerRadius(50)
                             .overlay(
