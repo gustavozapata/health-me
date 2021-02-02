@@ -102,6 +102,7 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
+    //TODO: create a generic function for login and signup
     func signup(_ fullname: String, _ email: String, _ password: String, completion: @escaping () -> ()) {
         let json: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)", "password": "\(password)"]
         let signupData = try? JSONSerialization.data(withJSONObject: json)
@@ -113,17 +114,18 @@ class AccountViewModel: ObservableObject {
         request.httpBody = signupData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                DispatchQueue.main.async {
-                    self.isLogged = responseJSON["isLogged"] as! Bool
-                    completion()
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        self.isLogged = true
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error.localizedDescription)")
                 }
-                
+                return
             }
         }
         task.resume()

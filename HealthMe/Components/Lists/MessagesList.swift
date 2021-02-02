@@ -13,14 +13,18 @@ struct MessagesList: View {
     
     var body: some View {
         if account.isLogged {
-            List {
-                ForEach(account.userModel!.messages, id: \.self){ message in
-                    NavigationLink(
-                        destination: MessagesDetail(message: message)
-                    ){
-                        MessagesRow(message: message)
-                    }.isDetailLink(false)
+            if account.userModel!.bookings.count > 0 {
+                List {
+                    ForEach(account.userModel!.messages, id: \.self){ message in
+                        NavigationLink(
+                            destination: MessagesDetail(message: message)
+                        ){
+                            MessagesRow(message: message)
+                        }.isDetailLink(false)
+                    }
                 }
+            } else {
+                Text("You don't have any messages").fontWeight(.semibold).foregroundColor(.gray)
             }
         } else {
             Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray)
