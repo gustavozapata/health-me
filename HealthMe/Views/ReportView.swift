@@ -30,6 +30,7 @@ struct ReportView: View {
             
             //Report
             VStack {
+                
                 VStack{
                     Image("bloodtype").font(.system(size: 60)).padding()
                     Text("Your blood type is B and it’s in 10% of people in the world, one of the least common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
@@ -42,6 +43,21 @@ struct ReportView: View {
                     }.padding().frame(width: 270)
                     Spacer()
                 }.padding(.vertical, 20)
+                
+                //Cholesterol
+                VStack {
+                    Text("Cholesterol").font(.system(size: 20, weight: .bold))
+                    VStack {
+                        Rectangle().fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
+                    }.padding()
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("Total cholesterol should be less than 200 mg/dL (200 milligrams per decilitre)").font(.system(size: 15, weight: .semibold))
+                        HStack(alignment: .top){
+                            Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange).font(.system(size: 12))
+                            Text("High cholesterol levels cause high risk of heart disease").font(.system(size: 13, weight: .medium)).foregroundColor(Color.gray)
+                        }
+                    }.fixedSize(horizontal: false, vertical: true)
+                }.padding()
                 
                 VStack {
                     Text("Red blood cells").font(.system(size: 20, weight: .semibold))

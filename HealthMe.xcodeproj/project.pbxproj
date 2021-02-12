@@ -95,7 +95,18 @@
 		4CE07EC024FEAD0700211618 /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CE07EBF24FEAD0700211618 /* results.json */; };
 		4CE07EC224FEB39800211618 /* ResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE07EC124FEB39800211618 /* ResultsList.swift */; };
 		4CE07EC524FEB42400211618 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE07EC424FEB42400211618 /* ResultRow.swift */; };
+		4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CE8438025C8D9BE00E4F99C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C217DBB24B7DE7A00F5C551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C217DC224B7DE7A00F5C551;
+			remoteInfo = HealthMe;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4C18239524EF2A1400CD187A /* BloodStationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStationRow.swift; sourceTree = "<group>"; };
@@ -188,10 +199,20 @@
 		4CE07EBF24FEAD0700211618 /* results.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = results.json; sourceTree = "<group>"; };
 		4CE07EC124FEB39800211618 /* ResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsList.swift; sourceTree = "<group>"; };
 		4CE07EC424FEB42400211618 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
+		4CE8437B25C8D9BE00E4F99C /* HealthMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMeUITests.swift; sourceTree = "<group>"; };
+		4CE8437F25C8D9BE00E4F99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4C217DC024B7DE7A00F5C551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE8437825C8D9BE00E4F99C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				4C217DC524B7DE7A00F5C551 /* HealthMe */,
+				4CE8437C25C8D9BE00E4F99C /* HealthMeUITests */,
 				4C217DC424B7DE7A00F5C551 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				4C217DC324B7DE7A00F5C551 /* HealthMe.app */,
+				4CE8437B25C8D9BE00E4F99C /* HealthMeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,6 +472,15 @@
 			path = Rows;
 			sourceTree = "<group>";
 		};
+		4CE8437C25C8D9BE00E4F99C /* HealthMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */,
+				4CE8437F25C8D9BE00E4F99C /* Info.plist */,
+			);
+			path = HealthMeUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,18 +501,40 @@
 			productReference = 4C217DC324B7DE7A00F5C551 /* HealthMe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4CE8437A25C8D9BE00E4F99C /* HealthMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CE8438425C8D9BE00E4F99C /* Build configuration list for PBXNativeTarget "HealthMeUITests" */;
+			buildPhases = (
+				4CE8437725C8D9BE00E4F99C /* Sources */,
+				4CE8437825C8D9BE00E4F99C /* Frameworks */,
+				4CE8437925C8D9BE00E4F99C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CE8438125C8D9BE00E4F99C /* PBXTargetDependency */,
+			);
+			name = HealthMeUITests;
+			productName = HealthMeUITests;
+			productReference = 4CE8437B25C8D9BE00E4F99C /* HealthMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4C217DBB24B7DE7A00F5C551 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Gustavo Zapata";
 				TargetAttributes = {
 					4C217DC224B7DE7A00F5C551 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					4CE8437A25C8D9BE00E4F99C = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 4C217DC224B7DE7A00F5C551;
 					};
 				};
 			};
@@ -498,6 +552,7 @@
 			projectRoot = "";
 			targets = (
 				4C217DC224B7DE7A00F5C551 /* HealthMe */,
+				4CE8437A25C8D9BE00E4F99C /* HealthMeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -517,6 +572,13 @@
 				4C217DCD24B7DE7D00F5C551 /* Assets.xcassets in Resources */,
 				4CE07EC024FEAD0700211618 /* results.json in Resources */,
 				4C7EB3E224EC563700AD3C00 /* bloodStations.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE8437925C8D9BE00E4F99C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +670,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CE8437725C8D9BE00E4F99C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CE8438125C8D9BE00E4F99C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C217DC224B7DE7A00F5C551 /* HealthMe */;
+			targetProxy = 4CE8438025C8D9BE00E4F99C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4C217DD124B7DE7E00F5C551 /* LaunchScreen.storyboard */ = {
@@ -778,6 +856,46 @@
 			};
 			name = Release;
 		};
+		4CE8438225C8D9BE00E4F99C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LFFP3H92BH;
+				INFOPLIST_FILE = HealthMeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.gustavozapata.HealthMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthMe;
+			};
+			name = Debug;
+		};
+		4CE8438325C8D9BE00E4F99C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LFFP3H92BH;
+				INFOPLIST_FILE = HealthMeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.gustavozapata.HealthMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthMe;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -795,6 +913,15 @@
 			buildConfigurations = (
 				4C217DD824B7DE7E00F5C551 /* Debug */,
 				4C217DD924B7DE7E00F5C551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CE8438425C8D9BE00E4F99C /* Build configuration list for PBXNativeTarget "HealthMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CE8438225C8D9BE00E4F99C /* Debug */,
+				4CE8438325C8D9BE00E4F99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
