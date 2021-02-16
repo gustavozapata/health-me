@@ -47,8 +47,15 @@ struct ReportView: View {
                 //Cholesterol
                 VStack {
                     Text("Cholesterol").font(.system(size: 20, weight: .bold))
-                    VStack {
-                        Rectangle().fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
+                            .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                        //                            RoundedRectangle(cornerRadius: 25)
+                        VStack {
+                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: 160.0, y: 25.0)
+                            //                                    .shadow(color: .gray, radius: 4, x: 2, y: 2)
+                            Text("200").font(.system(size: 14, weight: .bold)).position(x: 160, y: 24)
+                        }.frame(width: 200, height: 50)
                     }.padding()
                     VStack(alignment: .leading, spacing: 10){
                         Text("Total cholesterol should be less than 200 mg/dL (200 milligrams per decilitre)").font(.system(size: 15, weight: .semibold))
