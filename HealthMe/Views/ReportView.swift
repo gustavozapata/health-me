@@ -66,6 +66,28 @@ struct ReportView: View {
                     }.fixedSize(horizontal: false, vertical: true)
                 }.padding()
                 
+                //Glucose
+                VStack {
+                    Text("Glucose").font(.system(size: 20, weight: .bold))
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.green, .yellow]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
+                            .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                        //                            RoundedRectangle(cornerRadius: 25)
+                        VStack {
+                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: 120.0, y: 25.0)
+                            //                                    .shadow(color: .gray, radius: 4, x: 2, y: 2)
+                            Text("120").font(.system(size: 14, weight: .bold)).position(x: 120, y: 24)
+                        }.frame(width: 200, height: 50)
+                    }.padding()
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("Normal blood sugar levels are as follows: Between 4.0 to 5.4 mmol/L (72 to 99 mg/dL) when fasting").font(.system(size: 15, weight: .semibold))
+                        HStack(alignment: .top){
+                            Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange).font(.system(size: 12))
+                            Text("Hyperglycemia").font(.system(size: 13, weight: .medium)).foregroundColor(Color.gray)
+                        }
+                    }.fixedSize(horizontal: false, vertical: true)
+                }.padding()
+                
                 VStack {
                     Text("Red blood cells").font(.system(size: 20, weight: .semibold))
                     HStack{
