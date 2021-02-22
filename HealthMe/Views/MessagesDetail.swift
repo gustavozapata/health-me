@@ -10,7 +10,9 @@ import SwiftUI
 
 struct MessagesDetail: View {
     
-    @EnvironmentObject var messagesData: MessagesData
+    //    @EnvironmentObject var messagesData: MessagesData
+    @ObservedObject var messageVM: MessageViewModel = .message
+    @ObservedObject var account: AccountViewModel = .account
     @State var cancel = false
     var message: MessageModel
     
@@ -26,20 +28,26 @@ struct MessagesDetail: View {
                                     Text(msg.text)
                                         .padding(10)
                                         .foregroundColor(Color.white).messagesOptions()
-                                    Text(msg.date).foregroundColor(Color.gray).font(.system(size: 12)).padding(.trailing, 10)
+                                    Text(msg.time).foregroundColor(Color.gray).font(.system(size: 12)).padding(.trailing, 10)
                                 }
                             }
                         } else {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(message.sender).foregroundColor(Color.gray).font(.system(size: 12))
                                 Text(msg.text).padding().background(Color(red: 246/255, green: 248/255, blue: 250/255)).cornerRadius(16).lineSpacing(5)
-                                Text(msg.date).foregroundColor(Color.gray).font(.system(size: 12))
+                                Text(msg.time).foregroundColor(Color.gray).font(.system(size: 12))
                                 if msg == message.threads.last {
                                     VStack(alignment: .leading) {
                                         ForEach(msg.options, id: \.self) { reply in
                                             Text(reply).padding(8).overlay(
                                                 RoundedRectangle(cornerRadius: 25)
-                                                    .stroke(Color.black, lineWidth: 1.5))
+                                                    .stroke(Color.black, lineWidth: 1.5)).onTapGesture {
+                                                        print(reply)
+                                                        messageVM.sendMessage(reply, message.sender) {
+                                                            print("TODO BIEN EN UI")
+//                                                            print(account.userModel as Any)
+                                                        }
+                                                    }
                                         }
                                     }.padding(.vertical, 20)
                                 }
@@ -73,7 +81,6 @@ extension View {
 
 //struct MessagesDetail_Previews: PreviewProvider {
 //    static var previews: some View {
-//        let messagesData = MessagesData()
-//        return MessagesDetail(message: messagesData.messages[0])
+//        return MessagesDetail(message: message)
 //    }
 //}

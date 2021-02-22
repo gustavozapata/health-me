@@ -13,6 +13,7 @@ struct ServerResponse<Model: Decodable>: Decodable {
     var data: Model
 }
 struct UserModel: Decodable {
+    var _id: String
     var fullname: String
     var email: String
     var password: String
@@ -69,7 +70,6 @@ class AccountViewModel: ObservableObject {
     }
     
     func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
-        
         // prepare json data
         let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
         let loginData = try? JSONSerialization.data(withJSONObject: params)
@@ -84,7 +84,6 @@ class AccountViewModel: ObservableObject {
         request.httpBody = loginData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
             if let data = data {
                 do {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
