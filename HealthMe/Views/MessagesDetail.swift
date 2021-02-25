@@ -45,7 +45,7 @@ struct MessagesDetail: View {
                                                         print(reply)
                                                         messageVM.sendMessage(reply, message.sender) {
                                                             print("TODO BIEN EN UI")
-//                                                            print(account.userModel as Any)
+                                                            //                                                            print(account.userModel as Any)
                                                         }
                                                     }
                                         }

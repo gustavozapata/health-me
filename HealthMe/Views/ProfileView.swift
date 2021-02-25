@@ -10,11 +10,16 @@ import SwiftUI
 
 struct ProfileView: View {
     var profile: ProfileData
+    @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
         NavigationView {
             ProfileList(profile: ProfileData())
                 .navigationBarTitle("Profile")
+        }.onAppear(){
+            if !account.isLogged {
+                account.logout()
+            }
         }
     }
 }
