@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ReportView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var result: ResultsModel
     
     var backButton : some View {
         Image(systemName: "arrow.left").font(.system(size: 30, weight: .bold)).foregroundColor(Color.green).padding(.leading).onTapGesture {
@@ -23,17 +24,16 @@ struct ReportView: View {
                 backButton
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("CBC Blood Test").font(.system(size: 25, weight: .bold)).fixedSize(horizontal: false, vertical: true)
-                    Text("12 May, 2020").bold().font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.green)
+                    Text(result.test).font(.system(size: 25, weight: .bold)).fixedSize(horizontal: false, vertical: true)
+                    Text(result.date).bold().font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.green)
                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 70, alignment: .topLeading).padding()
             }.padding(.top, 5)
             
             //Report
             VStack {
-                
                 VStack{
                     Image("bloodtype").font(.system(size: 60)).padding()
-                    Text("Your blood type is B and it’s in 10% of people in the world, one of the least common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
+                    Text("Your blood type is \(result.blood_type) and it’s in 10% of people in the world, one of the least common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
                 }.padding(.vertical, 25).frame(width: 270)
                 
                 HStack {
@@ -52,9 +52,9 @@ struct ReportView: View {
                             .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         //                            RoundedRectangle(cornerRadius: 25)
                         VStack {
-                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: 160.0, y: 25.0)
+                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: CGFloat(result.cholesterolLevel-40), y: 25.0)
                             //                                    .shadow(color: .gray, radius: 4, x: 2, y: 2)
-                            Text("200").font(.system(size: 14, weight: .bold)).position(x: 160, y: 24)
+                            Text("\(result.cholesterolLevel)").font(.system(size: 14, weight: .bold)).position(x: CGFloat(result.cholesterolLevel-40), y: 24)
                         }.frame(width: 200, height: 50)
                     }.padding()
                     VStack(alignment: .leading, spacing: 10){
@@ -105,8 +105,8 @@ struct ReportView: View {
     }
 }
 
-struct ReportView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportView()
-    }
-}
+//struct ReportView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReportView()
+//    }
+//}

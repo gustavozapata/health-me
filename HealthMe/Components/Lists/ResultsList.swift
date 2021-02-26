@@ -9,25 +9,26 @@
 import SwiftUI
 
 struct ResultsList: View {
-    
-    var results: ResultData
     var type: String
+    @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
-        ForEach(results.results){ result in
-            NavigationLink(destination: ReportView()){
-                if self.type == "list" {
-                    ResultRow(result: result)
-                } else {
-                    BloodResultCard(result: result).padding(.vertical, 15)
+        ForEach(account.userModel!.results, id: \.self){ result in
+            NavigationLink(destination: ReportView(result: result)){
+                VStack {
+                    if self.type == "list" {
+                        ResultRow(result: result)
+                    } else {
+                        BloodResultCard(result: result).padding(.vertical, 15)
+                    }
                 }
             }.buttonStyle(PlainButtonStyle())
         }
     }
 }
 
-struct ResultsList_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultsList(results: ResultData(), type: "list")
-    }
-}
+//struct ResultsList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultsList(results: ResultData(), type: "list")
+//    }
+//}

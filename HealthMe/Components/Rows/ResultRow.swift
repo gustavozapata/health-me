@@ -10,20 +10,20 @@ import SwiftUI
 
 struct ResultRow: View {
     
-    var result: ResultModel
+    var result: ResultsModel
     
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
-                        Text(result.name).bold()
+                        Text(result.test).bold()
                         Spacer()
                         Text(result.date).font(.system(size: 12)).foregroundColor(Color.secondary).padding(.trailing)
                     }
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green)
-                        Text(result.cells).font(.system(size: 14))
+                        Text("cholesterol: \(result.cholesterolLevel)").font(.system(size: 14))
                     }
                 }
                 Spacer()
@@ -34,8 +34,8 @@ struct ResultRow: View {
     }
 }
 
-struct ResultRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultRow(result: resultsData[0])
-    }
-}
+//struct ResultRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultRow(result: resultsData[0])
+//    }
+//}

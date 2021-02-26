@@ -19,7 +19,6 @@
 		4C217DD324B7DE7E00F5C551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C217DD124B7DE7E00F5C551 /* LaunchScreen.storyboard */; };
 		4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */; };
 		4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */; };
-		4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DDF24B7E34300F5C551 /* NutritionView.swift */; };
 		4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C217DE124B7E35000F5C551 /* ProfileView.swift */; };
 		4C22513424B8CAA800891773 /* ContentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513324B8CAA800891773 /* ContentModels.swift */; };
 		4C22513624B8CD5200891773 /* ContentDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22513524B8CD5200891773 /* ContentDatas.swift */; };
@@ -124,7 +123,6 @@
 		4C217DD424B7DE7E00F5C551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C217DDB24B7E10000F5C551 /* BloodTestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestsView.swift; sourceTree = "<group>"; };
 		4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodResultsView.swift; sourceTree = "<group>"; };
-		4C217DDF24B7E34300F5C551 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		4C217DE124B7E35000F5C551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4C22513324B8CAA800891773 /* ContentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModels.swift; sourceTree = "<group>"; };
 		4C22513524B8CD5200891773 /* ContentDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDatas.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				4CDCAA9024F415FC0012C23C /* MapView.swift */,
 				4C217DDD24B7E13900F5C551 /* BloodResultsView.swift */,
 				4CE07EBD24FE7FC700211618 /* ReportView.swift */,
-				4C217DDF24B7E34300F5C551 /* NutritionView.swift */,
 				4C22514024B8EFEB00891773 /* AccountView.swift */,
 				4C74034224B9C47C009DB50B /* SettingsView.swift */,
 				4C217DE124B7E35000F5C551 /* ProfileView.swift */,
@@ -632,7 +629,6 @@
 				4CE07EBA24FD6BD900211618 /* AboutView.swift in Sources */,
 				4CDF616924FF035A009E3F96 /* StationService.swift in Sources */,
 				4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */,
-				4C217DE024B7E34300F5C551 /* NutritionView.swift in Sources */,
 				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
 				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
 				4C8DC38C25E30D31000D69CB /* MessageViewModel.swift in Sources */,
