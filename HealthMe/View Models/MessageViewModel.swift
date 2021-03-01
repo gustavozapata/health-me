@@ -13,7 +13,6 @@ class MessageViewModel: ObservableObject {
     static let message = MessageViewModel()
     
     @Published var userModel: UserModel?
-//    @Published var messageModel: MessageModel?
     @Published var account: AccountViewModel = .account
     
     func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {

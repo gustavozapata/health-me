@@ -17,6 +17,7 @@ struct LoginView: View {
     @ObservedObject var account: AccountViewModel = .account
     
     private func login() {
+        print(account.$appMsg)
         account.login(email, password) { //if login correct:
             if account.isLogged {
                 self.showLogin.toggle() //hide login sheet

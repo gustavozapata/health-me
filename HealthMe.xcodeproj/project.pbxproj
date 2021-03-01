@@ -75,6 +75,8 @@
 		4CA4013C24BFC46D009DA1F5 /* BookStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4013B24BFC46D009DA1F5 /* BookStation.swift */; };
 		4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE636F24DD823A008068CA /* ElementsModifier.swift */; };
 		4CAE637324DDBF43008068CA /* BloodStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE637224DDBF43008068CA /* BloodStations.swift */; };
+		4CBC692625EAE3190043ACD8 /* ResultsAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC692525EAE3190043ACD8 /* ResultsAnalysis.swift */; };
+		4CBC692A25EB30760043ACD8 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC692925EB30760043ACD8 /* ValidationServiceTests.swift */; };
 		4CBF947E24BB219800252DB8 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBF947D24BB219800252DB8 /* messages.json */; };
 		4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948324BB2DA600252DB8 /* MessagesView.swift */; };
 		4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF948524BB337500252DB8 /* MessagesList.swift */; };
@@ -179,6 +181,8 @@
 		4CA4013B24BFC46D009DA1F5 /* BookStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStation.swift; sourceTree = "<group>"; };
 		4CAE636F24DD823A008068CA /* ElementsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsModifier.swift; sourceTree = "<group>"; };
 		4CAE637224DDBF43008068CA /* BloodStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStations.swift; sourceTree = "<group>"; };
+		4CBC692525EAE3190043ACD8 /* ResultsAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsAnalysis.swift; sourceTree = "<group>"; };
+		4CBC692925EB30760043ACD8 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
 		4CBF947D24BB219800252DB8 /* messages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		4CBF948324BB2DA600252DB8 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		4CBF948524BB337500252DB8 /* MessagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesList.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				4C74034724B9CCAB009DB50B /* UIColor.swift */,
 				4C74034B24BA2E00009DB50B /* HelperFunc.swift */,
 				4C9D89D124DC5A30001A7831 /* Modifiers.swift */,
+				4CBC692525EAE3190043ACD8 /* ResultsAnalysis.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 			children = (
 				4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */,
 				4CE8437F25C8D9BE00E4F99C /* Info.plist */,
+				4CBC692925EB30760043ACD8 /* ValidationServiceTests.swift */,
 			);
 			path = HealthMeUITests;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				4C8EB74024FBF59200BEF8A7 /* SearchBar.swift in Sources */,
 				4CE07EBC24FE6EBF00211618 /* BloodResultCard.swift in Sources */,
 				4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */,
+				4CBC692625EAE3190043ACD8 /* ResultsAnalysis.swift in Sources */,
 				4C18239824EF328900CD187A /* Card.swift in Sources */,
 				4C7B34FF25004D8B006AE008 /* StationListView.swift in Sources */,
 				4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */,
@@ -674,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBC692A25EB30760043ACD8 /* ValidationServiceTests.swift in Sources */,
 				4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

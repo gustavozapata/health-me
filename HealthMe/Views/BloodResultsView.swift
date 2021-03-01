@@ -17,14 +17,18 @@ struct BloodResultsView: View {
         NavigationView {
             ScrollView {
                 if account.isLogged {
-                    Picker(selection: $listSelected, label: Text("View")) {
-                        Text("Detailed").tag(0)
-                        Text("List").tag(1)
-                    }.pickerStyle(SegmentedPickerStyle()).padding()
-                    if listSelected == 0 {
-                        ResultsList(type: "detailed")
+                    if account.userModel!.results.count > 0 {
+                        Picker(selection: $listSelected, label: Text("View")) {
+                            Text("Detailed").tag(0)
+                            Text("List").tag(1)
+                        }.pickerStyle(SegmentedPickerStyle()).padding()
+                        if listSelected == 0 {
+                            ResultsList(type: "detailed")
+                        } else {
+                            ResultsList(type: "list")
+                        }
                     } else {
-                        ResultsList(type: "list")
+                        Text("You don't have any results").fontWeight(.semibold).foregroundColor(.gray).padding()
                     }
                 } else {
                     Text("Register or login to see your results").fontWeight(.semibold).foregroundColor(.gray).padding(.vertical, 30)

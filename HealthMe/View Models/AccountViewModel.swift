@@ -69,21 +69,42 @@ class AccountViewModel: ObservableObject {
         self.showApp = false
     }
     
-    func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
-        // prepare json data
-        let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
-        let loginData = try? JSONSerialization.data(withJSONObject: params)
+    func createRequest(_ method: String, _ urlPath: String, _ params: [String: Any]) -> URLRequest {
+        let url = URL(string: "\(LocalVars.localHost)/api/v1/\(urlPath)")!
+        let data = try? JSONSerialization.data(withJSONObject: params)
         
-        // create post request
-        let url = URL(string: "\(LocalVars.localHost)/api/v1/users/login")!
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = data
         
-        // insert json data to the request
-        request.httpBody = loginData
+        return request
+    }
+    
+    func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["sender": sender, "message": "\(message)"]
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "messages/\(userModel!._id)", params)) { data, response, error in
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
+        
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "users/login", params)) { data, response, error in
             if let data = data {
                 do {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
@@ -101,18 +122,10 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    //TODO: create a generic function for login and signup
     func signup(_ fullname: String, _ email: String, _ password: String, completion: @escaping () -> ()) {
-        let json: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)", "password": "\(password)"]
-        let signupData = try? JSONSerialization.data(withJSONObject: json)
+        let params: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)", "password": "\(password)"]
         
-        let url = URL(string: "\(LocalVars.localHost)/api/v1/users/signup")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = signupData
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "users/signup", params)) { data, response, error in
             if let data = data {
                 do {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)

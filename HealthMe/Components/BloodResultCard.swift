@@ -16,7 +16,7 @@ struct BloodResultCard: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(result.test).bold()
             
-            HStack(alignment: .bottom) {
+            HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green).font(.system(size: 14))
@@ -42,8 +42,8 @@ struct BloodResultCard: View {
     }
 }
 
-//struct BloodResultCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BloodResultCard(result: resultsData[0])
-//    }
-//}
+struct BloodResultCard_Previews: PreviewProvider {
+    static var previews: some View {
+        BloodResultCard(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+    }
+}

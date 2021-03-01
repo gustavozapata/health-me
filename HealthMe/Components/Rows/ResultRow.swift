@@ -34,8 +34,8 @@ struct ResultRow: View {
     }
 }
 
-//struct ResultRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultRow(result: resultsData[0])
-//    }
-//}
+struct ResultRow_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultRow(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+    }
+}

@@ -10,10 +10,8 @@ import SwiftUI
 
 struct MessagesDetail: View {
     
-    //    @EnvironmentObject var messagesData: MessagesData
     @ObservedObject var messageVM: MessageViewModel = .message
     @ObservedObject var account: AccountViewModel = .account
-    @State var cancel = false
     var message: MessageModel
     
     var body: some View {
@@ -21,7 +19,7 @@ struct MessagesDetail: View {
             VStack(alignment: .trailing){
                 ForEach(message.threads, id: \.self){ msg in
                     VStack{
-                        if(msg.user){
+                        if msg.user {
                             HStack {
                                 Spacer()
                                 VStack(alignment: .trailing, spacing: 10) {
@@ -43,9 +41,8 @@ struct MessagesDetail: View {
                                                 RoundedRectangle(cornerRadius: 25)
                                                     .stroke(Color.black, lineWidth: 1.5)).onTapGesture {
                                                         print(reply)
-                                                        messageVM.sendMessage(reply, message.sender) {
-                                                            print("TODO BIEN EN UI")
-                                                            //                                                            print(account.userModel as Any)
+                                                        account.sendMessage(reply, message.sender) {
+                                                            print("message sent")
                                                         }
                                                     }
                                         }
@@ -57,17 +54,6 @@ struct MessagesDetail: View {
                 }
                 
                 Spacer()
-                
-                //FIXME: MAKE A POST REQUEST HERE
-                if self.cancel {
-                    VStack(alignment: .leading) {
-                        Text("Blood Station").foregroundColor(Color.gray).font(.system(size: 12))
-                        Text("Your appointment has been canceled").padding().background(Color(red: 246/255, green: 248/255, blue: 250/255)).cornerRadius(16).lineSpacing(5)
-                        Text("6:00 PM").foregroundColor(Color.gray).font(.system(size: 12))
-                    }.position(x: 173, y: 50)
-                }
-                //FIXME: MAKE A POST REQUEST HERE
-                
             }
         }.navigationBarTitle(message.sender)
     }
@@ -79,8 +65,8 @@ extension View {
     }
 }
 
-//struct MessagesDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        return MessagesDetail(message: message)
-//    }
-//}
+struct MessagesDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        return MessagesDetail(message: MessageModel(sender: "Health Me", read: false, threads: [ThreadModel(date: "23 Jan, 2020", time: "12:00PM", text: "Thanks for joining us", user: false, options: ["You're welcome"])]))
+    }
+}

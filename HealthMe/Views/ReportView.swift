@@ -33,7 +33,7 @@ struct ReportView: View {
             VStack {
                 VStack{
                     Image("bloodtype").font(.system(size: 60)).padding()
-                    Text("Your blood type is \(result.blood_type) and it’s in 10% of people in the world, one of the least common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
+                    Text("Your blood type is \(result.blood_type) and it’s in \(bloodTypeInfo(result.blood_type).percentage)% of people in the world, one of the \(bloodTypeInfo(result.blood_type).common) common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
                 }.padding(.vertical, 25).frame(width: 270)
                 
                 HStack {
@@ -72,11 +72,10 @@ struct ReportView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.green, .yellow]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
                             .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                        //                            RoundedRectangle(cornerRadius: 25)
                         VStack {
-                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: 120.0, y: 25.0)
-                            //                                    .shadow(color: .gray, radius: 4, x: 2, y: 2)
-                            Text("120").font(.system(size: 14, weight: .bold)).position(x: 120, y: 24)
+                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: CGFloat(result.glucose_level-40), y: 25.0)
+                            Text("\(result.glucose_level)").font(.system(size: 14, weight: .bold)).position(x: CGFloat(result.glucose_level-40), y: 24)
+                            
                         }.frame(width: 200, height: 50)
                     }.padding()
                     VStack(alignment: .leading, spacing: 10){
@@ -92,21 +91,21 @@ struct ReportView: View {
                     Text("Red blood cells").font(.system(size: 20, weight: .semibold))
                     HStack{
                         Image("bloodcells").resizable().frame(width: 70, height: 60).padding()
-                        Text("9,450").font(.system(size: 45, weight: .semibold))
+                        Text("\(result.red_blood_cells)").font(.system(size: 45, weight: .semibold))
                     }
                 }.padding(.vertical, 20)
                 
                 VStack {
                     Text("White blood cells").font(.system(size: 20, weight: .semibold))
-                    Text("6,450").font(.system(size: 45, weight: .semibold))
+                    Text("\(result.whiteBloodCells)").font(.system(size: 45, weight: .semibold))
                 }.padding(.vertical, 20)
             }
         }.navigationBarHidden(true)
     }
 }
 
-//struct ReportView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ReportView()
-//    }
-//}
+struct ReportView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReportView(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+    }
+}
