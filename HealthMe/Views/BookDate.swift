@@ -10,39 +10,42 @@ import SwiftUI
 
 struct BookDate: View {
     
-    @State var isDateSelected = false
+    @ObservedObject var account: AccountViewModel = .account
+    var allBookings = [""]
+    
+    @State var dates = [DateAppointment]()
+    @State var isDateSelected = true
     @State var isTimeSelected = false
+    @State var timeSelected = -1
+    @State var fulldateSelected = ""
     
     var body: some View {
-        
         VStack {
-            
             ScrollView {
-                
                 VStack {
-                    
                     VStack {
                         Header(title: "Date & Time", subtitle: "Select a date and time")
                     }
-                    
                     VStack {
-                        
-                        DatePicker(isSelected: $isDateSelected)
-                        
-                        Text("Friday, August 19th 2020").font(.system(size: 18, weight: .semibold)).padding(30)
-                        
-                        TimePicker(isSelected: $isTimeSelected)
-                        
+                        DatePicker(isSelected: $isDateSelected, timeSelected: $timeSelected, dates: $dates, fulldateSelected: $fulldateSelected)
+                        Text(fulldateSelected).font(.system(size: 18, weight: .semibold)).padding(30)
+                        TimePicker(isSelected: $isTimeSelected, timeSelected: $timeSelected)
                     }.padding(.bottom, 30)
-                    
                 }
-                
             }.navigationBarTitle("Book Test")
             
-            if isDateSelected && isTimeSelected {
+            if isDateSelected && isTimeSelected && timeSelected != -1 {
                 NavigationLink(destination: PaymentView()){
                     ConfirmButton()
                 }
+            }
+        }.onAppear(){
+            dates = populateDates()
+            fulldateSelected = dates[0].fulldate
+            
+            account.getBookingDates {
+                ///TODO:
+                //fulldateSelected = dates[0].fulldate
             }
         }
     }

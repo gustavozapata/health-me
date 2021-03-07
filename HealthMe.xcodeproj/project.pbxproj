@@ -85,6 +85,7 @@
 		4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */; };
 		4CD6DC6B24FFCD2000CEE326 /* FetchDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6DC6A24FFCD2000CEE326 /* FetchDataSample.swift */; };
 		4CD6DC6D24FFEE8600CEE326 /* BookStationFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6DC6C24FFEE8600CEE326 /* BookStationFetch.swift */; };
+		4CD7512425F4F75000ABA420 /* DateAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7512325F4F75000ABA420 /* DateAppointment.swift */; };
 		4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8C24F409360012C23C /* PaymentView.swift */; };
 		4CDCAA8F24F413DA0012C23C /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8E24F413DA0012C23C /* IconButton.swift */; };
 		4CDCAA9124F415FC0012C23C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA9024F415FC0012C23C /* MapView.swift */; };
@@ -191,6 +192,7 @@
 		4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesOptions.swift; sourceTree = "<group>"; };
 		4CD6DC6A24FFCD2000CEE326 /* FetchDataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataSample.swift; sourceTree = "<group>"; };
 		4CD6DC6C24FFEE8600CEE326 /* BookStationFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStationFetch.swift; sourceTree = "<group>"; };
+		4CD7512325F4F75000ABA420 /* DateAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAppointment.swift; sourceTree = "<group>"; };
 		4CDCAA8C24F409360012C23C /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		4CDCAA8E24F413DA0012C23C /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		4CDCAA9024F415FC0012C23C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				4C74034B24BA2E00009DB50B /* HelperFunc.swift */,
 				4C9D89D124DC5A30001A7831 /* Modifiers.swift */,
 				4CBC692525EAE3190043ACD8 /* ResultsAnalysis.swift */,
+				4CD7512325F4F75000ABA420 /* DateAppointment.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				4C2733D924E2D985009E53AE /* FigmaToCode.swift in Sources */,
 				4CBF948624BB337500252DB8 /* MessagesList.swift in Sources */,
 				4CBF948424BB2DA600252DB8 /* MessagesView.swift in Sources */,
+				4CD7512425F4F75000ABA420 /* DateAppointment.swift in Sources */,
 				4C8DC38C25E30D31000D69CB /* MessageViewModel.swift in Sources */,
 				4CDCAA8F24F413DA0012C23C /* IconButton.swift in Sources */,
 				4C720FB024EBCDBB00EF17B9 /* PageView.swift in Sources */,

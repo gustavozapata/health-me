@@ -63,6 +63,7 @@ class AccountViewModel: ObservableObject {
     @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?
+    @Published var bookingModel: BookingModel?
     
     func logout() {
         self.isLogged = false
@@ -79,6 +80,27 @@ class AccountViewModel: ObservableObject {
         request.httpBody = data
         
         return request
+    }
+    
+    ///TODO: get all bookings date
+    func getBookingDates(completion: @escaping () -> ()){
+        let url = URL(string: "\(LocalVars.localHost)/api/v1/users/bookings")
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<BookingModel>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.bookingModel = decodeResponse.data
+                        print(self.bookingModel as Any)
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
     }
     
     func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {

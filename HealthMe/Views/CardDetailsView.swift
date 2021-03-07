@@ -23,10 +23,8 @@ struct CardDetailsView: View {
         VStack {
             ScrollView {
                 VStack {
-                    
-                    HStack(alignment: .top) {
+                    VStack {
                         Header(title: "Payment", subtitle: "Enter your payment details")
-                        Text("Cancel").underline().foregroundColor(Color(red: 111/255, green: 111/255, blue: 111/255)).padding()
                     }
                     
                     //Image("card").resizable().aspectRatio(contentMode: .fit).frame(width: 300)
