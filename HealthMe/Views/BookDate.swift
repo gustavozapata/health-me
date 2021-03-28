@@ -11,12 +11,14 @@ import SwiftUI
 struct BookDate: View {
     
     @ObservedObject var account: AccountViewModel = .account
-    var allBookings = [""]
     
     @State var dates = [DateAppointment]()
+    @State var bookings = [BookingModel]()
+    @State var times = [] ///TODO: 
     @State var isDateSelected = true
     @State var isTimeSelected = false
     @State var timeSelected = -1
+    @State var dateSelected = 0
     @State var fulldateSelected = ""
     
     var body: some View {
@@ -27,9 +29,9 @@ struct BookDate: View {
                         Header(title: "Date & Time", subtitle: "Select a date and time")
                     }
                     VStack {
-                        DatePicker(isSelected: $isDateSelected, timeSelected: $timeSelected, dates: $dates, fulldateSelected: $fulldateSelected)
+                        DatePicker(dateSelected: $dateSelected, isSelected: $isDateSelected, timeSelected: $timeSelected, dates: $dates, fulldateSelected: $fulldateSelected)
                         Text(fulldateSelected).font(.system(size: 18, weight: .semibold)).padding(30)
-                        TimePicker(isSelected: $isTimeSelected, timeSelected: $timeSelected)
+                        TimePicker(isSelected: $isTimeSelected, timeSelected: $timeSelected, bookings: $bookings)
                     }.padding(.bottom, 30)
                 }
             }.navigationBarTitle("Book Test")
@@ -42,12 +44,26 @@ struct BookDate: View {
         }.onAppear(){
             dates = populateDates()
             fulldateSelected = dates[0].fulldate
-            
             account.getBookingDates {
-                ///TODO:
-                //fulldateSelected = dates[0].fulldate
+                bookings = account.bookingModel!.bookings
             }
         }
+    }
+    
+    ///TODO: get times from all bookings
+    func getTimes() {
+        for index in 0..<bookings.count {
+            if toInt(bookings[index].date) == dateSelected {
+                self.times.append(bookings[index].time)
+            }
+        }
+    }
+    func toInt(_ s: String?) -> Int {
+        var result = 0
+        if let str: String = s, let i = Int(str.prefix(2)) {
+            result = i
+        }
+        return result
     }
 }
 

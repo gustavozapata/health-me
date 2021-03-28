@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DatePicker: View {
     
-    @State var dateSelected = 0
+    @Binding var dateSelected: Int
     @Binding var isSelected: Bool
     @Binding var timeSelected: Int
     @Binding var dates: [DateAppointment]
@@ -36,6 +36,6 @@ struct DatePicker: View {
 
 struct DatePicker_Previews: PreviewProvider {
     static var previews: some View {
-        DatePicker(isSelected: .constant(false), timeSelected: .constant(0), dates: .constant([DateAppointment(day: 8, weekDay: "Monday", month: "March", fulldate: "Monday, March 08, 2021")]), fulldateSelected: .constant("Monday, March 08, 2021"))
+        DatePicker(dateSelected: .constant(0), isSelected: .constant(false), timeSelected: .constant(0), dates: .constant([DateAppointment(day: 8, weekDay: "Monday", month: "March", fulldate: "Monday, March 08, 2021")]), fulldateSelected: .constant("Monday, March 08, 2021"))
     }
 }

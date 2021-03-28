@@ -44,6 +44,7 @@ func populateDates() -> [DateAppointment] {
         let mes = String(dateToSring.string(from: date).prefix(3))
         
         dateToSring.dateFormat = "EEEE, MMMM dd, yyyy" //Monday, March 08, 2021
+        //dateToSring.dateFormat = "HH:mm E, dd MMM y"
         let fulldate = String(dateToSring.string(from: date))
         
         dates.append(DateAppointment(day: calendar.day!, weekDay: dia, month: mes, fulldate: fulldate))

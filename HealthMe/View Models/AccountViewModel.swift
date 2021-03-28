@@ -27,6 +27,9 @@ struct BookingModel: Decodable, Hashable {
     var date: String
     var time: String
 }
+struct Bookings: Decodable {
+    var bookings: [BookingModel]
+}
 ///replace for the ResultModel (without 's')
 struct ResultsModel: Decodable, Hashable {
     var blood_type: String
@@ -63,7 +66,7 @@ class AccountViewModel: ObservableObject {
     @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?
-    @Published var bookingModel: BookingModel?
+    @Published var bookingModel: Bookings?
     
     func logout() {
         self.isLogged = false
@@ -84,14 +87,13 @@ class AccountViewModel: ObservableObject {
     
     ///TODO: get all bookings date
     func getBookingDates(completion: @escaping () -> ()){
-        let url = URL(string: "\(LocalVars.localHost)/api/v1/users/bookings")
+        let url = URL(string: "\(LocalVars.localHost)/api/v1/bookings")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {
                 do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<BookingModel>.self, from: data)
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<Bookings>.self, from: data)
                     DispatchQueue.main.async {
                         self.bookingModel = decodeResponse.data
-                        print(self.bookingModel as Any)
                         completion()
                     }
                 } catch let error as NSError {
