@@ -33,7 +33,18 @@ struct LoginView: View {
                     Header(title: "Log in", subtitle: "Access your account")
                     
                     VStack(alignment: .leading){
-                        Text("Email").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(blueGray)
+                        
+                        ///FIXME: REMOVE onTapGesture() (development only)
+                        Text("Email").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(blueGray).onTapGesture {
+                            account.login("tavo", "1"){
+                                if account.isLogged {
+                                    self.showLogin.toggle() //hide login sheet
+                                    self.account.showApp = true //show main app (hide start screen)
+                                }
+                            }
+                        }
+                        ///---FIXME
+                        
                         TextField("user@email.com", text: $email)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)

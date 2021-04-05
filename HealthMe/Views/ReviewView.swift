@@ -67,7 +67,6 @@ struct ReviewView: View {
             }
             
             VStack {
-                
                 NavigationLink(destination: ConfirmationView()) {
                     Text("Confirm").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.white).cornerRadius(22).font(.system(size: 20, weight: .bold))
                         .overlay(

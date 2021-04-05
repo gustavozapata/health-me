@@ -41,23 +41,6 @@ struct PaymentView: View {
                         }.padding().frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }.buttonStyle(PlainButtonStyle())
                     
-                    ///SHEET VERSION
-//                    VStack(alignment: .leading, spacing: 10) {
-//                        Text("Bank Card").font(.system(size: 18, weight: .bold))
-//                        Button(action: {
-//                            self.isMethodSelected = true
-//                        }) {
-//                            HStack(alignment: .center, spacing: 20) {
-//                                Image("visa").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-//                                Image("mastercard").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-//                                Image("amex").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-//                            }.padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 159/255, green: 173/255, blue: 192/255), lineWidth: 2))
-//                        }
-//                        .sheet(isPresented: $isMethodSelected){
-//                            CardDetailsView()
-//                        }.buttonStyle(PlainButtonStyle())
-//                    }.padding().frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                    
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Other Methods").font(.system(size: 18, weight: .bold))
                         HStack(alignment: .center, spacing: 15) {

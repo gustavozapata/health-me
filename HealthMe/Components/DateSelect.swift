@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DateSelect: View {
     
+    @ObservedObject var account: AccountViewModel = .account
     var date: DateAppointment
     @Binding var selectedDate: Int
     @Binding var isSelected: Bool
@@ -28,6 +29,7 @@ struct DateSelect: View {
             self.selectedDate = self.date.day
             self.isSelected = true
             self.fulldateSelected = self.date.fulldate
+            account.fecha = self.date.date
             self.timeSelected = -1
         }
     }
@@ -35,6 +37,6 @@ struct DateSelect: View {
 
 struct DateSelect_Previews: PreviewProvider {
     static var previews: some View {
-        DateSelect(date: DateAppointment(day: 9, weekDay: "Mon", month: "Oct", fulldate: "Monday, March 08, 2021"), selectedDate: .constant(0), isSelected: .constant(false), timeSelected: .constant(0), fulldateSelected: .constant("Monday, March 08, 2021")).previewLayout(.fixed(width: 65, height: 65))
+        DateSelect(date: DateAppointment(day: 9, weekDay: "Mon", month: "Oct", fulldate: "Monday, March 08, 2021", date: Date()), selectedDate: .constant(0), isSelected: .constant(false), timeSelected: .constant(0), fulldateSelected: .constant("Monday, March 08, 2021")).previewLayout(.fixed(width: 65, height: 65))
     }
 }

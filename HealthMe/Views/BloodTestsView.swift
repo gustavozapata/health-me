@@ -36,7 +36,7 @@ struct BloodTestsView: View {
                         Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
                         
                         //                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
-                        NavigationLink(destination: BloodTestInfo(test: account.userModel!.bookings[0])){
+                        NavigationLink(destination: BloodTestInfo(booking: account.userModel!.bookings[0])){
                             AppointmentCard().padding(.bottom, 30)
                         }.buttonStyle(PlainButtonStyle())
                         

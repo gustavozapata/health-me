@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct BloodTestInfo: View {
-    var test: BookingModel
+    var booking: BookingModel
     
     @State var isModified = false
     @State var isCanceled = false
@@ -21,7 +21,7 @@ struct BloodTestInfo: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("LOCATION").font(.system(size: 13, weight: .black))
-                        Text(test.location).font(.system(size: 18))
+                        Text(booking.location).font(.system(size: 18))
                     }
                     Spacer()
                     //                    NavigationLink(destination: Text("")){
@@ -37,15 +37,15 @@ struct BloodTestInfo: View {
                 }
                 VStack(alignment: .leading, spacing: 7) {
                     Text("ADDRESS").font(.system(size: 13, weight: .black))
-                    Text(test.address).font(.system(size: 18))
+                    Text(booking.address).font(.system(size: 18))
                 }
                 VStack(alignment: .leading, spacing: 7) {
                     Text("DATE").font(.system(size: 13, weight: .black))
-                    Text(test.date).font(.system(size: 18))
+                    Text(dateToString(date: booking.date, format: "text")).font(.system(size: 18))
                 }
                 VStack(alignment: .leading, spacing: 7) {
                     Text("time".uppercased()).font(.system(size: 13, weight: .black))
-                    Text(test.time).font(.system(size: 18))
+                    Text(booking.time).font(.system(size: 18))
                 }
             }.padding(EdgeInsets(top: 40, leading: 20, bottom: 20, trailing: 20)).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 400, alignment: .topLeading)
             
@@ -58,15 +58,14 @@ struct BloodTestInfo: View {
                     print("Canceling...")
                     }, secondaryButton: .cancel(Text("No")))
             }
-            
             Spacer()
         }
         .navigationBarTitle("Blood Test")
     }
 }
 
-//struct BloodTestInfo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BloodTestInfo(test: pastTestsData[0])
-//    }
-//}
+struct BloodTestInfo_Previews: PreviewProvider {
+    static var previews: some View {
+        BloodTestInfo(booking: BookingModel(location: "", address: "", date: Date(), time: ""))
+    }
+}

@@ -51,9 +51,17 @@ struct BookDate: View {
     }
     
     ///TODO: get times from all bookings
+    //date:"29 Jan 2021"
+    //time:"15:30"
+    
+    //28 Mon Mar
+    //var day: Int
+    //var weekDay: String
+    //var month: String
+    //var fulldate: String
     func getTimes() {
         for index in 0..<bookings.count {
-            if toInt(bookings[index].date) == dateSelected {
+            if toInt(dateToString(date: bookings[index].date, format: "text")) == dateSelected {
                 self.times.append(bookings[index].time)
             }
         }

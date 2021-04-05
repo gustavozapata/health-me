@@ -24,7 +24,7 @@ struct UserModel: Decodable {
 struct BookingModel: Decodable, Hashable {
     var location: String
     var address: String
-    var date: String
+    var date: Date
     var time: String
 }
 struct Bookings: Decodable {
@@ -68,30 +68,63 @@ class AccountViewModel: ObservableObject {
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
     
+    ///FIXME: hold booking data in a better way
+    var tiempo = ""
+    var fecha = Date()
+    var bookingAppointment = BookingModel(location: "", address: "", date: Date(), time: "")
+    ///---FIXME
+    
     func logout() {
         self.isLogged = false
         self.showApp = false
     }
     
     func createRequest(_ method: String, _ urlPath: String, _ params: [String: Any]) -> URLRequest {
-        let url = URL(string: "\(LocalVars.localHost)/api/v1/\(urlPath)")!
+        let url = URL(string: "\(LocalVars.localHost)/api/v1\(urlPath)")!
         let data = try? JSONSerialization.data(withJSONObject: params)
-        
         var request = URLRequest(url: url)
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = data
-        
         return request
     }
     
-    ///TODO: get all bookings date
+    //Decode date from JSON response
+    func decodeJSONDate(data: Data) -> (dataJSON: Data, decoderJSON: JSONDecoder) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let decoderJSON = JSONDecoder()
+        let dataJSON = data
+        decoderJSON.dateDecodingStrategy = .formatted(formatter)
+        return (dataJSON, decoderJSON)
+    }
+    
+    func addBooking(completion: @escaping () -> ()) {
+        let params: [String: Any] = ["location": "Borrar", "address": "Borrar", "date": dateToString(date: self.fecha, time: self.tiempo, format: "date"), "time": self.tiempo]
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/bookings/\(userModel!._id)", params)) { data, response, error in
+            if let data = data {
+                do {
+                    let decoder = self.decodeJSONDate(data: data)
+                    _ = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
+                    DispatchQueue.main.async {
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
     func getBookingDates(completion: @escaping () -> ()){
-        let url = URL(string: "\(LocalVars.localHost)/api/v1/bookings")
+        let url = URL(string: "\(LocalVars.localHost)/api/v1/bookings/\(userModel!._id)")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {
                 do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<Bookings>.self, from: data)
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<Bookings>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
                         self.bookingModel = decodeResponse.data
                         completion()
@@ -107,8 +140,7 @@ class AccountViewModel: ObservableObject {
     
     func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {
         let params: [String: Any] = ["sender": sender, "message": "\(message)"]
-        
-        let task = URLSession.shared.dataTask(with: createRequest("POST", "messages/\(userModel!._id)", params)) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/messages/\(userModel!._id)", params)) { data, response, error in
             if let data = data {
                 do {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
@@ -127,18 +159,18 @@ class AccountViewModel: ObservableObject {
     
     func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
         let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
-        
-        let task = URLSession.shared.dataTask(with: createRequest("POST", "users/login", params)) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/login", params)) { data, response, error in
             if let data = data {
                 do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
                         self.isLogged = true
                         completion()
                     }
                 } catch let error as NSError {
-                    print("JSON decode failed: \(error.localizedDescription)")
+                    print("JSON decode failed: \(error)")
                 }
                 return
             }
@@ -148,8 +180,7 @@ class AccountViewModel: ObservableObject {
     
     func signup(_ fullname: String, _ email: String, _ password: String, completion: @escaping () -> ()) {
         let params: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)", "password": "\(password)"]
-        
-        let task = URLSession.shared.dataTask(with: createRequest("POST", "users/signup", params)) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/signup", params)) { data, response, error in
             if let data = data {
                 do {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
@@ -159,7 +190,7 @@ class AccountViewModel: ObservableObject {
                         completion()
                     }
                 } catch let error as NSError {
-                    print("JSON decode failed: \(error.localizedDescription)")
+                    print("JSON decode failed: \(error)")
                 }
                 return
             }

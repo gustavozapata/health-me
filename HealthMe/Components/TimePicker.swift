@@ -10,6 +10,8 @@ import SwiftUI
 
 struct TimePicker: View {
     
+    @ObservedObject var account: AccountViewModel = .account
+    
     @Binding var isSelected: Bool
     @Binding var timeSelected: Int
     @Binding var bookings: [BookingModel]
@@ -34,15 +36,15 @@ struct TimePicker: View {
             timeFormatter.dateFormat = "HH:mm"
             let timeString = timeFormatter.string(from: date)
             currentTime = Int(timeString.prefix(2))!
-            //currentTime = 12
         }
     }
     
     func renderRow(num: Int) -> some View {
         return HStack(alignment: .center, spacing: 15) {
             ForEach(num..<num+4){ i in
-                Text(self.times[i]).padding(5).background(self.timeSelected == i ? Color.green : Color.white).foregroundColor(self.timeSelected == i ? Color.white : self.checkTimeSlot(time: self.times[i]) ? Color.primary : Color.gray).cornerRadius(6).onTapGesture {
-                    if self.checkTimeSlot(time: self.times[i]) {
+                Text(self.times[i]).padding(5).background(self.timeSelected == i ? Color.green : Color.white).foregroundColor(self.timeSelected == i ? Color.white : !self.checkTimeSlot(time: self.times[i]) ? Color.primary : Color.gray).cornerRadius(6).onTapGesture {
+                    if !self.checkTimeSlot(time: self.times[i]) {
+                        account.tiempo = String(self.times[i])
                         self.timeSelected = i
                         self.isSelected = true
                     }
@@ -56,10 +58,10 @@ struct TimePicker: View {
         if currentTime >= 16 {
             return false
         }
-        if toInt(time) <= currentTime {
+        if dateToTimeInt(time).hour <= currentTime {
             return false
         }
-        // check if times is already booked or not for that date
+        // check if times are already booked or not for that date
         for index in 0..<bookings.count {
             if time == bookings[index].time {
                 return false
@@ -67,19 +69,10 @@ struct TimePicker: View {
         }
         return true
     }
-    
-    // convert string to int (safely) and get the hour
-    func toInt(_ s: String?) -> Int {
-        var result = 0
-        if let str: String = s, let i = Int(str.prefix(2)) {
-            result = i
-        }
-        return result
-    }
 }
 
 struct TimePicker_Previews: PreviewProvider {
     static var previews: some View {
-        TimePicker(isSelected: .constant(false), timeSelected: .constant(0), bookings: .constant([BookingModel(location: "", address: "", date: "", time: "")]))
+        TimePicker(isSelected: .constant(false), timeSelected: .constant(0), bookings: .constant([BookingModel(location: "", address: "", date: Date(), time: "")]))
     }
 }

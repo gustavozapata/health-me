@@ -14,9 +14,9 @@ struct PastTestsList: View {
     var body: some View {
         VStack{
             List {
-                ForEach(account.userModel!.bookings, id: \.self){ test in
-                    NavigationLink(destination: BloodTestInfo(test: test)){
-                        PastTestRow(pastTest: test)
+                ForEach(account.userModel!.bookings, id: \.self){ b in
+                    NavigationLink(destination: BloodTestInfo(booking: b)){
+                        PastTestRow(pastTest: b)
                     }
                 }
             }.frame(height: CGFloat(account.userModel!.bookings.count) * CGFloat(95))

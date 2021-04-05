@@ -13,15 +13,15 @@ struct PastTestRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(pastTest.date).font(.system(size: 16))
+            Text(dateToString(date: pastTest.date, format: "text")).font(.system(size: 16))
             Text(pastTest.location).foregroundColor(.gray).font(.system(size: 15))
         }.padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
     }
 }
 
-//struct PastTestRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PastTestRow(pastTest: )
-//            .previewLayout(.fixed(width: 300, height: 70))
-//    }
-//}
+struct PastTestRow_Previews: PreviewProvider {
+    static var previews: some View {
+        PastTestRow(pastTest: BookingModel(location: "", address: "", date: Date(), time: ""))
+            .previewLayout(.fixed(width: 300, height: 70))
+    }
+}
