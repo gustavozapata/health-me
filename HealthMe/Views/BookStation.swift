@@ -10,8 +10,9 @@ import SwiftUI
 
 struct BookStation: View {
     
-    @State var stationId = ""
+    @ObservedObject var account: AccountViewModel = .account
     @ObservedObject var stationListVM = StationListViewModel()
+    @State var stationId = ""
     var modify: Bool
     
     init(modify: Bool = false){
@@ -46,7 +47,9 @@ struct BookStation: View {
                     }
                 }
                 
-            }.navigationBarTitle("Book Test")
+            }.navigationBarTitle("Book Test").onAppear() {
+                account.isNewBooking = true
+            }
             
             if stationId != "" {
                 NavigationLink(destination: BookDate()){

@@ -42,7 +42,16 @@ struct OnboardingView: View {
                             )
                     }.padding(18)
                     HStack {
-                        Text("Already have an account?").foregroundColor(blueGray)
+                        ///FIXME: REMOVE onTapGesture() (development only)
+                        Text("Already have an account?").foregroundColor(blueGray).onTapGesture {
+                            account.login("tavo", "1"){
+                                if account.isLogged {
+                                    self.showLogin.toggle() //hide login sheet
+                                    self.account.showApp = true //show main app (hide start screen)
+                                }
+                            }
+                        }
+                        ///---FIXME
                         Text("Log in").underline().foregroundColor(.green).onTapGesture {
                             self.showLogin.toggle()
                         }.sheet(isPresented: $showLogin){

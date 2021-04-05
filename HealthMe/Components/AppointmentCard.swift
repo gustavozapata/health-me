@@ -10,14 +10,15 @@ import SwiftUI
 
 struct AppointmentCard: View {
     
+    @ObservedObject var account: AccountViewModel = .account
     @State var showMap = false
     
     var body: some View {
         VStack {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Kingston upon Thames").fontWeight(.bold)
-                    Text("32 Richmong Rd.")
+                    Text(account.aBooking.location).fontWeight(.bold)
+                    Text(account.aBooking.address)
                 }.padding(.trailing)
                 VStack {
                     Image("map_icon").resizable().aspectRatio(contentMode: .fit).frame(width: 24)
@@ -33,8 +34,8 @@ struct AppointmentCard: View {
             HStack {
                 Image(systemName: "calendar").resizable().aspectRatio(contentMode: .fit).frame(width: 45)
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Tue 22 Aug")
-                    Text("11:00 AM")
+                    Text(dateToString(date: account.aBooking.date, format: "text"))
+                    Text(account.aBooking.time)
                 }
             }
         }.padding().background(Color(red:245/255, green: 247/255, blue: 250/255)).cornerRadius(22).clipped().shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).frame(width: 320)

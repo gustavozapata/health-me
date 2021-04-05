@@ -29,7 +29,7 @@ struct DateSelect: View {
             self.selectedDate = self.date.day
             self.isSelected = true
             self.fulldateSelected = self.date.fulldate
-            account.fecha = self.date.date
+            account.aBooking.date = self.date.date
             self.timeSelected = -1
         }
     }

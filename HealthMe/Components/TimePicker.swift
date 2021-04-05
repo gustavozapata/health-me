@@ -44,7 +44,8 @@ struct TimePicker: View {
             ForEach(num..<num+4){ i in
                 Text(self.times[i]).padding(5).background(self.timeSelected == i ? Color.green : Color.white).foregroundColor(self.timeSelected == i ? Color.white : !self.checkTimeSlot(time: self.times[i]) ? Color.primary : Color.gray).cornerRadius(6).onTapGesture {
                     if !self.checkTimeSlot(time: self.times[i]) {
-                        account.tiempo = String(self.times[i])
+//                        account.tiempo = String(self.times[i])
+                        account.aBooking.time = String(self.times[i])
                         self.timeSelected = i
                         self.isSelected = true
                     }

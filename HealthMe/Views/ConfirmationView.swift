@@ -23,7 +23,7 @@ struct ConfirmationView: View {
                         Image("thanks").resizable().aspectRatio(contentMode: .fit).frame(width: 200)
                         Text("Thanks!").font(.system(size: 25, weight: .bold))
                     }
-                    NavigationLink(destination: BloodTestInfo(booking: account.userModel!.bookings[0])){
+                    NavigationLink(destination: BloodTestInfo(booking: account.aBooking)){
                         AppointmentCard().padding(.top, 30)
                     }.buttonStyle(PlainButtonStyle())
                     
@@ -33,8 +33,11 @@ struct ConfirmationView: View {
                 }
             }
         }.navigationBarTitle("Book Test").onAppear(){
-            account.addBooking() {
-                self.isBooked = true
+            if account.isNewBooking {
+                account.addBooking() {
+                    self.isBooked = true
+                    account.isNewBooking = false
+                }
             }
         }
     }

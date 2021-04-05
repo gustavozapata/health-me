@@ -10,6 +10,7 @@ import SwiftUI
 
 struct StationRow: View {
     
+    @ObservedObject var account: AccountViewModel = .account
     var bloodStation: StationViewModel
     @Binding var selectedStation: String
     @State var showMap = false
@@ -43,6 +44,8 @@ struct StationRow: View {
                 .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }.onTapGesture {
             self.selectedStation = self.bloodStation.id
+            account.aBooking.address = bloodStation.address
+            account.aBooking.location = bloodStation.location
         }
     }
 }

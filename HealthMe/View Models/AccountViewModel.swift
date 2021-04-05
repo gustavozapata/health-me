@@ -68,11 +68,8 @@ class AccountViewModel: ObservableObject {
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
     
-    ///FIXME: hold booking data in a better way
-    var tiempo = ""
-    var fecha = Date()
-    var bookingAppointment = BookingModel(location: "", address: "", date: Date(), time: "")
-    ///---FIXME
+    var aBooking = BookingModel(location: "", address: "", date: Date(), time: "")
+    var isNewBooking = false
     
     func logout() {
         self.isLogged = false
@@ -100,7 +97,7 @@ class AccountViewModel: ObservableObject {
     }
     
     func addBooking(completion: @escaping () -> ()) {
-        let params: [String: Any] = ["location": "Borrar", "address": "Borrar", "date": dateToString(date: self.fecha, time: self.tiempo, format: "date"), "time": self.tiempo]
+        let params: [String: Any] = ["location": self.aBooking.location, "address": self.aBooking.address, "date": dateToString(date: self.aBooking.date, time: self.aBooking.time, format: "date"), "time": self.aBooking.time]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/bookings/\(userModel!._id)", params)) { data, response, error in
             if let data = data {
                 do {

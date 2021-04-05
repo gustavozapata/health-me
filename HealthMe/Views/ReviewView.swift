@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ReviewView: View {
     
+    @ObservedObject var account: AccountViewModel = .account
     @State var showMap = false
     
     var body: some View {
@@ -23,9 +24,9 @@ struct ReviewView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Group {
                         Text("Full Name").fontWeight(.bold)
-                        Text("Gustavo Zapata")
+                        Text(account.userModel!.fullname)
                         Text("Email").fontWeight(.bold).padding(.top, 20)
-                        Text("tavo@hotmail.com")
+                        Text(account.userModel!.email)
                         Text("Telephone").fontWeight(.bold).padding(.top, 20)
                         Text("07474559929").padding(.bottom, 25)
                     }
@@ -40,8 +41,8 @@ struct ReviewView: View {
                     VStack {
                         HStack(alignment: .bottom) {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text("Kingston upon Thames").fontWeight(.bold)
-                                Text("32 Richmong Rd.")
+                                Text(account.aBooking.location).fontWeight(.bold)
+                                Text(account.aBooking.address)
                             }.padding(.trailing)
                             VStack {
                                 Image("map_icon").resizable().aspectRatio(contentMode: .fit).frame(width: 24)
@@ -57,8 +58,8 @@ struct ReviewView: View {
                         HStack {
                             Image(systemName: "calendar").resizable().aspectRatio(contentMode: .fit).frame(width: 40)
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Tue 22 Aug")
-                                Text("11:00 AM")
+                                Text(dateToString(date: account.aBooking.date, format: "text"))
+                                Text(account.aBooking.time)
                             }
                         }
                     }.padding(.top, 25)
@@ -72,7 +73,7 @@ struct ReviewView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 22)
                                 .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 80/255, green: 25/255, blue: 235/255), Color(red: 135/255, green: 49/255, blue: 234/255), Color(red: 214/255, green: 66/255, blue: 188/255), Color(red: 255/255, green: 86/255, blue: 135/255), Color(red: 255/255, green: 151/255, blue: 114/255), Color(red: 255/255, green: 220/255, blue: 120/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
-                    ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
+                        ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
                 }
                 
                 Text("You'll be charged £10").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 15)
