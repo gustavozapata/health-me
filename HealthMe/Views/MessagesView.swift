@@ -17,15 +17,14 @@ struct MessagesView: View {
         NavigationView {
             if account.isLogged {
                 if account.userModel!.messages.count > 0 {
-                    MessagesDetail(message: account.userModel!.messages[0])
-                    //                MessagesDetail()
+                    MessagesDetail(messages: account.userModel!.messages)
                 } else {
                     Text("You don't have any messages").fontWeight(.semibold).foregroundColor(.gray)
                 }
             } else {
                 Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray)
             }
-        }.navigationBarTitle("Messages")
+        }
     }
 }
 

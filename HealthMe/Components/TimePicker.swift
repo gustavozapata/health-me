@@ -59,13 +59,14 @@ struct TimePicker: View {
         dateToSring.dateFormat = "EEEE, MMMM dd, yyyy"
         let chosenFulldate = String(dateToSring.string(from: account.aBooking.date))
         
+        let selectFulldate = String(dateToSring.string(from: account.aBooking.date))
+        let currentFulldate = String(dateToSring.string(from: currentDate))
+        
         // if current time is greater than 4pm (latest appointment), then time not available
-        if currentTime >= 16 {
+        if selectFulldate == currentFulldate && currentTime >= 16 {
             return false
         }
         // if it's earlier than current day and time, then time not available
-        let selectFulldate = String(dateToSring.string(from: account.aBooking.date))
-        let currentFulldate = String(dateToSring.string(from: currentDate))
         if selectFulldate == currentFulldate && dateToTimeInt(time).hour <= currentTime {
             return false
         }

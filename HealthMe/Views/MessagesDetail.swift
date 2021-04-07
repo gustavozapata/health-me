@@ -12,36 +12,36 @@ struct MessagesDetail: View {
     
     @ObservedObject var messageVM: MessageViewModel = .message
     @ObservedObject var account: AccountViewModel = .account
-    var message: MessageModel
+    var messages: [MessageModel]
     
     var body: some View {
         ScrollView {
             VStack(alignment: .trailing){
-                ForEach(message.threads, id: \.self){ msg in
+                ForEach(messages, id: \.self){ msg in
                     VStack{
-                        if msg.user {
+                        if msg.isUser {
                             HStack {
                                 Spacer()
                                 VStack(alignment: .trailing, spacing: 10) {
                                     Text(msg.text)
                                         .padding(10)
                                         .foregroundColor(Color.white).messagesOptions()
-                                    Text(msg.time).foregroundColor(Color.gray).font(.system(size: 12)).padding(.trailing, 10)
+                                    Text(dateToString(date: msg.date, time: msg.time, format: "time")).foregroundColor(Color.gray).font(.system(size: 12)).padding(.trailing, 10)
                                 }
                             }
                         } else {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Health Me").foregroundColor(Color.gray).font(.system(size: 12))
                                 Text(msg.text).padding().background(Color(red: 246/255, green: 248/255, blue: 250/255)).cornerRadius(16).lineSpacing(5)
-                                Text(msg.time).foregroundColor(Color.gray).font(.system(size: 12))
-                                if msg == message.threads.last {
+                                Text(dateToString(date: msg.date, time: msg.time, format: "time")).foregroundColor(Color.gray).font(.system(size: 12))
+                                if msg == messages.last {
                                     VStack(alignment: .leading) {
                                         ForEach(msg.options, id: \.self) { reply in
                                             Text(reply).padding(8).overlay(
                                                 RoundedRectangle(cornerRadius: 25)
                                                     .stroke(Color.black, lineWidth: 1.5)).onTapGesture {
                                                         print(reply)
-                                                        account.sendMessage(reply, message.sender) {
+                                                        account.sendMessage(reply) {
                                                             print("message sent")
                                                         }
                                                     }
@@ -54,7 +54,7 @@ struct MessagesDetail: View {
                 }
                 Spacer()
             }
-        }
+        }.navigationBarTitle("Messages")
     }
 }
 
@@ -66,6 +66,6 @@ extension View {
 
 struct MessagesDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return MessagesDetail(message: MessageModel(sender: "Health Me", read: false, threads: [ThreadModel(date: "23 Jan, 2020", time: "12:00PM", text: "Thanks for joining us", user: false, options: ["You're welcome"])]))
+        return MessagesDetail(messages: [MessageModel(date: Date(), time: "12:00", text: "Message", isUser: false, options: ["option1"])])
     }
 }

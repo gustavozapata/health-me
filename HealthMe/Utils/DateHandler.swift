@@ -58,7 +58,7 @@ func dateToString(date: Date, time: String = "", format: String) -> String {
     let theTime = dateToTimeInt(time)
     let formatter = DateFormatter()
     let date = Calendar.current.date(bySettingHour: theTime.hour, minute: theTime.minutes, second: 0, of: date)!
-    formatter.dateFormat = format == "text" ? "MMMM dd, yyyy" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    formatter.dateFormat = format == "text" ? "MMMM dd, yyyy" : format == "time" ? "HH:mm E, d MMM y" : "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     return String(formatter.string(from: date))
 }
 

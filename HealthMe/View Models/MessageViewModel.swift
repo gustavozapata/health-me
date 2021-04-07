@@ -15,8 +15,8 @@ class MessageViewModel: ObservableObject {
     @Published var userModel: UserModel?
     @Published var account: AccountViewModel = .account
     
-    func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {
-        let json: [String: Any] = ["sender": sender, "message": "\(message)"]
+    func sendMessage(_ message: String, completion: @escaping () -> ()) {
+        let json: [String: Any] = ["message": "\(message)"]
         let messageData = try? JSONSerialization.data(withJSONObject: json)
         
         let url = URL(string: "\(LocalVars.localHost)/api/v1/messages/\(account.userModel!._id)")!

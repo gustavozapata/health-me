@@ -42,16 +42,16 @@ struct ResultsModel: Decodable, Hashable {
     var hemoglobin:Int
     var plateletCount:Int
 }
+//struct MessageModel: Decodable, Hashable {
+//    var sender: String
+//    var read: Bool
+//    var threads: [ThreadModel]
+//}
 struct MessageModel: Decodable, Hashable {
-    var sender: String
-    var read: Bool
-    var threads: [ThreadModel]
-}
-struct ThreadModel: Decodable, Hashable {
-    var date: String
+    var date: Date
     var time: String
     var text: String
-    var user: Bool
+    var isUser: Bool
     var options: [String]
 }
 //******
@@ -135,12 +135,13 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    func sendMessage(_ message: String, _ sender: String, completion: @escaping () -> ()) {
-        let params: [String: Any] = ["sender": sender, "message": "\(message)"]
+    func sendMessage(_ message: String, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["text": "\(message)"]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/messages/\(userModel!._id)", params)) { data, response, error in
             if let data = data {
                 do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
                         completion()
