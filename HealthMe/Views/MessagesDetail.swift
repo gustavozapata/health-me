@@ -31,7 +31,7 @@ struct MessagesDetail: View {
                             }
                         } else {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(message.sender).foregroundColor(Color.gray).font(.system(size: 12))
+                                Text("Health Me").foregroundColor(Color.gray).font(.system(size: 12))
                                 Text(msg.text).padding().background(Color(red: 246/255, green: 248/255, blue: 250/255)).cornerRadius(16).lineSpacing(5)
                                 Text(msg.time).foregroundColor(Color.gray).font(.system(size: 12))
                                 if msg == message.threads.last {
@@ -52,10 +52,9 @@ struct MessagesDetail: View {
                         }
                     }.padding().frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
                 }
-                
                 Spacer()
             }
-        }.navigationBarTitle(message.sender)
+        }
     }
 }
 

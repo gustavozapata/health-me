@@ -9,11 +9,23 @@
 import SwiftUI
 
 struct MessagesView: View {
+    
+    @ObservedObject var account: AccountViewModel = .account
+    @State var active = true
+    
     var body: some View {
         NavigationView {
-            MessagesList()
-                .navigationBarTitle("Messages")
-        }
+            if account.isLogged {
+                if account.userModel!.messages.count > 0 {
+                    MessagesDetail(message: account.userModel!.messages[0])
+                    //                MessagesDetail()
+                } else {
+                    Text("You don't have any messages").fontWeight(.semibold).foregroundColor(.gray)
+                }
+            } else {
+                Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray)
+            }
+        }.navigationBarTitle("Messages")
     }
 }
 

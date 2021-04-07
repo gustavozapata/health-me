@@ -16,6 +16,7 @@ struct MessagesList: View {
         if account.isLogged {
             if account.userModel!.messages.count > 0 {
                 MessagesDetail(message: account.userModel!.messages[0])
+//                MessagesDetail()
             } else {
                 Text("You don't have any messages").fontWeight(.semibold).foregroundColor(.gray)
             }
