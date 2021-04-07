@@ -11,7 +11,6 @@ import Foundation
 class StationService {
     
     func getStations(completion: @escaping ([StationModel]?) -> ()) {
-        
         guard let url = URL(string: "\(LocalVars.localHost)/api/v1/stations") else {
             completion(nil)
             return

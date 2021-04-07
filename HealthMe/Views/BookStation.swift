@@ -56,6 +56,8 @@ struct BookStation: View {
                     ConfirmButton()
                 }
             }
+        }.onAppear(){
+            stationListVM.fetchStations()
         }
     }
 }

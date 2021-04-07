@@ -37,11 +37,14 @@ struct StationRow: View {
                     Spacer()
                     HStack(alignment: .center, spacing: 3) {
                         Image("phone_icon").resizable().aspectRatio(contentMode: .fit).frame(width: 15)
-                        Text(bloodStation.telephone).font(.system(size: 13)).underline()
+                        Text(bloodStation.telephone).font(.system(size: 13)).underline().onTapGesture {
+                            guard let url = URL(string: "tel://\(bloodStation.telephone)") else { return }
+                            UIApplication.shared.open(url)
+                        }
                     }
                 }.frame(width: 110,height: 100)
             }.padding().frame(width: 320).background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.white)
-                .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
+            .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }.onTapGesture {
             self.selectedStation = self.bloodStation.id
             account.aBooking.address = bloodStation.address

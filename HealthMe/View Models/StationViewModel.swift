@@ -37,10 +37,6 @@ class StationListViewModel: ObservableObject {
     @Published var stations = [StationViewModel]()
     @Published var hasFetched = true
     
-    init() {
-        fetchStations()
-    }
-    
     func fetchStations() {
         StationService().getStations { stations in
             ///Update (if data from DB map it, else get the json file)
