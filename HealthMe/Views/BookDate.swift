@@ -44,21 +44,13 @@ struct BookDate: View {
         }.onAppear(){
             dates = populateDates()
             fulldateSelected = dates[0].fulldate
+            account.aBooking.date = Date()
             account.getBookingDates {
                 bookings = account.bookingModel!.bookings
             }
         }
     }
     
-    ///TODO: get times from all bookings
-    //date:"29 Jan 2021"
-    //time:"15:30"
-    
-    //28 Mon Mar
-    //var day: Int
-    //var weekDay: String
-    //var month: String
-    //var fulldate: String
     func getTimes() {
         for index in 0..<bookings.count {
             if toInt(dateToString(date: bookings[index].date, format: "text")) == dateSelected {
@@ -66,6 +58,7 @@ struct BookDate: View {
             }
         }
     }
+    
     func toInt(_ s: String?) -> Int {
         var result = 0
         if let str: String = s, let i = Int(str.prefix(2)) {

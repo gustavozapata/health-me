@@ -31,6 +31,7 @@ struct StationRow: View {
                     }) {
                         Text("See map").font(.system(size: 14)).underline().foregroundColor(Color.primary)
                     }.sheet(isPresented: $showMap){
+//                        MapView(showMap: $showMap)
                         MapView()
                     }
                     
