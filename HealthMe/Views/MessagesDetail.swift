@@ -37,10 +37,9 @@ struct MessagesDetail: View {
                                 if msg == messages.last {
                                     VStack(alignment: .leading) {
                                         ForEach(msg.options, id: \.self) { reply in
-                                            Text(reply).padding(8).overlay(
+                                            Text(reply.option).padding(8).overlay(
                                                 RoundedRectangle(cornerRadius: 25)
                                                     .stroke(Color.black, lineWidth: 1.5)).onTapGesture {
-                                                        print(reply)
                                                         account.sendMessage(reply) {
                                                             print("message sent")
                                                         }
@@ -66,6 +65,6 @@ extension View {
 
 struct MessagesDetail_Previews: PreviewProvider {
     static var previews: some View {
-        return MessagesDetail(messages: [MessageModel(date: Date(), time: "12:00", text: "Message", isUser: false, options: ["option1"])])
+        return MessagesDetail(messages: [MessageModel(date: Date(), time: "12:00", text: "Message", isUser: false, options: [MessageOptionModel(code: 100, option: "Cancel the appointment")])])
     }
 }

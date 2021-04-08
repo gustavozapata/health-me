@@ -27,7 +27,6 @@ struct ContentView: View {
                     .tabItem {
                         VStack {
                             //                        Text("Health")
-                            //                        Image("blood")
                             Image(systemName: "circle.bottomthird.split")
                                 .font(.system(size: 32.0, weight: .black))
                         }
@@ -46,7 +45,6 @@ struct ContentView: View {
                 MessagesView()
                     .tabItem {
                         VStack {
-                            //                        Image(systemName: "heart")
                             Image(systemName: "message")
                                 .font(.system(size: 25.0, weight: .black))
                         }
@@ -65,7 +63,7 @@ struct ContentView: View {
                     .tag(3)
             }.accentColor(.green).onAppear(perform: {
                 selection = 0 //show initial view when logging in
-            }) //Color(UIColor(hex: "#F61767ff")!): rosa, #3581F2ff: azul
+            })
         }
     }
 }

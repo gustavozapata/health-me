@@ -42,17 +42,16 @@ struct ResultsModel: Decodable, Hashable {
     var hemoglobin:Int
     var plateletCount:Int
 }
-//struct MessageModel: Decodable, Hashable {
-//    var sender: String
-//    var read: Bool
-//    var threads: [ThreadModel]
-//}
 struct MessageModel: Decodable, Hashable {
     var date: Date
     var time: String
     var text: String
     var isUser: Bool
-    var options: [String]
+    var options: [MessageOptionModel]
+}
+struct MessageOptionModel: Decodable, Hashable {
+    var code: Int
+    var option: String
 }
 //******
 
@@ -102,8 +101,9 @@ class AccountViewModel: ObservableObject {
             if let data = data {
                 do {
                     let decoder = self.decodeJSONDate(data: data)
-                    _ = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
                         completion()
                     }
                 } catch let error as NSError {
@@ -135,8 +135,8 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    func sendMessage(_ message: String, completion: @escaping () -> ()) {
-        let params: [String: Any] = ["text": "\(message)"]
+    func sendMessage(_ message: MessageOptionModel, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["code": message.code, "option": "\(message.option)"]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/messages/\(userModel!._id)", params)) { data, response, error in
             if let data = data {
                 do {
@@ -181,7 +181,8 @@ class AccountViewModel: ObservableObject {
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/signup", params)) { data, response, error in
             if let data = data {
                 do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
                         self.isLogged = true
