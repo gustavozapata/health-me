@@ -11,38 +11,20 @@ import SwiftUI
 struct SettingsView: View {
     
     @State var languageSelected = "English"
-    @State var isDarkMode = false
     @State var requireAuthentication = false
+    @ObservedObject var account: AccountViewModel = .account
     
     var body: some View {
         Form {
-            Section(header: Text("LANGUAGE")){
-                HStack {
-                    Text("English")
-                    Spacer()
-                    if languageSelected == "English" {
-                        Image(systemName: "checkmark").foregroundColor(Color.blue)
-                    }
-                }.contentShape(Rectangle()).onTapGesture {
-                    self.languageSelected = "English"
-                }
-                HStack {
-                    Text("Spanish")
-                    Spacer()
-                    if languageSelected == "Spanish" {
-                        Image(systemName: "checkmark").foregroundColor(Color.blue)
-                    }
-                }.contentShape(Rectangle()).onTapGesture {
-                    self.languageSelected = "Spanish"
-                }
-            }.contentShape(Rectangle())
             Section(header: Text("THEME"), footer: Text("Display the dark mode for better readibility when you are in a dark environment")){
-                Toggle(isOn: self.$isDarkMode){
+                Toggle(isOn: $account.isDark){
                     Text("Dark Mode")
+                }.onChange(of: account.isDark){ value in
+                    account.isDark = !account.isDark
                 }
             }
             
-            Section(header: Text("SECURITY")){
+            Section(header: Text("SECURITY"), footer: Text("Secure your data by enabling authentication when opening the app")){
                 Toggle(isOn: self.$requireAuthentication){
                     Text("Require Authentication")
                 }

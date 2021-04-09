@@ -42,7 +42,18 @@ extension UIColor {
     }
 }
 
+//Own defined colours 
 extension Color {
     static let selectedItem = Color("selectedItem")
+    static let bgGradient1 = Color("bgGradient1")
+    static let bgGradient2 = Color("bgGradient2")
+    static let bgBlue = Color("bgBlue")
+    static let messageBg = Color("messageBg")
+    static let buttonGradient = Color("buttonGradient")
+    static let theme = Color("theme")
+    static let themeReverse = Color("themeReverse")
+    static let resultCard = Color("resultCard")
+    static let border = Color("border")
+    static let shadow = Color("shadow")
     static let azul = Color("azul")
 }

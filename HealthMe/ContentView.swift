@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         if !self.account.showApp {
-            OnboardingView()
+            OnboardingView().preferredColorScheme(account.isDark ? .dark : .light)
         } else {
             TabView(selection: $selection){
                 BloodTestsView()
@@ -61,7 +61,7 @@ struct ContentView: View {
                         }
                     }
                     .tag(3)
-            }.accentColor(.green).onAppear(perform: {
+            }.accentColor(.green).preferredColorScheme(account.isDark ? .dark : .light).onAppear(perform: {
                 selection = 0 //show initial view when logging in
             })
         }
@@ -71,6 +71,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        //                        .environment(\.colorScheme, .dark)
     }
 }

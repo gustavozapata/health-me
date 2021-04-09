@@ -22,7 +22,7 @@ struct MessagesView: View {
                     Text("You don't have any messages").fontWeight(.semibold).foregroundColor(.gray)
                 }
             } else {
-                Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray)
+                Text("Register or login to see your messages").fontWeight(.semibold).foregroundColor(.gray).navigationBarTitle("Messages")
             }
         }
     }
@@ -30,6 +30,6 @@ struct MessagesView: View {
 
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesView()
+        MessagesView().preferredColorScheme(.dark)
     }
 }

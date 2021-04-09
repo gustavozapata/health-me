@@ -29,14 +29,12 @@ struct BookTestCard: View {
             } else {
                 Text("Login to be able to book").font(.system(size: 15, weight: .semibold)).padding(.bottom, 30).foregroundColor(.gray)
             }
-            
-            
-        }.background(LinearGradient(gradient: Gradient(colors: [Color(red: 222/255, green: 251/255, blue: 255/255), Color(red: 219/255, green: 233/255, blue: 255/255)]), startPoint: .top, endPoint: .bottom)).cornerRadius(22).clipped().shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).padding()
+        }.background(LinearGradient(gradient: Gradient(colors: [.bgGradient1, .bgGradient2]), startPoint: .top, endPoint: .bottom)).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).padding()
     }
 }
 
 struct BookTestCard_Previews: PreviewProvider {
     static var previews: some View {
-        BookTestCard()
+        BookTestCard().preferredColorScheme(.dark)
     }
 }

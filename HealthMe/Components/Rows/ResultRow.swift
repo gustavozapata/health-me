@@ -15,7 +15,7 @@ struct ResultRow: View {
     var body: some View {
         VStack {
             HStack {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 6) {
                     HStack(alignment: .top) {
                         Text(result.test).bold()
                         Spacer()
@@ -23,12 +23,12 @@ struct ResultRow: View {
                     }
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green)
-                        Text("cholesterol: \(result.cholesterolLevel)").font(.system(size: 14))
+                        Text("Overall: \(result.cholesterolLevel)").font(.system(size: 14))
                     }
                 }
                 Spacer()
                 Image(systemName: "chevron.right").font(.system(size: 12))
-            }.padding().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading).background(Color.white)
+            }.padding().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading).background(Color.theme)
             Divider().padding(.leading)
         }
     }

@@ -35,10 +35,10 @@ struct BloodResultCard: View {
                 }
             }.padding(.vertical, 5)
             
-            Image("barcode").resizable().aspectRatio(contentMode: .fit)
+//            Image("barcode").resizable().aspectRatio(contentMode: .fit)
             //Image(systemName: "barcode.viewfinder").font(.system(size: 30))
             
-        }.padding().background(Color(red: 247/255, green: 247/255, blue: 247/255)).cornerRadius(22).clipped().shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).frame(width: 280)
+        }.padding().background(Color.resultCard).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 280)
     }
 }
 

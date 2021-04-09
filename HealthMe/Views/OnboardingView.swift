@@ -37,11 +37,12 @@ struct OnboardingView: View {
                             .padding(EdgeInsets(top:7, leading: 33, bottom:7, trailing: 33))
                             .background(
                                 RoundedRectangle(cornerRadius: 50)
-                                    .fill(Color.white)
-                                    .shadow(color: lightBorder, radius: 5, x: 4, y: 4)
+                                    .fill(Color.theme)
+                                    .shadow(color: .shadow, radius: 5, x: 4, y: 4)
                             )
                     }.padding(18)
                     HStack {
+                        
                         ///FIXME: REMOVE onTapGesture() (development only)
                         Text("Already have an account?").foregroundColor(blueGray).onTapGesture {
                             account.login("tavo", "1"){
@@ -52,6 +53,7 @@ struct OnboardingView: View {
                             }
                         }
                         ///---FIXME
+                        
                         Text("Log in").underline().foregroundColor(.green).onTapGesture {
                             self.showLogin.toggle()
                         }.sheet(isPresented: $showLogin){
@@ -70,6 +72,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView().preferredColorScheme(.dark)
     }
 }

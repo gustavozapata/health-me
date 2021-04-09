@@ -18,11 +18,11 @@ struct BookTestButton: View {
     }
     
     var body: some View {
-        Text("Book a blood test").padding(EdgeInsets(top: 13, leading: 20, bottom: 13, trailing: 20)).background(Color.white).cornerRadius(25)
+        Text("Book a blood test").padding(EdgeInsets(top: 13, leading: 20, bottom: 13, trailing: 20)).background(Color.buttonGradient).cornerRadius(25)
             .overlay(
                 RoundedRectangle(cornerRadius: 25)
                     .stroke(conic, lineWidth: 4)
-        ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
+        ).font(.system(size: 17, weight: .semibold)).foregroundColor(.primary)
     }
 }
 

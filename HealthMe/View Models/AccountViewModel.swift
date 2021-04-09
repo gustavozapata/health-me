@@ -66,6 +66,7 @@ class AccountViewModel: ObservableObject {
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
+    @Published var isDark = true
     
     var aBooking = BookingModel(location: "", address: "", date: Date(), time: "")
     var isNewBooking = false
