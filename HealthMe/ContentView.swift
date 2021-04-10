@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         if !self.account.showApp {
-            OnboardingView().preferredColorScheme(account.isDark ? .dark : .light)
+            OnboardingView()
         } else {
             TabView(selection: $selection){
                 BloodTestsView()
@@ -50,7 +50,6 @@ struct ContentView: View {
                         }
                     }
                     .tag(2)
-                
                 
                 ProfileView(profile: ProfileData())
                     .tabItem {

@@ -20,6 +20,8 @@ struct Place: Identifiable {
 }
 struct MapView: View {
     
+    @ObservedObject var account: AccountViewModel = .account
+    
     let places = [Place(name: "Kingston Blood Station", latitude: 51.4154248, longitude: -0.3041535)]
     
     @State var region = MKCoordinateRegion(
@@ -34,7 +36,7 @@ struct MapView: View {
             Map(coordinateRegion: $region, annotationItems: places) { place in
                 MapPin(coordinate: place.coordinate)
             }
-        }
+        }.preferredColorScheme(account.isDark ? .dark : .light)
         .ignoresSafeArea(.all)
     }
 }

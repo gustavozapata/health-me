@@ -12,11 +12,7 @@ struct BloodTestsView: View {
     
     var conic: LinearGradient
     var w: Int
-    @Environment(\.colorScheme) var colorScheme
-    
     @ObservedObject var account: AccountViewModel = .account
-    
-    @State var isUpcomingTest = false
     
     init() {
         let colors = Gradient(colors: [.green, .orange, .pink, .red, .purple])
@@ -26,31 +22,12 @@ struct BloodTestsView: View {
     
     var body: some View {
         NavigationView {
-            
             ScrollView {
                 
                 //Container
                 VStack {
-                    
-                    if isUpcomingTest {
-                        Header(title: "Upcoming Tests", subtitle: "These are your upcoming blood tests")
-                        
-                        //                        NavigationLink(destination: BloodTestInfo(test: pastTestsData[0])){
-                        NavigationLink(destination: BloodTestInfo(booking: account.userModel!.bookings[0])){
-                            AppointmentCard().padding(.bottom, 30)
-                        }.buttonStyle(PlainButtonStyle())
-                        
-                        CardSection().padding([.top, .bottom], 30)
-                    } else {
-                        BookTestCard().padding(.bottom, 30)
-                        DiscoverHealthMe()
-                    }
-                    
-                    //                    HStack {
-                    //                        Text("use-case").foregroundColor(Color.red).onTapGesture{
-                    //                            self.isUpcomingTest.toggle()
-                    //                        }
-                    //                    }
+                    BookTestCard().padding(.bottom, 30)
+                    DiscoverHealthMe()
                     
                     //Section - Past Tests
                     if account.isLogged {
@@ -77,6 +54,5 @@ struct BloodTestsView: View {
 struct BloodTestsView_Previews: PreviewProvider {
     static var previews: some View {
         BloodTestsView()
-        //BloodTestsView().environment(\.colorScheme, .dark)
     }
 }

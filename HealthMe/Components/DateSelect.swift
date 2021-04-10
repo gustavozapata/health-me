@@ -25,7 +25,7 @@ struct DateSelect: View {
             Text(date.month).font(.system(size: 12, weight: .bold)).padding(.top, 5)
             Text("\(date.day)").font(.system(size: 25, weight: .bold))
             Text(date.weekDay).font(.system(size: 15, weight: .bold)).padding(.bottom, 5)
-        }.padding(.horizontal, 16).background(self.selectedDate == self.date.day ? Color.green : Color.white).foregroundColor(self.selectedDate == self.date.day ? Color.white : Color.black).border(Color.black).onTapGesture {
+        }.padding(.horizontal, 16).background(self.selectedDate == self.date.day ? Color.green : Color.theme).foregroundColor(self.selectedDate == self.date.day ? Color.white : Color.themeReverse).border(Color.borderDate).onTapGesture {
             self.selectedDate = self.date.day
             self.isSelected = true
             self.fulldateSelected = self.date.fulldate

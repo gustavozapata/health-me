@@ -38,7 +38,7 @@ struct AppointmentCard: View {
                     Text(account.aBooking.time)
                 }
             }
-        }.padding().background(Color(red:245/255, green: 247/255, blue: 250/255)).cornerRadius(22).clipped().shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).frame(width: 320)
+        }.padding().background(Color.blueVybz).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 320)
     }
 }
 

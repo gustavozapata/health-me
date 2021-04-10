@@ -44,7 +44,7 @@ struct StationRow: View {
                         }
                     }
                 }.frame(width: 110,height: 100)
-            }.padding().frame(width: 320).background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.white)
+            }.padding().frame(width: 320).background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.theme)
             .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }.onTapGesture {
             self.selectedStation = self.bloodStation.id

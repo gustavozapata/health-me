@@ -30,7 +30,7 @@ struct TimePicker: View {
             renderRow(num: 12)
         }.padding(10).overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(red: 226/255, green: 232/255, blue: 240/255), lineWidth: 2)
+                .stroke(Color.border, lineWidth: 2)
         ).font(.system(size: 16, weight: .medium))
         .onAppear(){
             let timeFormatter = DateFormatter()
@@ -43,7 +43,7 @@ struct TimePicker: View {
     func renderRow(num: Int) -> some View {
         return HStack(alignment: .center, spacing: 15) {
             ForEach(num..<num+4){ i in
-                Text(self.times[i]).padding(5).background(self.timeSelected == i ? Color.green : Color.white).foregroundColor(self.timeSelected == i ? Color.white : self.checkTimeSlot(time: self.times[i]) ? Color.primary : Color.gray).cornerRadius(6).onTapGesture {
+                Text(self.times[i]).padding(5).background(self.timeSelected == i ? Color.green : Color.bw).foregroundColor(self.timeSelected == i ? Color.white : self.checkTimeSlot(time: self.times[i]) ? Color.primary : Color.gray).cornerRadius(6).onTapGesture {
                     if self.checkTimeSlot(time: self.times[i]) {
                         account.aBooking.time = String(self.times[i])
                         self.timeSelected = i

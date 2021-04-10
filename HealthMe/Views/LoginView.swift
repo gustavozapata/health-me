@@ -75,7 +75,7 @@ struct LoginView: View {
                     }
                 }.font(.system(size: 13.5))
             }.padding(.top)
-        }
+        }.preferredColorScheme(account.isDark ? .dark : .light)
     }
 }
 

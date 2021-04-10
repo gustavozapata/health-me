@@ -24,30 +24,26 @@ struct PaymentView: View {
                     VStack {
                         Text("£10").padding(EdgeInsets(top: 30, leading: 15, bottom: 30, trailing: 15)).font(.system(size: 60, weight: .bold)).overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.black, lineWidth: 3)
+                                .stroke(Color.themeReverse, lineWidth: 3)
                         )
                         Text("Health Me blood test fixed cost").padding()
                     }
                     
-                    ///NAV VERSION
                     NavigationLink(destination: CardDetailsView()){
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Bank Card").font(.system(size: 18, weight: .bold))
                             HStack(alignment: .center, spacing: 20) {
                                 Image("visa").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-                                Image("mastercard").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-                                Image("amex").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
-                            }.padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 159/255, green: 173/255, blue: 192/255), lineWidth: 2))
+                                Image("mastercard2").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
+                            }.padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.border, lineWidth: 2))
                         }.padding().frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }.buttonStyle(PlainButtonStyle())
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Other Methods").font(.system(size: 18, weight: .bold))
-                        HStack(alignment: .center, spacing: 15) {
-                            IconButton(image: "applepay")
-                            IconButton(image: "googlepay")
-                            IconButton(image: "paypal")
-                        }
+                        HStack(alignment: .center, spacing: 20) {
+                            Image("applepay2").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
+                        }.padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.border, lineWidth: 2))
                     }.padding(.horizontal).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }.padding(.bottom, 15)
             }

@@ -23,7 +23,7 @@ struct BookDate: View {
     
     var body: some View {
         VStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     VStack {
                         Header(title: "Date & Time", subtitle: "Select a date and time")

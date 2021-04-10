@@ -14,7 +14,7 @@ struct ReviewView: View {
     @State var showMap = false
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 
                 VStack{
@@ -64,12 +64,12 @@ struct ReviewView: View {
                         }
                     }.padding(.top, 25)
                     
-                }.padding(25).background(Color.white).cornerRadius(16).shadow(color: Color(red: 200/255, green: 200/255, blue: 200/255), radius: 7, x: 0, y: 2).frame(width: 320)
+                }.padding(25).background(Color.theme).cornerRadius(16).shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 320)
             }
             
             VStack {
                 NavigationLink(destination: ConfirmationView()) {
-                    Text("Confirm").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.white).cornerRadius(22).font(.system(size: 20, weight: .bold))
+                    Text("Confirm").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.theme).cornerRadius(22).font(.system(size: 20, weight: .bold))
                         .overlay(
                             RoundedRectangle(cornerRadius: 22)
                                 .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 80/255, green: 25/255, blue: 235/255), Color(red: 135/255, green: 49/255, blue: 234/255), Color(red: 214/255, green: 66/255, blue: 188/255), Color(red: 255/255, green: 86/255, blue: 135/255), Color(red: 255/255, green: 151/255, blue: 114/255), Color(red: 255/255, green: 220/255, blue: 120/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)

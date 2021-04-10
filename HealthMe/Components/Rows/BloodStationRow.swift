@@ -41,7 +41,7 @@ struct BloodStationRow: View {
                     }
                 }.frame(width: 110,height: 100)
             }.padding().frame(width: 320)
-                .background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.white)
+                .background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.theme)
                 .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
             //TODO: border style black solid version
             //            .padding(10).overlay(
@@ -56,6 +56,6 @@ struct BloodStationRow: View {
 
 struct BloodStationRow_Previews: PreviewProvider {
     static var previews: some View {
-        BloodStationRow(bloodStation: bloodStationsData[0], selectedStation: .constant(""))
+        BloodStationRow(bloodStation: bloodStationsData[0], selectedStation: .constant("")).preferredColorScheme(.dark)
     }
 }

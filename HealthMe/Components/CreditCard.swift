@@ -41,10 +41,10 @@ struct CreditCard: View {
                 
             }.padding(20).foregroundColor(Color.white).font(.custom("Courier", size: 20)).placedOnCard().flipRotate(flipDegrees).opacity(isFlipped ? 0.0 : 1.0).animation(.easeInOut(duration: 0.8))
             VStack {
-                Rectangle().frame(height: 33)
+                Rectangle().fill(Color.black).frame(height: 33)
                 Text("CVV").font(.system(size: 14, weight: .black)).foregroundColor(Color.white).padding(.top, 5)
                 HStack {
-                    Text(self.cardCVV).padding(.trailing, 5).frame(width: 200, height: 25, alignment: .trailing).background(Color.white)
+                    Text(self.cardCVV).padding(.trailing, 5).frame(width: 200, height: 25, alignment: .trailing).background(Color.white).foregroundColor(.black)
                     Spacer()
                 }
                 Spacer()
@@ -68,6 +68,6 @@ extension View {
 
 struct CreditCard_Previews: PreviewProvider {
     static var previews: some View {
-        CreditCard(cardNumber: .constant("5436 4755 8990 2334"), cardHolder: .constant("Gustavo Zapata"), cardExpiresMonth: .constant("07"), cardExpiresYear: .constant("24"), cardCVV: .constant("333"), isFlipped: .constant(false))
+        CreditCard(cardNumber: .constant("5436 4755 8990 2334"), cardHolder: .constant("Gustavo Zapata"), cardExpiresMonth: .constant("07"), cardExpiresYear: .constant("24"), cardCVV: .constant("333"), isFlipped: .constant(true))
     }
 }

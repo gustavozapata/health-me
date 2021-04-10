@@ -17,7 +17,7 @@ struct CardSection: View {
                 NavigationLink(destination: BookStation()){
                     BookTestButton()
                 }
-            }.padding(.bottom, 35).frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.white)
+            }.padding(.bottom, 35).frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.theme)
                 .cornerRadius(23).overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color(red: 225/255, green: 232/255, blue: 239/255), lineWidth: 1)

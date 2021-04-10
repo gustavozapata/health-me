@@ -65,7 +65,7 @@ struct OnboardingView: View {
                 Text("Skip").font(.system(size: 14, weight: .medium)).frame(maxWidth: .infinity, alignment: .trailing).padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 22)).onTapGesture {
                     self.account.showApp = true
                 }
-            }
+            }.preferredColorScheme(account.isDark ? .dark : .light)
         }
     }
 }
