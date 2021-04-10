@@ -11,12 +11,13 @@ import SwiftUI
 struct BloodTestInfo: View {
     var booking: BookingModel
     
+    @ObservedObject var account: AccountViewModel = .account
     @State var isModified = false
     @State var isCanceled = false
+    var currentDate = Date()
     
     var body: some View {
         VStack {
-            
             VStack(alignment: .leading, spacing: 40) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 10) {
@@ -24,16 +25,16 @@ struct BloodTestInfo: View {
                         Text(booking.location).font(.system(size: 18))
                     }
                     Spacer()
-                    //                    NavigationLink(destination: Text("")){
-                    //                     Text("Modify").foregroundColor(Color.green).fontWeight(.bold).underline()
-                    //                    }
-                    Button(action: {
-                        self.isModified.toggle()
-                    }){
-                        Text("Modify").foregroundColor(Color.green).fontWeight(.semibold).underline()
-                    }.sheet(isPresented: $isModified){
-                        BookStation(modify: true)
-                    }
+                    ///TODO??: modify booking
+//                    if booking.date > currentDate {
+//                        Button(action: {
+//                            self.isModified.toggle()
+//                        }){
+//                            Text("Modify").foregroundColor(Color.green).fontWeight(.semibold).underline()
+//                        }.sheet(isPresented: $isModified){
+//                            BookStation(modify: true)
+//                        }
+//                    }
                 }
                 VStack(alignment: .leading, spacing: 7) {
                     Text("ADDRESS").font(.system(size: 13, weight: .black))
@@ -49,14 +50,15 @@ struct BloodTestInfo: View {
                 }
             }.padding(EdgeInsets(top: 40, leading: 20, bottom: 20, trailing: 20)).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 400, alignment: .topLeading)
             
-            Text("Cancel").foregroundColor(Color(red: 100/255, green: 100/255, blue: 100/255)).underline()
-                .onTapGesture{
-                    self.isCanceled.toggle()
-            }
-            .alert(isPresented: $isCanceled) {
-                Alert(title: Text("Are you sure you want to cancel this?"), message: Text("You can't undo this"), primaryButton: .destructive(Text("Yes")) {
-                    print("Canceling...")
-                    }, secondaryButton: .cancel(Text("No")))
+            if booking.date > currentDate {
+                Text("Cancel").foregroundColor(Color(red: 100/255, green: 100/255, blue: 100/255)).underline()
+                    .onTapGesture{
+                        self.isCanceled.toggle()
+                    }.alert(isPresented: $isCanceled) {
+                        Alert(title: Text("Are you sure you want to cancel this?"), message: Text("You can't undo this"), primaryButton: .destructive(Text("Yes")) {
+                            print("Canceling...")
+                        }, secondaryButton: .cancel(Text("No")))
+                    }
             }
             Spacer()
         }

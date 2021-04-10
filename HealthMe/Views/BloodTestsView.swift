@@ -29,10 +29,10 @@ struct BloodTestsView: View {
                     BookTestCard().padding(.bottom, 30)
                     DiscoverHealthMe()
                     
-                    //Section - Past Tests
+                    //Section - All Blood Tests
                     if account.isLogged {
                         VStack {
-                            Header(title: "Past Tests", subtitle: "See your blood tests booking history").padding(.bottom, 20)
+                            Header(title: "Your Blood Tests", subtitle: "See all your blood test bookings").padding(.bottom, 20)
                             if account.userModel!.bookings.count > 0 {
                                 PastTestsList()
                             } else {

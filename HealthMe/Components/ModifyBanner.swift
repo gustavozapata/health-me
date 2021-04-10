@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct ModifyBanner: View {
+    @ObservedObject var account: AccountViewModel = .account
+    
     var body: some View {
         VStack(spacing: 2) {
             Text("Modifying").foregroundColor(Color.green).fontWeight(.semibold).font(.system(size: 12))
             HStack(spacing: 16) {
                 VStack(alignment: .leading){
-                    Text("Kingston")
-                    Text("32 Richmond Rd.")
-                    Text("KT2 7PS")
+                    Text(account.aBooking.location)
+                    Text(account.aBooking.address)
+//                    Text("KT2 7PS")
                 }.font(.system(size: 12))
                 VStack {
                     Text("22 Aug")
