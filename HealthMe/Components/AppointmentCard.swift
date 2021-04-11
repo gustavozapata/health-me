@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct AppointmentCard: View {
     
     @ObservedObject var account: AccountViewModel = .account
     @State var showMap = false
+    @State var region = MKCoordinateRegion()
+    @State var places = [Place(name: "", latitude: 0, longitude: 0)]
     
     var body: some View {
         VStack {
@@ -27,7 +30,7 @@ struct AppointmentCard: View {
                     }) {
                         Text("See map").font(.system(size: 14)).underline().foregroundColor(Color.primary)
                     }.sheet(isPresented: $showMap){
-                        MapView()
+                        MapView(region: $region, places: $places)
                     }
                 }
             }.padding(.bottom, 20)
@@ -38,7 +41,12 @@ struct AppointmentCard: View {
                     Text(account.aBooking.time)
                 }
             }
-        }.padding().background(Color.blueVybz).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 320)
+        }.padding().background(Color.blueVybz).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 320).onAppear(){
+            places = [Place(name: account.aBooking.location, latitude: account.aStationLatitude, longitude: account.aStationLongitude)]
+            region = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: account.aStationLatitude, longitude: account.aStationLongitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        }
     }
 }
 

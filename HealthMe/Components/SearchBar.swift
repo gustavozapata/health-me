@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @ObservedObject var account: AccountViewModel = .account
+    
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass").padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 5))
-            TextField("Search", text: .constant("")).foregroundColor(Color.primary).padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 20))
+            TextField("Search by town or postcode", text: $account.searchTerm).foregroundColor(Color.primary).padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 20))
             Spacer()
         }.foregroundColor(Color.secondary)
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(50).padding(.horizontal, 25)
+        .background(Color(.secondarySystemBackground))
+        .cornerRadius(50).padding(.horizontal, 25)
     }
 }
 

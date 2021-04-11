@@ -24,12 +24,13 @@ class StationService {
                 return
             }
             
-            let stations = try? JSONDecoder().decode(MapResponse.self, from: data)
-            DispatchQueue.main.async {
-                completion(stations?.data)
-            }
+//            let stations = try? JSONDecoder().decode(MapResponse.self, from: data)
+//            DispatchQueue.main.async {
+//                completion(stations?.data)
+//            }
             
             print("Fetch failed: \(error?.localizedDescription ?? "error desconocido")")
+            print(data)
         }.resume()
     }
 }

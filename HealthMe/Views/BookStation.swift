@@ -19,9 +19,8 @@ struct BookStation: View {
         self.modify = modify
     }
     
-    //        @ViewBuilder
+    //@ViewBuilder
     var body: some View {
-        
         VStack {
             ScrollView {
                 VStack {
@@ -36,18 +35,22 @@ struct BookStation: View {
                     }
                     
                     VStack(alignment: .center) {
-                        if stationListVM.hasFetched {
-                            ///Fetch version
-                            StationListView(bloodStations: stationListVM.stations, stationId: self.$stationId)
-                        } else {
-                            ///Hardcoded version
-                            StationList(stations: BloodStationData(), stationId: self.$stationId)
-                        }
+                        StationListView(stationId: self.$stationId)
+                        
+                        ///TODO: fetch version and local version
+                        //                        if stationListVM.hasFetched {
+                        //                            ///Fetch version
+                        //                            StationListView(stationId: self.$stationId)
+                        //                        } else {
+                        //                            ///Hardcoded version
+                        //                            StationList(stations: BloodStationData(), stationId: self.$stationId)
+                        //                        }
                         Spacer()
                     }
                 }
                 
             }.navigationBarTitle("Book Test").onAppear() {
+                account.getBloodStations{}
                 account.isNewBooking = true
             }
             
@@ -56,8 +59,6 @@ struct BookStation: View {
                     ConfirmButton()
                 }
             }
-        }.onAppear(){
-            stationListVM.fetchStations()
         }
     }
 }

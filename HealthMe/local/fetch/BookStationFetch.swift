@@ -25,7 +25,7 @@ struct BookStationFetch: View {
             }
             
         }.onAppear(perform: loadData)
-            .navigationBarTitle("Book Blood Test")
+        .navigationBarTitle("Book Blood Test")
     }
     
     func loadData() {
@@ -87,7 +87,7 @@ struct BloodStationRowFetch: View {
                     }) {
                         Text("See map").font(.system(size: 14)).underline().foregroundColor(Color.primary)
                     }.sheet(isPresented: $showMap){
-                        MapView()
+//                        MapView()
                     }
                     
                     Spacer()
@@ -97,7 +97,7 @@ struct BloodStationRowFetch: View {
                     }
                 }.frame(width: 110,height: 100)
             }.padding().frame(width: 320).background(Color.white)
-                .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
+            .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }
     }
 }

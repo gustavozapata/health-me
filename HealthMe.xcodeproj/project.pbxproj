@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -98,6 +98,7 @@
 		4CE07EC024FEAD0700211618 /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CE07EBF24FEAD0700211618 /* results.json */; };
 		4CE07EC224FEB39800211618 /* ResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE07EC124FEB39800211618 /* ResultsList.swift */; };
 		4CE07EC524FEB42400211618 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE07EC424FEB42400211618 /* ResultRow.swift */; };
+		4CE3336E26226EE900D83155 /* iPaymentButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE3336D26226EE900D83155 /* iPaymentButton */; };
 		4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE3336E26226EE900D83155 /* iPaymentButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +508,9 @@
 			dependencies = (
 			);
 			name = HealthMe;
+			packageProductDependencies = (
+				4CE3336D26226EE900D83155 /* iPaymentButton */,
+			);
 			productName = HealthMe;
 			productReference = 4C217DC324B7DE7A00F5C551 /* HealthMe.app */;
 			productType = "com.apple.product-type.application";
@@ -556,6 +561,9 @@
 				Base,
 			);
 			mainGroup = 4C217DBA24B7DE7A00F5C551;
+			packageReferences = (
+				4CE3336C26226EE900D83155 /* XCRemoteSwiftPackageReference "iPaymentButton" */,
+			);
 			productRefGroup = 4C217DC424B7DE7A00F5C551 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -939,6 +947,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CE3336C26226EE900D83155 /* XCRemoteSwiftPackageReference "iPaymentButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iPaymentButton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CE3336D26226EE900D83155 /* iPaymentButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE3336C26226EE900D83155 /* XCRemoteSwiftPackageReference "iPaymentButton" */;
+			productName = iPaymentButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C217DBB24B7DE7A00F5C551 /* Project object */;
 }

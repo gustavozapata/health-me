@@ -11,7 +11,7 @@ import SwiftUI
 struct BloodStationRow: View {
     
     var bloodStation: BloodStationModel
-
+    
     @Binding var selectedStation: String
     @State var showMap = false
     
@@ -31,9 +31,8 @@ struct BloodStationRow: View {
                     }) {
                         Text("See map").font(.system(size: 14)).underline().foregroundColor(Color.primary)
                     }.sheet(isPresented: $showMap){
-                        MapView()
+//                        MapView()
                     }
-                    
                     Spacer()
                     HStack(alignment: .center, spacing: 3) {
                         Image("phone_icon").resizable().aspectRatio(contentMode: .fit).frame(width: 15)
@@ -41,13 +40,8 @@ struct BloodStationRow: View {
                     }
                 }.frame(width: 110,height: 100)
             }.padding().frame(width: 320)
-                .background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.theme)
-                .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
-            //TODO: border style black solid version
-            //            .padding(10).overlay(
-            //                RoundedRectangle(cornerRadius: 9)
-            //                    .stroke(Color.black, lineWidth: 1)
-            //            ).frame(maxWidth: 330)
+            .background(self.selectedStation == self.bloodStation.id ? Color.selectedItem : Color.theme)
+            .cornerRadius(16).shadow(radius: 1, x: 0, y: 1).padding(.bottom, 10)
         }.onTapGesture {
             self.selectedStation = self.bloodStation.id
         }

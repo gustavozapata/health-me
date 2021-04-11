@@ -9,10 +9,10 @@
 import Foundation
 
 struct MapResponse: Decodable {
-    var data: [StationModel]
+    var data: [StationModelOLD]
 }
 
-struct StationModel: Codable, Hashable {
+struct StationModelOLD: Codable, Hashable {
     var _id: String
     var location: String
     var address: String

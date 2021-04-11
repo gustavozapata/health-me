@@ -53,6 +53,15 @@ struct MessageOptionModel: Decodable, Hashable {
     var code: Int
     var option: String
 }
+struct StationModel: Decodable, Hashable {
+    var _id: String
+    var location: String
+    var address: String
+    var postcode: String
+    var latitude: Double
+    var longitude: Double
+    var telephone: String
+}
 //******
 
 class AccountViewModel: ObservableObject {
@@ -66,9 +75,14 @@ class AccountViewModel: ObservableObject {
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
+    @Published var stations: [StationModel] = [StationModel(_id: "-", location: "", address: "", postcode: "", latitude: 0.0, longitude: 0.0, telephone: "")]
     @Published var isDark = false
+    @Published var searchTerm = ""
     
     var aBooking = BookingModel(location: "", address: "", date: Date(), time: "")
+    var aStationLatitude = 0.0
+    var aStationLongitude = 0.0
+//    var aStation = StationModel(_id: "", location: "", address: "", postcode: "", latitude: 0.0, longitude: 0.0, telephone: "")
     var isNewBooking = false
     
     func logout() {
@@ -94,6 +108,25 @@ class AccountViewModel: ObservableObject {
         let dataJSON = data
         decoderJSON.dateDecodingStrategy = .formatted(formatter)
         return (dataJSON, decoderJSON)
+    }
+    
+    func getBloodStations(completion: @escaping () -> ()){
+        let url = URL(string: "\(LocalVars.localHost)/api/v1/stations")
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<[StationModel]>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.stations = decodeResponse.data
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
     }
     
     func addBooking(completion: @escaping () -> ()) {

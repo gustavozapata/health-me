@@ -7,11 +7,15 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ReviewView: View {
     
     @ObservedObject var account: AccountViewModel = .account
     @State var showMap = false
+    
+    @State var region = MKCoordinateRegion()
+    @State var places = [Place(name: "", latitude: 0, longitude: 0)]
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -51,7 +55,7 @@ struct ReviewView: View {
                                 }) {
                                     Text("See map").font(.system(size: 14)).underline().foregroundColor(Color.primary)
                                 }.sheet(isPresented: $showMap){
-                                    MapView()
+                                    MapView(region: $region, places: $places)
                                 }
                             }
                         }.padding(.bottom, 20)
@@ -79,7 +83,12 @@ struct ReviewView: View {
                 Text("You'll be charged £10").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 15)
             }.padding(.vertical, 25)
             
-        }.navigationBarTitle("Book Test")
+        }.navigationBarTitle("Book Test").onAppear(){
+            places = [Place(name: account.aBooking.location, latitude: account.aStationLatitude, longitude: account.aStationLongitude)]
+            region = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: account.aStationLatitude, longitude: account.aStationLongitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        }
     }
 }
 

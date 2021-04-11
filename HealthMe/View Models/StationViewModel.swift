@@ -48,11 +48,6 @@ class StationListViewModel: ObservableObject {
             } else {
                 self.hasFetched = false
             }
-            
-            ///Original (without else hardcoded data)
-            //if let stations = stations {
-                //self.stations = stations.map(StationViewModel.init)
-            //}
         }
     }
 }

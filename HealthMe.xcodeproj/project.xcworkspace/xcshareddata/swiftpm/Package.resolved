@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "iGraphics",
+        "repositoryURL": "https://github.com/benjaminsage/iGraphics.git",
+        "state": {
+          "branch": null,
+          "revision": "2b0714f7fe333621365854ebdce44ea2db866405",
+          "version": "0.0.7"
+        }
+      },
+      {
+        "package": "iPaymentButton",
+        "repositoryURL": "https://github.com/benjaminsage/iPaymentButton",
+        "state": {
+          "branch": null,
+          "revision": "e37a1808b4ae0da08a94b85d2c9d465d34360fbe",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
