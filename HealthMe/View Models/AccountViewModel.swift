@@ -82,7 +82,6 @@ class AccountViewModel: ObservableObject {
     var aBooking = BookingModel(location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0
     var aStationLongitude = 0.0
-//    var aStation = StationModel(_id: "", location: "", address: "", postcode: "", latitude: 0.0, longitude: 0.0, telephone: "")
     var isNewBooking = false
     
     func logout() {

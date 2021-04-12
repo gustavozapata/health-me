@@ -24,11 +24,6 @@ struct MapView: View {
     @Binding var region: MKCoordinateRegion
     @Binding var places: [Place]
     
-//    let places = [Place(name: "Kingston Blood Station", latitude: 51.4154248, longitude: -0.3041535)]
-//    @State var region = MKCoordinateRegion(
-//        center: CLLocationCoordinate2D(latitude: 51.4154248, longitude: -0.3041535),
-//        span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-    
     var body: some View {
         VStack {
             HStack{
@@ -42,8 +37,8 @@ struct MapView: View {
     }
 }
 
-//struct MapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MapView()
-//    }
-//}
+struct MapView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapView(region: .constant(MKCoordinateRegion()), places: .constant([Place(name: "", latitude: 0, longitude: 0)]))
+    }
+}

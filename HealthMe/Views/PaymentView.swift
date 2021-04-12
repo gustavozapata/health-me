@@ -43,12 +43,12 @@ struct PaymentView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Other Methods").font(.system(size: 18, weight: .bold))
                         HStack(alignment: .center, spacing: 20) {
-//                            Image("applepay2").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
+                            //Image("applepay2").resizable().aspectRatio(contentMode: .fill).frame(width: 50)
                             iPaymentButton(type: .inStore, style: .automatic) {
                                 iPaymentButton.applePayDemo()
                             }.cornerRadius(8).frame(width: 140).padding(.leading, 7).font(.system(size: 30))
                         }
-//                        .padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.border, lineWidth: 2))
+                        //.padding(15).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.border, lineWidth: 2))
                     }.padding(.horizontal).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }.padding(.bottom, 15)
             }
