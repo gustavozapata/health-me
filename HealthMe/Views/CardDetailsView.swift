@@ -8,16 +8,31 @@
 
 import SwiftUI
 
+//limit the length of characters in text field
+class TextLimit: ObservableObject {
+    @ObservedObject var account: AccountViewModel = .account
+    @Published var text = "" {
+        didSet {
+            if text.count > characterLimit && oldValue.count <= characterLimit {
+                text = oldValue
+            }
+            account.aCreditCard.cardNumber = text
+        }
+    }
+    let characterLimit: Int
+
+    init(limit: Int = 16){
+        characterLimit = limit
+    }
+}
+
 struct CardDetailsView: View {
     
-    @State var cardNumber = ""
-    @State var cardHolder = ""
-    @State var cardExpiresMonth = ""
-    @State var cardExpiresYear = ""
-    @State var cardCVV = ""
-    @State var isFlipped = false
-    
+    @ObservedObject var account: AccountViewModel = .account
     @ObservedObject private var keyboard = KeyboardResponder()
+    @ObservedObject var textBindingManager = TextLimit(limit: 16)
+    
+    @State var isFlipped = false
     
     var body: some View {
         VStack {
@@ -26,27 +41,21 @@ struct CardDetailsView: View {
                     VStack {
                         Header(title: "Payment", subtitle: "Enter your payment details")
                     }
-                    
-                    //Image("card").resizable().aspectRatio(contentMode: .fit).frame(width: 300)
-                    
-                    CreditCard(cardNumber: $cardNumber, cardHolder: $cardHolder, cardExpiresMonth: $cardExpiresMonth, cardExpiresYear: $cardExpiresYear, cardCVV: $cardCVV, isFlipped: $isFlipped)
+                    CreditCard(isFlipped: $isFlipped)
                     
                     //Form
                     VStack {
                         VStack(alignment: .leading, spacing: 7) {
                             Text("CARD NUMBER").fontWeight(.bold).font(.system(size: 15))
-                            TextField("", text: $cardNumber, onEditingChanged: { (editedText) in
-                                if self.cardNumber.count > 3 && self.cardNumber.count < 6 {
-                                    //IF CARD NUM IS MORE THAN 4 -> ADD A SPACE
-                                }
-                            }).keyboardType(.numberPad).frame(height: 42)
+                            //TextField("", text: $account.aCreditCard.cardNumber)
+                            TextField("", text: $textBindingManager.text).keyboardType(.numberPad).frame(height: 42)
                                 .padding([.leading, .trailing], 4)
                                 .cornerRadius(16)
                                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
                         }.padding(.bottom, 6)
                         VStack(alignment: .leading, spacing: 7) {
                             Text("CARD HOLDER").fontWeight(.bold).font(.system(size: 15))
-                            TextField("", text: $cardHolder).frame(height: 42)
+                            TextField("", text: $account.aCreditCard.cardHolder).frame(height: 42)
                                 .padding([.leading, .trailing], 4)
                                 .cornerRadius(16)
                                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
@@ -55,11 +64,11 @@ struct CardDetailsView: View {
                             VStack(alignment: .leading, spacing: 7) {
                                 Text("EXPIRES").fontWeight(.bold).font(.system(size: 15))
                                 HStack {
-                                    TextField("MONTH", text: $cardExpiresMonth).frame(width: 60, height: 42).keyboardType(.numberPad).font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
+                                    TextField("MONTH", text: $account.aCreditCard.cardExpiresMonth).frame(width: 60, height: 42).keyboardType(.numberPad).font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
                                         .padding([.leading, .trailing], 4)
                                         .cornerRadius(16)
                                         .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
-                                    TextField("YEAR", text: $cardExpiresYear).keyboardType(.numberPad).frame(width: 60, height: 42)
+                                    TextField("YEAR", text: $account.aCreditCard.cardExpiresYear).keyboardType(.numberPad).frame(width: 60, height: 42)
                                         .font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
                                         .padding([.leading, .trailing], 4)
                                         .cornerRadius(16)
@@ -69,7 +78,7 @@ struct CardDetailsView: View {
                             Spacer()
                             VStack(alignment: .leading, spacing: 7)  {
                                 Text("CVV").fontWeight(.bold).font(.system(size: 15))
-                                TextField("", text: $cardCVV, onEditingChanged: { (editingChange) in
+                                TextField("", text: $account.aCreditCard.cardCVV, onEditingChanged: { (editingChange) in
                                     if editingChange {
                                         self.isFlipped = true
                                         print("focus added")
@@ -85,7 +94,6 @@ struct CardDetailsView: View {
                             
                         }.padding(.bottom, 30)
                         
-                        //BookTestButton()
                         NavigationLink(destination: ReviewView()){
                             Text("Next").padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30)).background(Color.theme).cornerRadius(22).font(.system(size: 20, weight: .bold))
                                 .overlay(

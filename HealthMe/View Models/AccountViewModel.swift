@@ -62,6 +62,13 @@ struct StationModel: Decodable, Hashable {
     var longitude: Double
     var telephone: String
 }
+struct CreditCardModel: Decodable, Hashable {
+    var cardNumber: String
+    var cardHolder: String
+    var cardExpiresYear: String
+    var cardExpiresMonth: String
+    var cardCVV: String
+}
 //******
 
 class AccountViewModel: ObservableObject {
@@ -76,6 +83,7 @@ class AccountViewModel: ObservableObject {
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
     @Published var stations: [StationModel] = [StationModel(_id: "-", location: "", address: "", postcode: "", latitude: 0.0, longitude: 0.0, telephone: "")]
+    @Published var aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
     @Published var isDark = false
     @Published var searchTerm = ""
     
@@ -118,6 +126,26 @@ class AccountViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.stations = decodeResponse.data
                         completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    //func addPayment(completion: @escaping () -> ()) {
+    func addPayment() {
+        let params: [String: Any] = ["cardNumber": aCreditCard.cardNumber]
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/bookings/pay/\(userModel!._id)", params)) { data, response, error in
+            if let data = data {
+                do {
+                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        //completion()
                     }
                 } catch let error as NSError {
                     print("JSON decode failed: \(error)")

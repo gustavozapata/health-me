@@ -10,11 +10,7 @@ import SwiftUI
 
 struct CreditCard: View {
     
-    @Binding var cardNumber: String
-    @Binding var cardHolder: String
-    @Binding var cardExpiresMonth: String
-    @Binding var cardExpiresYear: String
-    @Binding var cardCVV: String
+    @ObservedObject var account: AccountViewModel = .account
     @Binding var isFlipped: Bool
     
     var body: some View {
@@ -26,16 +22,16 @@ struct CreditCard: View {
                     Spacer()
                     Image("visa_label").resizable().aspectRatio(contentMode: .fit).frame(width: 75)
                 }
-                Text(self.cardNumber).fontWeight(.semibold).frame(width: 235, alignment: .leading)
+                Text(account.aCreditCard.cardNumber.replacingOccurrences(of: "(\\d{4})(\\d{4})(\\d{4})(\\d+)", with: "$1 $2 $3 $4", options: .regularExpression, range: nil)).fontWeight(.semibold).frame(width: 235, alignment: .leading)
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("CARD HOLDER").font(.custom("Courier", size: 11)).fontWeight(.black)
-                        Text(self.cardHolder).font(.custom("Courier", size: 16)).fontWeight(.black)
+                        Text(account.aCreditCard.cardHolder).font(.custom("Courier", size: 16)).fontWeight(.black)
                     }
                     Spacer()
                     VStack(alignment: .leading, spacing: 4) {
                         Text("EXPIRES").font(.custom("Courier", size: 11)).fontWeight(.black)
-                        Text(self.cardExpiresMonth.count > 0 || self.cardExpiresYear.count > 0 ? self.cardExpiresMonth + "/" + self.cardExpiresYear : "").font(.custom("Courier", size: 16)).fontWeight(.black)
+                        Text(account.aCreditCard.cardExpiresMonth.count > 0 || account.aCreditCard.cardExpiresYear.count > 0 ? account.aCreditCard.cardExpiresMonth + "/" + account.aCreditCard.cardExpiresYear : "").font(.custom("Courier", size: 16)).fontWeight(.black)
                     }
                 }
                 
@@ -44,7 +40,7 @@ struct CreditCard: View {
                 Rectangle().fill(Color.black).frame(height: 33)
                 Text("CVV").font(.system(size: 14, weight: .black)).foregroundColor(Color.white).padding(.top, 5)
                 HStack {
-                    Text(self.cardCVV).padding(.trailing, 5).frame(width: 200, height: 25, alignment: .trailing).background(Color.white).foregroundColor(.black)
+                    Text("\(account.aCreditCard.cardCVV)").padding(.trailing, 5).frame(width: 200, height: 25, alignment: .trailing).background(Color.white).foregroundColor(.black)
                     Spacer()
                 }
                 Spacer()
@@ -68,6 +64,6 @@ extension View {
 
 struct CreditCard_Previews: PreviewProvider {
     static var previews: some View {
-        CreditCard(cardNumber: .constant("5436 4755 8990 2334"), cardHolder: .constant("Gustavo Zapata"), cardExpiresMonth: .constant("07"), cardExpiresYear: .constant("24"), cardCVV: .constant("333"), isFlipped: .constant(true))
+        CreditCard(isFlipped: .constant(true))
     }
 }
