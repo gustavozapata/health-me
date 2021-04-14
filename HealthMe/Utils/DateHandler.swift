@@ -62,6 +62,14 @@ func dateToString(date: Date, time: String = "", format: String) -> String {
     return String(formatter.string(from: date))
 }
 
+func dateToDateAndTime(date: Date, time: String) -> Date {
+    let theTime = dateToTimeInt(time)
+    let formatter = DateFormatter()
+    let date = Calendar.current.date(bySettingHour: theTime.hour, minute: theTime.minutes, second: 0, of: date)!
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    return date
+}
+
 // convert string to int (safely) and get the hour and minutes
 func dateToTimeInt(_ s: String?) -> (hour: Int, minutes: Int) {
     var hour = 0

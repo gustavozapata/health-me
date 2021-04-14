@@ -47,6 +47,7 @@
 		4C502EC724F288F300046C4C /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC624F288F300046C4C /* DatePicker.swift */; };
 		4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC824F2AE4200046C4C /* TimePicker.swift */; };
 		4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502ECA24F3188000046C4C /* ConfirmButton.swift */; };
+		4C5E76502624EDAC0070880D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E764F2624EDAC0070880D /* EventViewController.swift */; };
 		4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5ECF4B25A3733B00B322F8 /* LoginView.swift */; };
 		4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B5AA24DE052E002C3CBF /* DateSelect.swift */; };
 		4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */; };
@@ -155,6 +156,7 @@
 		4C502EC624F288F300046C4C /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		4C502EC824F2AE4200046C4C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		4C502ECA24F3188000046C4C /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		4C5E764F2624EDAC0070880D /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		4C5ECF4B25A3733B00B322F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4C65B5AA24DE052E002C3CBF /* DateSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelect.swift; sourceTree = "<group>"; };
 		4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			children = (
 				4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */,
 				4C720FAF24EBCDBB00EF17B9 /* PageView.swift */,
+				4C5E764F2624EDAC0070880D /* EventViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				4C2D7E4E25BDA1140007FBDF /* AuthService.swift in Sources */,
 				4CA4013A24BE441C009DA1F5 /* locals.swift in Sources */,
 				4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */,
+				4C5E76502624EDAC0070880D /* EventViewController.swift in Sources */,
 				4C502EC724F288F300046C4C /* DatePicker.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,

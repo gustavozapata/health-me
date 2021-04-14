@@ -27,13 +27,16 @@ struct ConfirmationView: View {
                         AppointmentCard().padding(.top, 30)
                     }.buttonStyle(PlainButtonStyle())
                     
-                    Text("Add to your calendar").underline().fontWeight(.medium).foregroundColor(Color(red: 12/255, green: 92/255, blue: 214/255)).padding()
+                    Text("Add to your calendar").underline().fontWeight(.medium).foregroundColor(Color(red: 12/255, green: 92/255, blue: 214/255)).padding().onTapGesture {
+                        checkCalendarAuthorizationStatus(booking: account.aBooking)
+                    }
                 } else {
                     Text("Loading...")
                 }
             }
         }.navigationBarTitle("Book Test").onAppear(){
             if account.isNewBooking {
+                account.aBooking.date = dateToDateAndTime(date: account.aBooking.date, time: account.aBooking.time)
                 account.addBooking() {
                     self.isBooked = true
                     account.isNewBooking = false
