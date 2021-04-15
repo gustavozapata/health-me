@@ -35,9 +35,9 @@ struct ReviewView: View {
                     Rectangle().fill(LinearGradient(gradient: Gradient(colors: [Color(red: 80/255, green: 25/255, blue: 235/255), Color(red: 135/255, green: 49/255, blue: 234/255), Color(red: 214/255, green: 66/255, blue: 188/255), Color(red: 255/255, green: 86/255, blue: 135/255), Color(red: 255/255, green: 151/255, blue: 114/255), Color(red: 255/255, green: 220/255, blue: 120/255)]), startPoint: .leading, endPoint: .trailing)).frame(height: 2)
                     Group {
                         Text("Payment Method").fontWeight(.bold).padding(.top, 25)
-                        Text("Credit Card - Visa")
+                        Text("Credit Card")
                         Text("Card Number").fontWeight(.bold).padding(.top, 20)
-                        Text("**** **** **** \(account.aCreditCard.cardNumber)").padding(.bottom, 25)
+                        Text("**** **** **** \(substring(account.aCreditCard.cardNumber, 12))").padding(.bottom, 25)
                     }
                     Rectangle().fill(LinearGradient(gradient: Gradient(colors: [Color(red: 80/255, green: 25/255, blue: 235/255), Color(red: 135/255, green: 49/255, blue: 234/255), Color(red: 214/255, green: 66/255, blue: 188/255), Color(red: 255/255, green: 86/255, blue: 135/255), Color(red: 255/255, green: 151/255, blue: 114/255), Color(red: 255/255, green: 220/255, blue: 120/255)]), startPoint: .leading, endPoint: .trailing)).frame(height: 2)
                     VStack {
@@ -87,6 +87,12 @@ struct ReviewView: View {
                 center: CLLocationCoordinate2D(latitude: account.aStationLatitude, longitude: account.aStationLongitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         }
+    }
+    
+    // retrieves n number of characters from a string
+    func substring(_ str: String, _ num: Int) -> String {
+        let index = str.index(str.startIndex, offsetBy: num)
+        return String(str.suffix(from: index))
     }
 }
 

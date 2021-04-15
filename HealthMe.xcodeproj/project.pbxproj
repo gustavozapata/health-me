@@ -48,6 +48,7 @@
 		4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502EC824F2AE4200046C4C /* TimePicker.swift */; };
 		4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C502ECA24F3188000046C4C /* ConfirmButton.swift */; };
 		4C5E76502624EDAC0070880D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E764F2624EDAC0070880D /* EventViewController.swift */; };
+		4C5E76662628B6770070880D /* TextFieldValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E76652628B6770070880D /* TextFieldValidate.swift */; };
 		4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5ECF4B25A3733B00B322F8 /* LoginView.swift */; };
 		4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C65B5AA24DE052E002C3CBF /* DateSelect.swift */; };
 		4C720FAE24EBCC3D00EF17B9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */; };
@@ -157,6 +158,7 @@
 		4C502EC824F2AE4200046C4C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		4C502ECA24F3188000046C4C /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
 		4C5E764F2624EDAC0070880D /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		4C5E76652628B6770070880D /* TextFieldValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidate.swift; sourceTree = "<group>"; };
 		4C5ECF4B25A3733B00B322F8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4C65B5AA24DE052E002C3CBF /* DateSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelect.swift; sourceTree = "<group>"; };
 		4C720FAD24EBCC3D00EF17B9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				4C8EB73F24FBF59200BEF8A7 /* SearchBar.swift */,
 				4CE07EBB24FE6EBF00211618 /* BloodResultCard.swift */,
 				4C39A25E259941BE00D84E16 /* ModifyBanner.swift */,
+				4C5E76652628B6770070880D /* TextFieldValidate.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */,
 				4C22513424B8CAA800891773 /* ContentModels.swift in Sources */,
 				4C502EC124F2796300046C4C /* CardSection.swift in Sources */,
+				4C5E76662628B6770070880D /* TextFieldValidate.swift in Sources */,
 				4C7EB3E824EC750100AD3C00 /* OLDStationRow.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
 				4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */,

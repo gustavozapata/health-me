@@ -7,30 +7,12 @@
 //
 
 import SwiftUI
-
-//limit the length of characters in text field
-class TextLimit: ObservableObject {
-    @ObservedObject var account: AccountViewModel = .account
-    @Published var text = "" {
-        didSet {
-            if text.count > characterLimit && oldValue.count <= characterLimit {
-                text = oldValue
-            }
-            account.aCreditCard.cardNumber = text
-        }
-    }
-    let characterLimit: Int
-
-    init(limit: Int = 16){
-        characterLimit = limit
-    }
-}
+import Combine
 
 struct CardDetailsView: View {
     
     @ObservedObject var account: AccountViewModel = .account
     @ObservedObject private var keyboard = KeyboardResponder()
-    @ObservedObject var textBindingManager = TextLimit(limit: 16)
     
     @State var isFlipped = false
     
@@ -43,12 +25,11 @@ struct CardDetailsView: View {
                     }
                     CreditCard(isFlipped: $isFlipped)
                     
-                    //Form
+                    //credit card form
                     VStack {
                         VStack(alignment: .leading, spacing: 7) {
                             Text("CARD NUMBER").fontWeight(.bold).font(.system(size: 15))
-                            //TextField("", text: $account.aCreditCard.cardNumber)
-                            TextField("", text: $textBindingManager.text).keyboardType(.numberPad).frame(height: 42)
+                            TextFieldValidate(field: $account.aCreditCard.cardNumber, textLimit: 16).keyboardType(.numberPad).frame(height: 42)
                                 .padding([.leading, .trailing], 4)
                                 .cornerRadius(16)
                                 .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
@@ -64,11 +45,12 @@ struct CardDetailsView: View {
                             VStack(alignment: .leading, spacing: 7) {
                                 Text("EXPIRES").fontWeight(.bold).font(.system(size: 15))
                                 HStack {
-                                    TextField("MONTH", text: $account.aCreditCard.cardExpiresMonth).frame(width: 60, height: 42).keyboardType(.numberPad).font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
+                                    TextFieldValidate(field: $account.aCreditCard.cardExpiresMonth, textLimit: 2, placeholder: "MONTH")
+                                        .frame(width: 60, height: 42).keyboardType(.numberPad).font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
                                         .padding([.leading, .trailing], 4)
                                         .cornerRadius(16)
                                         .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
-                                    TextField("YEAR", text: $account.aCreditCard.cardExpiresYear).keyboardType(.numberPad).frame(width: 60, height: 42)
+                                    TextFieldValidate(field: $account.aCreditCard.cardExpiresYear, textLimit: 2, placeholder: "YEAR").keyboardType(.numberPad).frame(width: 60, height: 42)
                                         .font(.system(size: 15, weight: .bold)).foregroundColor(Color(red: 119/255, green: 119/255, blue: 119/255))
                                         .padding([.leading, .trailing], 4)
                                         .cornerRadius(16)
@@ -81,15 +63,22 @@ struct CardDetailsView: View {
                                 TextField("", text: $account.aCreditCard.cardCVV, onEditingChanged: { (editingChange) in
                                     if editingChange {
                                         self.isFlipped = true
-                                        print("focus added")
                                     } else {
                                         self.isFlipped = false
-                                        print("focus removed")
                                     }
-                                }).keyboardType(.numberPad).frame(width: 75,height: 42)
-                                    .padding([.leading, .trailing], 4)
-                                    .cornerRadius(16)
-                                    .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
+                                }).onReceive(Just(account.aCreditCard.cardCVV)) { _ in
+                                    if account.aCreditCard.cardCVV.count > 4 {
+                                        account.aCreditCard.cardCVV = String(account.aCreditCard.cardCVV.prefix(4))
+                                    }
+                                    let filtered = account.aCreditCard.cardCVV.filter { "0123456789".contains($0) }
+                                    if filtered != account.aCreditCard.cardCVV {
+                                        return account.aCreditCard.cardCVV = filtered
+                                    }
+                                }
+                                .keyboardType(.numberPad).frame(width: 75,height: 42)
+                                .padding([.leading, .trailing], 4)
+                                .cornerRadius(16)
+                                .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(red: 97/255, green: 137/255, blue: 240/255), lineWidth: 2))
                             }
                             
                         }.padding(.bottom, 30)
@@ -99,7 +88,7 @@ struct CardDetailsView: View {
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 22)
                                         .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 67/255, blue: 66/255), Color(red: 255/255, green: 150/255, blue: 1/255), Color(red: 1/255, green: 167/255, blue: 167/255), Color(red: 1/255, green: 135/255, blue: 144/255), Color(red: 239/255, green: 55/255, blue: 11/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
-                            ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
+                                ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
                         }
                         
                         Text("You won’t be charged. Next to review page").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 15)
@@ -107,8 +96,8 @@ struct CardDetailsView: View {
                     }.padding(25)
                     
                 }.padding(.bottom, keyboard.currentHeight)
-                    .edgesIgnoringSafeArea(.bottom)
-                    .animation(.easeOut(duration: 0.16))
+                .edgesIgnoringSafeArea(.bottom)
+                .animation(.easeOut(duration: 0.16))
             }
             .navigationBarTitle("Book Test")
         }
