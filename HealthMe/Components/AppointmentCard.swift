@@ -15,6 +15,7 @@ struct AppointmentCard: View {
     @State var showMap = false
     @State var region = MKCoordinateRegion()
     @State var places = [Place(name: "", latitude: 0, longitude: 0)]
+    @State var isAddedToCal = false
     
     var body: some View {
         VStack {
@@ -40,6 +41,14 @@ struct AppointmentCard: View {
                     Text(dateToString(date: account.aBooking.date, format: "text"))
                     Text(account.aBooking.time)
                 }
+            }
+            if !isAddedToCal {
+                Text("Add to your calendar").underline().fontWeight(.medium).foregroundColor(Color(red: 12/255, green: 92/255, blue: 214/255)).padding(5).onTapGesture {
+                    checkCalendarAuthorizationStatus(booking: account.aBooking)
+                    self.isAddedToCal = true
+                }
+            } else {
+                Text("Booking added to calendar").font(.system(size: 14, weight: .medium)).foregroundColor(Color.gray).padding(5)
             }
         }.padding().background(Color.blueVybz).cornerRadius(22).clipped().shadow(color: Color.shadow, radius: 7, x: 0, y: 2).frame(width: 320).onAppear(){
             places = [Place(name: account.aBooking.location, latitude: account.aStationLatitude, longitude: account.aStationLongitude)]

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ConfirmationView: View {
     @ObservedObject var account: AccountViewModel = .account
-    @State var isBooked = false
+    @State var isBooked = true
     
     var body: some View {
         ScrollView {
@@ -27,11 +27,13 @@ struct ConfirmationView: View {
                         AppointmentCard().padding(.top, 30)
                     }.buttonStyle(PlainButtonStyle())
                     
-                    Text("Add to your calendar").underline().fontWeight(.medium).foregroundColor(Color(red: 12/255, green: 92/255, blue: 214/255)).padding().onTapGesture {
-                        checkCalendarAuthorizationStatus(booking: account.aBooking)
-                    }
+                    Text("Back home").underline()
+                        .foregroundColor(.green).fontWeight(.semibold)
+                        .padding().onTapGesture {
+                            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.navigateToRoot()
+                        }
                 } else {
-                    Text("Loading...")
+                    Loading()
                 }
             }
         }.navigationBarTitle("Book Test").onAppear(){
@@ -40,6 +42,7 @@ struct ConfirmationView: View {
                 account.addBooking() {
                     self.isBooked = true
                     account.isNewBooking = false
+                    account.aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
                 }
             }
         }

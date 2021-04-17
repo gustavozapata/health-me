@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0E06F4262AEE6D00D88935 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E06F3262AEE6D00D88935 /* Loading.swift */; };
 		4C18239624EF2A1400CD187A /* BloodStationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239524EF2A1400CD187A /* BloodStationRow.swift */; };
 		4C18239824EF328900CD187A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239724EF328900CD187A /* Card.swift */; };
 		4C18239A24EF32CC00CD187A /* DiscoverHealthMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */; };
@@ -115,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0E06F3262AEE6D00D88935 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		4C18239524EF2A1400CD187A /* BloodStationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodStationRow.swift; sourceTree = "<group>"; };
 		4C18239724EF328900CD187A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4C18239924EF32CC00CD187A /* DiscoverHealthMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHealthMe.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				4CE07EBB24FE6EBF00211618 /* BloodResultCard.swift */,
 				4C39A25E259941BE00D84E16 /* ModifyBanner.swift */,
 				4C5E76652628B6770070880D /* TextFieldValidate.swift */,
+				4C0E06F3262AEE6D00D88935 /* Loading.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				4C7EB3E824EC750100AD3C00 /* OLDStationRow.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
 				4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */,
+				4C0E06F4262AEE6D00D88935 /* Loading.swift in Sources */,
 				4C7B350125005A08006AE008 /* StationRow.swift in Sources */,
 				4CE07EC224FEB39800211618 /* ResultsList.swift in Sources */,
 				4C74034524B9C885009DB50B /* PrivacyView.swift in Sources */,

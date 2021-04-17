@@ -28,7 +28,7 @@ struct BloodResultsView: View {
                             ResultsList(type: "list")
                         }
                     } else {
-                        Text("You don't have any results").fontWeight(.semibold).foregroundColor(.gray).padding()
+                        Text("You don't have any blood test results").fontWeight(.semibold).foregroundColor(.gray).padding()
                     }
                 } else {
                     Text("Register or login to see your results").fontWeight(.semibold).foregroundColor(.gray).padding(.vertical, 30)

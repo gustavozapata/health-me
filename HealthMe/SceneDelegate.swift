@@ -30,6 +30,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
         }
     }
+    
+    //takes user to the home view
+    func navigateToRoot() {
+        let contentView = ContentView()
+        window?.rootViewController = UIHostingController(rootView: contentView)
+      }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

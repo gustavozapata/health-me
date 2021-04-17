@@ -83,6 +83,6 @@ struct TimePicker: View {
 
 struct TimePicker_Previews: PreviewProvider {
     static var previews: some View {
-        TimePicker(isSelected: .constant(false), timeSelected: .constant(0), bookings: .constant([BookingModel(location: "", address: "", date: Date(), time: "")]))
+        TimePicker(isSelected: .constant(false), timeSelected: .constant(0), bookings: .constant([BookingModel(_id: "", location: "", address: "", date: Date(), time: "")]))
     }
 }

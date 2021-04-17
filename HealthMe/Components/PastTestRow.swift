@@ -28,7 +28,7 @@ struct PastTestRow: View {
 
 struct PastTestRow_Previews: PreviewProvider {
     static var previews: some View {
-        PastTestRow(pastTest: BookingModel(location: "", address: "", date: Date(), time: ""))
+        PastTestRow(pastTest: BookingModel(_id: "", location: "", address: "", date: Date(), time: ""))
             .previewLayout(.fixed(width: 300, height: 70))
     }
 }

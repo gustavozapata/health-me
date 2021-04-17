@@ -91,8 +91,11 @@ struct ReviewView: View {
     
     // retrieves n number of characters from a string
     func substring(_ str: String, _ num: Int) -> String {
-        let index = str.index(str.startIndex, offsetBy: num)
-        return String(str.suffix(from: index))
+        if str.count > num {
+            let index = str.index(str.startIndex, offsetBy: num)
+            return String(str.suffix(from: index))
+        }
+        return str
     }
 }
 

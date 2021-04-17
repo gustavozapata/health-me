@@ -22,6 +22,7 @@ struct UserModel: Decodable {
     var messages: [MessageModel]
 }
 struct BookingModel: Decodable, Hashable {
+    var _id: String
     var location: String
     var address: String
     var date: Date
@@ -87,7 +88,7 @@ class AccountViewModel: ObservableObject {
     @Published var isDark = false
     @Published var searchTerm = ""
     
-    var aBooking = BookingModel(location: "", address: "", date: Date(), time: "")
+    var aBooking = BookingModel(_id: "", location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0
     var aStationLongitude = 0.0
     var isNewBooking = false
@@ -117,6 +118,26 @@ class AccountViewModel: ObservableObject {
         return (dataJSON, decoderJSON)
     }
     
+    func cancelBooking(_ booking: String, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["_id": booking]
+        let task = URLSession.shared.dataTask(with: createRequest("DELETE", "/bookings/\(userModel!._id)", params)){ data, response, error in
+            if let data = data {
+                do {
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
     func getBloodStations(completion: @escaping () -> ()){
         let url = URL(string: "\(LocalVars.localHost)/api/v1/stations")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
@@ -136,7 +157,6 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    //func addPayment(completion: @escaping () -> ()) {
     func addPayment() {
         let params: [String: Any] = ["cardNumber": aCreditCard.cardNumber]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/bookings/pay/\(userModel!._id)", params)) { data, response, error in
@@ -145,7 +165,6 @@ class AccountViewModel: ObservableObject {
                     let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
-                        //completion()
                     }
                 } catch let error as NSError {
                     print("JSON decode failed: \(error)")
