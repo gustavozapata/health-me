@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ConfirmationView: View {
     @ObservedObject var account: AccountViewModel = .account
-    @State var isBooked = true
+    @State var isBooked = false
     
     var body: some View {
         ScrollView {
@@ -39,10 +39,12 @@ struct ConfirmationView: View {
         }.navigationBarTitle("Book Test").onAppear(){
             if account.isNewBooking {
                 account.aBooking.date = dateToDateAndTime(date: account.aBooking.date, time: account.aBooking.time)
-                account.addBooking() {
-                    self.isBooked = true
-                    account.isNewBooking = false
-                    account.aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
+                account.addPayment {
+                    account.addBooking() {
+                        self.isBooked = true
+                        account.isNewBooking = false
+                        account.aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
+                    }
                 }
             }
         }

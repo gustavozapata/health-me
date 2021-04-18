@@ -87,7 +87,7 @@ class AccountViewModel: ObservableObject {
     @Published var aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
     @Published var isDark = false
     @Published var searchTerm = ""
-    @Published var newMsg = true
+    @Published var newMsg = false
     
     var aBooking = BookingModel(_id: "", location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0
@@ -158,20 +158,10 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    func addPayment() {
-        let params: [String: Any] = ["cardNumber": aCreditCard.cardNumber]
+    func addPayment(completion: @escaping () -> ()) {
+        let params: [String: Any] = ["booking": dateToString(date: aBooking.date, format: "text")]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/bookings/pay/\(userModel!._id)", params)) { data, response, error in
-            if let data = data {
-                do {
-                    let decodeResponse = try JSONDecoder().decode(ServerResponse<UserModel>.self, from: data)
-                    DispatchQueue.main.async {
-                        self.userModel = decodeResponse.data
-                    }
-                } catch let error as NSError {
-                    print("JSON decode failed: \(error)")
-                }
-                return
-            }
+            completion()
         }
         task.resume()
     }

@@ -15,6 +15,7 @@ struct CardDetailsView: View {
     @ObservedObject private var keyboard = KeyboardResponder()
     
     @State var isFlipped = false
+    @State var detailsEntered = false
     
     var body: some View {
         VStack {
@@ -88,8 +89,8 @@ struct CardDetailsView: View {
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 22)
                                         .stroke(LinearGradient(gradient: Gradient(colors: [Color(red: 255/255, green: 67/255, blue: 66/255), Color(red: 255/255, green: 150/255, blue: 1/255), Color(red: 1/255, green: 167/255, blue: 167/255), Color(red: 1/255, green: 135/255, blue: 144/255), Color(red: 239/255, green: 55/255, blue: 11/255)]), startPoint: .leading, endPoint: .trailing), lineWidth: 4)
-                                ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary)
-                        }
+                                ).font(.system(size: 17, weight: .semibold)).foregroundColor(Color.primary).opacity(checkInputs() ? 1 : 0.5)
+                        }.disabled(!checkInputs())
                         
                         Text("You won’t be charged. Next to review page").font(.system(size: 14)).foregroundColor(Color.gray).padding(.top, 15)
                         
@@ -101,6 +102,14 @@ struct CardDetailsView: View {
             }
             .navigationBarTitle("Book Test")
         }
+    }
+    
+    //checks that all text fields meet the input criteria
+    func checkInputs() -> Bool {
+        if account.aCreditCard.cardNumber.count < 16 || account.aCreditCard.cardHolder == "" || account.aCreditCard.cardExpiresYear.count < 2 || account.aCreditCard.cardExpiresYear.count < 2 || account.aCreditCard.cardCVV.count < 3 {
+            return false
+        }
+        return true
     }
 }
 
