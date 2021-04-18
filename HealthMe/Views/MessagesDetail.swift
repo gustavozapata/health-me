@@ -52,6 +52,8 @@ struct MessagesDetail: View {
                     }.padding().frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
                 }
                 Spacer()
+            }.onAppear(){
+                account.newMsg = false
             }
         }.navigationBarTitle("Messages")
     }

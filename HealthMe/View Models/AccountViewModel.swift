@@ -87,6 +87,7 @@ class AccountViewModel: ObservableObject {
     @Published var aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
     @Published var isDark = false
     @Published var searchTerm = ""
+    @Published var newMsg = true
     
     var aBooking = BookingModel(_id: "", location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0
@@ -184,6 +185,7 @@ class AccountViewModel: ObservableObject {
                     let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
+                        self.newMsg = true
                         completion()
                     }
                 } catch let error as NSError {
@@ -266,6 +268,7 @@ class AccountViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.userModel = decodeResponse.data
                         self.isLogged = true
+                        self.newMsg = true
                         completion()
                     }
                 } catch let error as NSError {
