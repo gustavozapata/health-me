@@ -99,6 +99,9 @@ struct ReportView: View {
                     Text("White blood cells").font(.system(size: 20, weight: .semibold))
                     Text("\(result.whiteBloodCells)").font(.system(size: 45, weight: .semibold))
                 }.padding(.vertical, 20)
+                
+                //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
+                //https://ada.com/blood-test-results
             }
         }.navigationBarHidden(true)
     }

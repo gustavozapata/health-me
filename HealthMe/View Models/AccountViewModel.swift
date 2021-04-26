@@ -227,6 +227,27 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
+    ///TODO: implement this on the server
+    func editDetails(_ fullname: String, _ email: String, completion: @escaping () -> ()) {
+        let params: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)"]
+        let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/edit", params)) { data, response, error in
+            if let data = data {
+                do {
+                    let decoder = self.decodeJSONDate(data: data)
+                    let decodeResponse = try decoder.decoderJSON.decode(ServerResponse<UserModel>.self, from: decoder.dataJSON)
+                    DispatchQueue.main.async {
+                        self.userModel = decodeResponse.data
+                        completion()
+                    }
+                } catch let error as NSError {
+                    print("JSON decode failed: \(error)")
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
     func login(_ email: String, _ password: String, completion: @escaping () -> ()) {
         let params: [String: Any] = ["email": "\(email)", "password": "\(password)"]
         let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/login", params)) { data, response, error in

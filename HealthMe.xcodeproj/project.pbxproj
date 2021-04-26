@@ -103,6 +103,7 @@
 		4CE07EC524FEB42400211618 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE07EC424FEB42400211618 /* ResultRow.swift */; };
 		4CE3336E26226EE900D83155 /* iPaymentButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE3336D26226EE900D83155 /* iPaymentButton */; };
 		4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */; };
+		4CEAF5162636A9F600221028 /* EditDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAF5152636A9F600221028 /* EditDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 		4CE8437B25C8D9BE00E4F99C /* HealthMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMeUITests.swift; sourceTree = "<group>"; };
 		4CE8437F25C8D9BE00E4F99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEAF5152636A9F600221028 /* EditDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				4C39A2612599472200D84E16 /* SignUpView.swift */,
 				4C5ECF4B25A3733B00B322F8 /* LoginView.swift */,
 				4C23971325B20AEE00904210 /* OnboardingView.swift */,
+				4CEAF5152636A9F600221028 /* EditDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				4CDF616B24FF06EA009E3F96 /* StationViewModel.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C8EB74024FBF59200BEF8A7 /* SearchBar.swift in Sources */,
+				4CEAF5162636A9F600221028 /* EditDetailsView.swift in Sources */,
 				4CE07EBC24FE6EBF00211618 /* BloodResultCard.swift in Sources */,
 				4C5ECF4C25A3733B00B322F8 /* LoginView.swift in Sources */,
 				4CBC692625EAE3190043ACD8 /* ResultsAnalysis.swift in Sources */,
