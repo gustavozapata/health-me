@@ -13,6 +13,7 @@ struct EditDetailsView: View {
     @Binding var isEdit: Bool
     @State var fullname: String = ""
     @State var email: String = ""
+    @State var isValidEmail = false
     
     func validateEmail(email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -69,10 +70,16 @@ struct EditDetailsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.green, lineWidth: 2)
                     ).padding(.bottom, 8).onTapGesture {
-                        account.updateDetails(fullname, email){
-                            self.isEdit = false
+                        if validateEmail(email: email) {
+                            account.updateDetails(fullname, email) {
+                                self.isEdit = false
+                            }
+                        } else {
+                            self.isValidEmail.toggle()
                         }
                     }
+            }.alert(isPresented: $isValidEmail) {
+                Alert(title: Text("Valid Email"), message: Text("Please enter a valid email"), dismissButton: .default(Text("OK")))
             }
         }.padding(.vertical).onAppear(){
             self.fullname = account.userModel!.fullname

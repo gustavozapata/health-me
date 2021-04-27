@@ -102,6 +102,7 @@ struct ReportView: View {
                 
                 //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
                 //https://ada.com/blood-test-results
+                
             }
         }.navigationBarHidden(true)
     }
