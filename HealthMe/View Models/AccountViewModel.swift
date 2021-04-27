@@ -227,10 +227,9 @@ class AccountViewModel: ObservableObject {
         task.resume()
     }
     
-    ///TODO: implement this on the server
-    func editDetails(_ fullname: String, _ email: String, completion: @escaping () -> ()) {
+    func updateDetails(_ fullname: String, _ email: String, completion: @escaping () -> ()) {
         let params: [String: Any] = ["fullname": "\(fullname)", "email": "\(email)"]
-        let task = URLSession.shared.dataTask(with: createRequest("POST", "/users/edit", params)) { data, response, error in
+        let task = URLSession.shared.dataTask(with: createRequest("PATCH", "/users/update/\(userModel!._id)", params)) { data, response, error in
             if let data = data {
                 do {
                     let decoder = self.decodeJSONDate(data: data)

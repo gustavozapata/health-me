@@ -69,7 +69,7 @@ struct EditDetailsView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.green, lineWidth: 2)
                     ).padding(.bottom, 8).onTapGesture {
-                        account.editDetails(fullname, email){
+                        account.updateDetails(fullname, email){
                             self.isEdit = false
                         }
                     }
