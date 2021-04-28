@@ -19,7 +19,7 @@ struct ResultRow: View {
                     HStack(alignment: .top) {
                         Text(result.test).bold()
                         Spacer()
-                        Text(result.date).font(.system(size: 12)).foregroundColor(Color.secondary).padding(.trailing)
+                        Text(dateToString(date: result.date, format: "text")).font(.system(size: 12)).foregroundColor(Color.secondary).padding(.trailing)
                     }
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green)
@@ -36,6 +36,6 @@ struct ResultRow: View {
 
 struct ResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        ResultRow(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        ResultRow(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
     }
 }

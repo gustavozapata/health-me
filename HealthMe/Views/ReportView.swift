@@ -25,7 +25,7 @@ struct ReportView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(result.test).font(.system(size: 25, weight: .bold)).fixedSize(horizontal: false, vertical: true)
-                    Text(result.date).bold().font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.green)
+                    Text(dateToString(date: result.date, format: "text")).bold().font(.system(size: 16)).fixedSize(horizontal: false, vertical: true).foregroundColor(Color.green)
                 }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 70, alignment: .topLeading).padding()
             }.padding(.top, 5)
             
@@ -110,6 +110,6 @@ struct ReportView: View {
 
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportView(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        ReportView(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
     }
 }

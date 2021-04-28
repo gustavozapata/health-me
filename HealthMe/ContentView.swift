@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
-    
     @ObservedObject var account: AccountViewModel = .account
     
     init() {

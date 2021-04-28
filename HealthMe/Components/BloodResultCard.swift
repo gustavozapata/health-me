@@ -31,7 +31,7 @@ struct BloodResultCard: View {
                 VStack {
                     //Image("bloodtube").resizable().aspectRatio(contentMode: .fit).frame(height: 50)
                     Image(systemName: "doc").font(.system(size: 33)).padding(.bottom, 15)
-                    Text(result.date).font(.system(size: 13))
+                    Text(dateToString(date: result.date, format: "text")).font(.system(size: 13))
                 }
             }.padding(.vertical, 5)
             
@@ -44,6 +44,6 @@ struct BloodResultCard: View {
 
 struct BloodResultCard_Previews: PreviewProvider {
     static var previews: some View {
-        BloodResultCard(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: "Jan 27, 2021", red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        BloodResultCard(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
     }
 }

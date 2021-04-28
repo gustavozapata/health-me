@@ -35,7 +35,7 @@ struct Bookings: Decodable {
 struct ResultsModel: Decodable, Hashable {
     var blood_type: String
     var test: String
-    var date: String
+    var date: Date
     var red_blood_cells: Int
     var whiteBloodCells:Int
     var cholesterolLevel:Int

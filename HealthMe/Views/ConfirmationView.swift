@@ -44,10 +44,36 @@ struct ConfirmationView: View {
                         self.isBooked = true
                         account.isNewBooking = false
                         account.aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
+                        sendNotification()
                     }
                 }
             }
         }
+    }
+    
+    // notification blood test results ready 
+    func sendNotification() {
+        // check if user has approved to receive notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  {
+            success, error in
+            if success {
+                print("authorization granted")
+            } else if let error = error {
+                print(error)
+            }
+        }
+        // heading and body of the notification
+        let content = UNMutableNotificationContent()
+        content.title = "Health Me"
+        content.subtitle = "Your blood test result is ready 😃"
+        content.body = "Go to results and see your health report"
+        content.sound = UNNotificationSound.default
+        
+        // for testing purposes, the notification is sent after 30 sec
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 }
 
