@@ -78,16 +78,24 @@ class AccountViewModel: ObservableObject {
     static let account = AccountViewModel()
     
     @Published var user: String?
-    @Published var isLogged: Bool = false
+    @Published var isLogged = false
     @Published var appMsg: String? = ""
     @Published var showApp: Bool = false
     @Published var userModel: UserModel?
     @Published var bookingModel: Bookings?
     @Published var stations: [StationModel] = [StationModel(_id: "-", location: "", address: "", postcode: "", latitude: 0.0, longitude: 0.0, telephone: "")]
     @Published var aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
-    @Published var isDark = false
     @Published var searchTerm = ""
     @Published var newMsg = false
+    
+    //(UserDefaults.standard.dictionaryRepresentation() //all the UserDefaults
+    //UserDefaults.standard.removeObject(forKey: "passcode") //delete a UserDefault
+    @Published var isDark = UserDefaults.standard.bool(forKey: "isDark")
+    @Published var requiredPass = UserDefaults.standard.bool(forKey: "requiredPass")
+    @Published var hasPassSetup = false
+    @Published var isUnlocked = false
+    @Published var showPassSetup = false
+    @Published var passcode = ""
     
     var aBooking = BookingModel(_id: "", location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0
