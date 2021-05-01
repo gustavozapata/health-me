@@ -71,7 +71,6 @@ struct ContentView: View {
                             Circle().foregroundColor(.green).frame(width: 10, height: 10).offset(x: geometry.size.width / 1.55, y: -30)
                         }
                     }.onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                        print("Moving back to the foreground!")
                         account.isUnlocked = false
                     }
                 }

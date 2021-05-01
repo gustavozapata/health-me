@@ -102,7 +102,7 @@ struct PasscodeView: View {
                             checkPasscode()
                         }
                 }
-                HStack(spacing: pass.count > 0 ? 57 : 54) {
+                HStack(spacing: pass.count > 0 ? 83 : 80) {
                     Spacer()
                     Text("0").font(.system(size: 25))
                         .background(Circle().stroke(Color.black, lineWidth: 1).frame(width: 60, height: 60))
@@ -125,18 +125,15 @@ struct PasscodeView: View {
     func checkPasscode() {
         if pass.count > 3 {
             if UserDefaults.standard.object(forKey: "passcode") != nil { /// if localStorage exists
-                print("ya se habia setup un pass")
                 if pass == UserDefaults.standard.string(forKey: "passcode"){ /// checking the passcode to allow access
                     account.showApp = true
                     account.isUnlocked = true
-                    print("epaaa el passcode es bueno")
                 } else {
                     pass = ""
                 }
             } else { /// localStorage doesn't exist
                 UserDefaults.standard.set(pass, forKey: "passcode") /// setting up the passcode
                 account.showPassSetup = false
-                print("por fin un passcode se ha setup: \(pass)")
             }
         }
     }
@@ -144,6 +141,6 @@ struct PasscodeView: View {
 
 struct PasscodeView_Previews: PreviewProvider {
     static var previews: some View {
-        PrivacyView()
+        PasscodeView()
     }
 }
