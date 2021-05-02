@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ONLY USED FOR TESTING 
 class AuthService {
     
     func login() {

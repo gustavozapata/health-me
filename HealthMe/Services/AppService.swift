@@ -14,6 +14,7 @@ struct ServerResponse<Model: Decodable>: Decodable {
 
 class AppService {
     
+    // compose the head and body of the request
     func createRequest(_ method: String, _ urlPath: String, _ params: [String: Any]) -> URLRequest {
         let url = URL(string: "\(LocalVars.localHost)/api/v1\(urlPath)")!
         let data = try? JSONSerialization.data(withJSONObject: params)
@@ -24,7 +25,7 @@ class AppService {
         return request
     }
     
-    //Decode date from JSON response
+    // decode date from JSON response
     func decodeJSONDate(data: Data) -> (dataJSON: Data, decoderJSON: JSONDecoder) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
@@ -34,6 +35,7 @@ class AppService {
         return (dataJSON, decoderJSON)
     }
     
+    // requests that mutate the database - POST, PATCH, DELETE, etc.
     func updateRequest(params: [String: Any], path: String, method: String, completion: @escaping (_ response: UserModel) -> ()) {
         let task = URLSession.shared.dataTask(with: self.createRequest(method, path, params)) { data, response, error in
             if let data = data {
@@ -52,6 +54,7 @@ class AppService {
         task.resume()
     }
     
+    // retrieves data
     func getRequest(url: URL, completion: @escaping (_ response: UserModel) -> ()) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -70,6 +73,7 @@ class AppService {
         task.resume()
     }
     
+    // get all the bookings (all stations and all dates) to check availability
     func getBookingDates(url: URL, completion: @escaping (_ response: Bookings) -> ()) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -88,6 +92,7 @@ class AppService {
         task.resume()
     }
     
+    // get all blood stations to select one when booking an appointment
     func getBloodStations(url: URL, completion: @escaping (_ response: [StationModel]) -> ()){
         let url = URL(string: "\(LocalVars.localHost)/api/v1/stations")
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in

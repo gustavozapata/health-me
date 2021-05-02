@@ -263,7 +263,6 @@
 		4C217DBA24B7DE7A00F5C551 = {
 			isa = PBXGroup;
 			children = (
-				4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */,
 				4C217DC524B7DE7A00F5C551 /* HealthMe */,
 				4CE8437C25C8D9BE00E4F99C /* HealthMeUITests */,
 				4C217DC424B7DE7A00F5C551 /* Products */,
@@ -509,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				4C22513324B8CAA800891773 /* ContentModels.swift */,
+				4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */,
 				4C22513524B8CD5200891773 /* ContentDatas.swift */,
 			);
 			path = Content;

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ONLY USED FOR TESTING 
 class StationService {
     
     func getStations(completion: @escaping ([StationModel]?) -> ()) {

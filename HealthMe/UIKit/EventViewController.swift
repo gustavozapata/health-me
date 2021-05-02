@@ -12,7 +12,7 @@ import EventKitUI
 
 let eventStore = EKEventStore()
 
-//request access to Calendar app, if it is or has been accepted, then create the event
+// request access to the Calendar app, on allow access, create the event
 func checkCalendarAuthorizationStatus(booking: BookingModel) {
     eventStore.requestAccess(to: .event, completion:{(granted: Bool, error: Error?) -> Void in
         if granted {
@@ -23,7 +23,7 @@ func checkCalendarAuthorizationStatus(booking: BookingModel) {
     })
 }
 
-//create and insert the event 
+// create and insert the event
 func insertEvent(store: EKEventStore, booking: BookingModel) {
     let calendars = store.calendars(for: .event)
     

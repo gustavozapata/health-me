@@ -10,6 +10,7 @@ import Foundation
 
 class AccountViewModel: ObservableObject {
     
+    // singleton pattern - only one instance of a class is allowed
     private init(){}
     static let account = AccountViewModel()
     
@@ -23,15 +24,14 @@ class AccountViewModel: ObservableObject {
     @Published var aCreditCard = CreditCardModel(cardNumber: "", cardHolder: "", cardExpiresYear: "", cardExpiresMonth: "", cardCVV: "")
     @Published var searchTerm = ""
     @Published var newMsg = false
-    
-    //(UserDefaults.standard.dictionaryRepresentation() //all the UserDefaults
-    //UserDefaults.standard.removeObject(forKey: "passcode") //delete a UserDefault
-    @Published var isDark = UserDefaults.standard.bool(forKey: "isDark")
-    @Published var requiredPass = UserDefaults.standard.bool(forKey: "requiredPass")
     @Published var hasPassSetup = false
     @Published var isUnlocked = false
     @Published var showPassSetup = false
     @Published var passcode = ""
+    
+    // local storage variables
+    @Published var isDark = UserDefaults.standard.bool(forKey: "isDark")
+    @Published var requiredPass = UserDefaults.standard.bool(forKey: "requiredPass")
     
     var aBooking = BookingModel(_id: "", location: "", address: "", date: Date(), time: "")
     var aStationLatitude = 0.0

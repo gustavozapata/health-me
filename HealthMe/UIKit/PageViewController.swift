@@ -9,6 +9,7 @@
 import SwiftUI
 import UIKit
 
+// extends UIKit to be able to use page views (slideshows-like) in SwiftUI
 struct PageViewController: UIViewControllerRepresentable {
     var controllers: [UIViewController]
     
