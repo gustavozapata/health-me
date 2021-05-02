@@ -83,7 +83,7 @@ struct SignUpView: View {
                 }
                 
             }.padding(EdgeInsets(top: 10, leading: 25, bottom: 25, trailing: 25))
-        }
+        }.preferredColorScheme(account.isDark ? .dark : .light)
     }
 }
 

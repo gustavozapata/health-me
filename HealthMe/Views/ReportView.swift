@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ReportView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -44,67 +45,15 @@ struct ReportView: View {
                     Spacer()
                 }.padding(.vertical, 20)
                 
-                //Cholesterol
-                VStack {
-                    Text("Cholesterol").font(.system(size: 20, weight: .bold))
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
-                            .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                        //                            RoundedRectangle(cornerRadius: 25)
-                        VStack {
-                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: CGFloat(result.cholesterolLevel-40), y: 25.0)
-                            //                                    .shadow(color: .gray, radius: 4, x: 2, y: 2)
-                            Text("\(result.cholesterolLevel)").font(.system(size: 14, weight: .bold)).position(x: CGFloat(result.cholesterolLevel-40), y: 24)
-                        }.frame(width: 200, height: 50)
-                    }.padding()
-                    VStack(alignment: .leading, spacing: 10){
-                        Text("Total cholesterol should be less than 200 mg/dL (200 milligrams per decilitre)").font(.system(size: 15, weight: .semibold))
-                        HStack(alignment: .top){
-                            Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange).font(.system(size: 12))
-                            Text("High cholesterol levels cause high risk of heart disease").font(.system(size: 13, weight: .medium)).foregroundColor(Color.gray)
-                        }
-                    }.fixedSize(horizontal: false, vertical: true)
-                }.padding()
+                Cholesterol(result: result)
                 
-                //Glucose
-                VStack {
-                    Text("Glucose").font(.system(size: 20, weight: .bold))
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.green, .yellow]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
-                            .shadow(color: .gray, radius: 3, x: 3, y: 3)
-                        VStack {
-                            Rectangle().fill(Color.orange).frame(width: 6, height: 28).position(x: CGFloat(result.glucose_level-40), y: 25.0)
-                            Text("\(result.glucose_level)").font(.system(size: 14, weight: .bold)).position(x: CGFloat(result.glucose_level-40), y: 24)
-                            
-                        }.frame(width: 200, height: 50)
-                    }.padding()
-                    VStack(alignment: .leading, spacing: 10){
-                        Text("Normal blood sugar levels are as follows: Between 4.0 to 5.4 mmol/L (72 to 99 mg/dL) when fasting").font(.system(size: 15, weight: .semibold))
-                        HStack(alignment: .top){
-                            Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange).font(.system(size: 12))
-                            Text("Hyperglycemia").font(.system(size: 13, weight: .medium)).foregroundColor(Color.gray)
-                        }
-                    }.fixedSize(horizontal: false, vertical: true)
-                }.padding()
+                Glucose(result: result)
                 
-                VStack {
-                    Text("Red blood cells").font(.system(size: 20, weight: .semibold))
-                    HStack{
-                        Image("bloodcells").resizable().frame(width: 70, height: 60).padding()
-                        Text("\(result.red_blood_cells)").font(.system(size: 45, weight: .semibold))
-                    }
-                }.padding(.vertical, 20)
-                
-                VStack {
-                    Text("White blood cells").font(.system(size: 20, weight: .semibold))
-                    Text("\(result.whiteBloodCells)").font(.system(size: 45, weight: .semibold))
-                }.padding(.vertical, 20)
-                
+                BloodCells(result: result)
                 //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
                 //https://ada.com/blood-test-results
-                
             }
-        }.navigationBarHidden(true)
+        }.navigationBarHidden(true).navigationTitle("")
     }
 }
 

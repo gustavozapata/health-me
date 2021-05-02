@@ -32,7 +32,7 @@ struct BloodTestsView: View {
                     //Section - All Blood Tests
                     if account.isLogged {
                         VStack {
-                            Header(title: "Your Blood Tests", subtitle: "See all your blood test bookings").padding(.bottom, 20)
+                            Header(title: "Your Blood Tests", subtitle: "See all your blood test bookings").padding(.bottom, 30)
                             if account.userModel!.bookings.count > 0 {
                                 PastTestsList()
                             } else {

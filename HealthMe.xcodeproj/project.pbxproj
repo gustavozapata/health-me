@@ -34,6 +34,8 @@
 		4C2D7E4E25BDA1140007FBDF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D7E4D25BDA1140007FBDF /* AuthService.swift */; };
 		4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */; };
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
+		4C383476263F02AE00CAFEE1 /* cholesterol.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */; };
+		4C383479263F0AB500CAFEE1 /* Cholesterol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C383478263F0AB500CAFEE1 /* Cholesterol.swift */; };
 		4C39A25F259941BE00D84E16 /* ModifyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A25E259941BE00D84E16 /* ModifyBanner.swift */; };
 		4C39A2622599472200D84E16 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A2612599472200D84E16 /* SignUpView.swift */; };
 		4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A770B24F7A9C100679E59 /* CreditCard.swift */; };
@@ -91,6 +93,13 @@
 		4CC5A57F24BBC9050033F10B /* MessagesOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */; };
 		4CD6DC6B24FFCD2000CEE326 /* FetchDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6DC6A24FFCD2000CEE326 /* FetchDataSample.swift */; };
 		4CD6DC6D24FFEE8600CEE326 /* BookStationFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6DC6C24FFEE8600CEE326 /* BookStationFetch.swift */; };
+		4CDC1A90263F161400C2F178 /* Glucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A8F263F161400C2F178 /* Glucose.swift */; };
+		4CDC1A92263F282100C2F178 /* BloodCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A91263F282100C2F178 /* BloodCells.swift */; };
+		4CDC1A94263F33EB00C2F178 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A93263F33EB00C2F178 /* AppService.swift */; };
+		4CDC1A98263F510B00C2F178 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A97263F510B00C2F178 /* UserModel.swift */; };
+		4CDC1A9A263F512700C2F178 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A99263F512700C2F178 /* BookingModel.swift */; };
+		4CDC1A9C263F517100C2F178 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A9B263F517100C2F178 /* MessageModel.swift */; };
+		4CDC1A9E263F51B300C2F178 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC1A9D263F51B300C2F178 /* ResultModel.swift */; };
 		4CDCAA8D24F409360012C23C /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8C24F409360012C23C /* PaymentView.swift */; };
 		4CDCAA8F24F413DA0012C23C /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA8E24F413DA0012C23C /* IconButton.swift */; };
 		4CDCAA9124F415FC0012C23C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDCAA9024F415FC0012C23C /* MapView.swift */; };
@@ -148,6 +157,8 @@
 		4C2D7E4D25BDA1140007FBDF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestInfo.swift; sourceTree = "<group>"; };
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
+		4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cholesterol.mp4; sourceTree = "<group>"; };
+		4C383478263F0AB500CAFEE1 /* Cholesterol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cholesterol.swift; sourceTree = "<group>"; };
 		4C39A25E259941BE00D84E16 /* ModifyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyBanner.swift; sourceTree = "<group>"; };
 		4C39A2612599472200D84E16 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4C3A770B24F7A9C100679E59 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -205,6 +216,13 @@
 		4CC5A57E24BBC9050033F10B /* MessagesOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesOptions.swift; sourceTree = "<group>"; };
 		4CD6DC6A24FFCD2000CEE326 /* FetchDataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataSample.swift; sourceTree = "<group>"; };
 		4CD6DC6C24FFEE8600CEE326 /* BookStationFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStationFetch.swift; sourceTree = "<group>"; };
+		4CDC1A8F263F161400C2F178 /* Glucose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glucose.swift; sourceTree = "<group>"; };
+		4CDC1A91263F282100C2F178 /* BloodCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCells.swift; sourceTree = "<group>"; };
+		4CDC1A93263F33EB00C2F178 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		4CDC1A97263F510B00C2F178 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4CDC1A99263F512700C2F178 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
+		4CDC1A9B263F517100C2F178 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		4CDC1A9D263F51B300C2F178 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		4CDCAA8C24F409360012C23C /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		4CDCAA8E24F413DA0012C23C /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		4CDCAA9024F415FC0012C23C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -245,6 +263,7 @@
 		4C217DBA24B7DE7A00F5C551 = {
 			isa = PBXGroup;
 			children = (
+				4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */,
 				4C217DC524B7DE7A00F5C551 /* HealthMe */,
 				4CE8437C25C8D9BE00E4F99C /* HealthMeUITests */,
 				4C217DC424B7DE7A00F5C551 /* Products */,
@@ -343,6 +362,10 @@
 				4C7B34FC2500497A006AE008 /* StationModel.swift */,
 				4C22513924B8CF9000891773 /* Data.swift */,
 				4C7EB3E324EC576B00AD3C00 /* dataModels.swift */,
+				4CDC1A97263F510B00C2F178 /* UserModel.swift */,
+				4CDC1A99263F512700C2F178 /* BookingModel.swift */,
+				4CDC1A9B263F517100C2F178 /* MessageModel.swift */,
+				4CDC1A9D263F51B300C2F178 /* ResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +373,7 @@
 		4C22513D24B8D8F100891773 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4C383477263F0A9000CAFEE1 /* Results */,
 				4CE07EC324FEB40C00211618 /* Rows */,
 				4C9D89D524DC72AA001A7831 /* Layout */,
 				4C7EB3DC24EC53FC00AD3C00 /* Lists */,
@@ -372,6 +396,16 @@
 				4C0E06F3262AEE6D00D88935 /* Loading.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4C383477263F0A9000CAFEE1 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				4C383478263F0AB500CAFEE1 /* Cholesterol.swift */,
+				4CDC1A8F263F161400C2F178 /* Glucose.swift */,
+				4CDC1A91263F282100C2F178 /* BloodCells.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		4C44A3D925C6D85F00D9BCEC /* login */ = {
@@ -441,6 +475,7 @@
 			children = (
 				4CDF616824FF035A009E3F96 /* StationService.swift */,
 				4C2D7E4D25BDA1140007FBDF /* AuthService.swift */,
+				4CDC1A93263F33EB00C2F178 /* AppService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -597,6 +632,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C383476263F02AE00CAFEE1 /* cholesterol.mp4 in Resources */,
 				4C7EB3E024EC54A200AD3C00 /* pastTests.json in Resources */,
 				4CBF947E24BB219800252DB8 /* messages.json in Resources */,
 				4C502EC524F283F300046C4C /* bookings.json in Resources */,
@@ -635,20 +671,24 @@
 				4CDCAA9324F4168D0012C23C /* CardDetailsView.swift in Sources */,
 				4C7EB3E624EC654400AD3C00 /* PastTestRow.swift in Sources */,
 				4C502EC324F27A7800046C4C /* BookTestButton.swift in Sources */,
+				4C383479263F0AB500CAFEE1 /* Cholesterol.swift in Sources */,
 				4C2D7E4B25BD9F090007FBDF /* AccountViewModel.swift in Sources */,
 				4C7EB3E424EC576B00AD3C00 /* dataModels.swift in Sources */,
 				4C9D89D024DC57D2001A7831 /* BookDate.swift in Sources */,
+				4CDC1A9A263F512700C2F178 /* BookingModel.swift in Sources */,
 				4CA4013C24BFC46D009DA1F5 /* BookStation.swift in Sources */,
 				4CBF948824BB33E700252DB8 /* MessagesRow.swift in Sources */,
 				4C217DDC24B7E10000F5C551 /* BloodTestsView.swift in Sources */,
 				4CE07EBE24FE7FC700211618 /* ReportView.swift in Sources */,
 				4C65B5AB24DE052E002C3CBF /* DateSelect.swift in Sources */,
 				4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */,
+				4CDC1A9C263F517100C2F178 /* MessageModel.swift in Sources */,
 				4C91DD4E261B30910093B604 /* DateHandler.swift in Sources */,
 				4C44A3DF25C7179E00D9BCEC /* Fetch_JSON_Varios.swift in Sources */,
 				4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */,
 				4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */,
 				4CE07EC524FEB42400211618 /* ResultRow.swift in Sources */,
+				4CDC1A90263F161400C2F178 /* Glucose.swift in Sources */,
 				4C22513624B8CD5200891773 /* ContentDatas.swift in Sources */,
 				4C74034824B9CCAB009DB50B /* UIColor.swift in Sources */,
 				4C22514324B8F28800891773 /* ProfileRow.swift in Sources */,
@@ -658,6 +698,7 @@
 				4C47D46324DA1F89006ECC51 /* StationList.swift in Sources */,
 				4C5E76502624EDAC0070880D /* EventViewController.swift in Sources */,
 				4C502EC724F288F300046C4C /* DatePicker.swift in Sources */,
+				4CDC1A9E263F51B300C2F178 /* ResultModel.swift in Sources */,
 				4C217DDE24B7E13900F5C551 /* BloodResultsView.swift in Sources */,
 				4C74034324B9C47C009DB50B /* SettingsView.swift in Sources */,
 				4C8EB73E24FBC4F200BEF8A7 /* ConfirmationView.swift in Sources */,
@@ -679,12 +720,14 @@
 				4CD6DC6D24FFEE8600CEE326 /* BookStationFetch.swift in Sources */,
 				4CDCAA9124F415FC0012C23C /* MapView.swift in Sources */,
 				4C217DE224B7E35000F5C551 /* ProfileView.swift in Sources */,
+				4CDC1A98263F510B00C2F178 /* UserModel.swift in Sources */,
 				4C502EC924F2AE4200046C4C /* TimePicker.swift in Sources */,
 				4C502ECB24F3188000046C4C /* ConfirmButton.swift in Sources */,
 				4C74034C24BA2E00009DB50B /* HelperFunc.swift in Sources */,
 				4C9D89D424DC5B89001A7831 /* Header.swift in Sources */,
 				4C39A2622599472200D84E16 /* SignUpView.swift in Sources */,
 				4CD6DC6B24FFCD2000CEE326 /* FetchDataSample.swift in Sources */,
+				4CDC1A94263F33EB00C2F178 /* AppService.swift in Sources */,
 				4CDF616B24FF06EA009E3F96 /* StationViewModel.swift in Sources */,
 				4C217DCB24B7DE7A00F5C551 /* ContentView.swift in Sources */,
 				4C8EB74024FBF59200BEF8A7 /* SearchBar.swift in Sources */,
@@ -705,6 +748,7 @@
 				4CC06B3B263ADE1800BFE235 /* PasscodeView.swift in Sources */,
 				4C7EB3E824EC750100AD3C00 /* OLDStationRow.swift in Sources */,
 				4C22513F24B8D90700891773 /* ProfileList.swift in Sources */,
+				4CDC1A92263F282100C2F178 /* BloodCells.swift in Sources */,
 				4C502EBF24F2682000046C4C /* AppointmentCard.swift in Sources */,
 				4C0E06F4262AEE6D00D88935 /* Loading.swift in Sources */,
 				4C7B350125005A08006AE008 /* StationRow.swift in Sources */,
