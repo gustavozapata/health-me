@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// custom styling to attach to elements
 struct MessagesOptions: ViewModifier {
     func body(content: Content) -> some View {
         return content
