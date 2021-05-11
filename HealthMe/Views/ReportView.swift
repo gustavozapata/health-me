@@ -32,10 +32,15 @@ struct ReportView: View {
             
             //Report
             VStack {
-                VStack{
-                    Image("bloodtype").font(.system(size: 60)).padding()
-                    Text("Your blood type is \(result.blood_type) and it’s in \(bloodTypeInfo(result.blood_type).percentage)% of people in the world, one of the \(bloodTypeInfo(result.blood_type).common) common blood groups").fontWeight(.medium).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
-                }.padding(.vertical, 25).frame(width: 270)
+                BloodType(result: result)
+                
+                Cholesterol(result: result)
+                
+                Glucose(result: result)
+                
+                BloodCells(result: result)
+                //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
+                //https://ada.com/blood-test-results
                 
                 HStack {
                     VStack {
@@ -45,13 +50,7 @@ struct ReportView: View {
                     Spacer()
                 }.padding(.vertical, 20)
                 
-                Cholesterol(result: result)
-                
-                Glucose(result: result)
-                
-                BloodCells(result: result)
-                //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
-                //https://ada.com/blood-test-results
+                Text("Overall your health looks pretty good!")
             }
         }.navigationBarHidden(true).navigationTitle("")
     }
@@ -59,6 +58,6 @@ struct ReportView: View {
 
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportView(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        ReportView(result: ResultsModel(blood_type: "O+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
     }
 }

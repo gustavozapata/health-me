@@ -34,8 +34,8 @@
 		4C2D7E4E25BDA1140007FBDF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D7E4D25BDA1140007FBDF /* AuthService.swift */; };
 		4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */; };
 		4C31406C24EB0BA900BA496E /* OldViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31406B24EB0BA900BA496E /* OldViews.swift */; };
-		4C383476263F02AE00CAFEE1 /* cholesterol.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */; };
 		4C383479263F0AB500CAFEE1 /* Cholesterol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C383478263F0AB500CAFEE1 /* Cholesterol.swift */; };
+		4C3897712640B9FB0057E680 /* cholesterol.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C3897702640B9FA0057E680 /* cholesterol.mp4 */; };
 		4C39A25F259941BE00D84E16 /* ModifyBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A25E259941BE00D84E16 /* ModifyBanner.swift */; };
 		4C39A2622599472200D84E16 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39A2612599472200D84E16 /* SignUpView.swift */; };
 		4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A770B24F7A9C100679E59 /* CreditCard.swift */; };
@@ -70,6 +70,8 @@
 		4C7EB3E424EC576B00AD3C00 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EB3E324EC576B00AD3C00 /* dataModels.swift */; };
 		4C7EB3E624EC654400AD3C00 /* PastTestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EB3E524EC654400AD3C00 /* PastTestRow.swift */; };
 		4C7EB3E824EC750100AD3C00 /* OLDStationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7EB3E724EC750100AD3C00 /* OLDStationRow.swift */; };
+		4C8C3A4B264A803500CBA402 /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C3A4A264A803500CBA402 /* BloodType.swift */; };
+		4C8C3A4D264A9C7B00CBA402 /* bloodcells.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4C8C3A4C264A9C7B00CBA402 /* bloodcells.mp4 */; };
 		4C8DC38C25E30D31000D69CB /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8DC38B25E30D31000D69CB /* MessageViewModel.swift */; };
 		4C8EB73E24FBC4F200BEF8A7 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EB73D24FBC4F200BEF8A7 /* ConfirmationView.swift */; };
 		4C8EB74024FBF59200BEF8A7 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EB73F24FBF59200BEF8A7 /* SearchBar.swift */; };
@@ -157,8 +159,8 @@
 		4C2D7E4D25BDA1140007FBDF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4C30183C24F071E800BDF9C7 /* BloodTestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodTestInfo.swift; sourceTree = "<group>"; };
 		4C31406B24EB0BA900BA496E /* OldViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViews.swift; sourceTree = "<group>"; };
-		4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cholesterol.mp4; sourceTree = "<group>"; };
 		4C383478263F0AB500CAFEE1 /* Cholesterol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cholesterol.swift; sourceTree = "<group>"; };
+		4C3897702640B9FA0057E680 /* cholesterol.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cholesterol.mp4; sourceTree = "<group>"; };
 		4C39A25E259941BE00D84E16 /* ModifyBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyBanner.swift; sourceTree = "<group>"; };
 		4C39A2612599472200D84E16 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4C3A770B24F7A9C100679E59 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
@@ -193,6 +195,8 @@
 		4C7EB3E324EC576B00AD3C00 /* dataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModels.swift; sourceTree = "<group>"; };
 		4C7EB3E524EC654400AD3C00 /* PastTestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTestRow.swift; sourceTree = "<group>"; };
 		4C7EB3E724EC750100AD3C00 /* OLDStationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDStationRow.swift; sourceTree = "<group>"; };
+		4C8C3A4A264A803500CBA402 /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
+		4C8C3A4C264A9C7B00CBA402 /* bloodcells.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bloodcells.mp4; sourceTree = "<group>"; };
 		4C8DC38B25E30D31000D69CB /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		4C8EB73D24FBC4F200BEF8A7 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		4C8EB73F24FBF59200BEF8A7 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				4C383478263F0AB500CAFEE1 /* Cholesterol.swift */,
 				4CDC1A8F263F161400C2F178 /* Glucose.swift */,
 				4CDC1A91263F282100C2F178 /* BloodCells.swift */,
+				4C8C3A4A264A803500CBA402 /* BloodType.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -507,8 +512,9 @@
 		4CAE637124DDBED3008068CA /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				4C3897702640B9FA0057E680 /* cholesterol.mp4 */,
+				4C8C3A4C264A9C7B00CBA402 /* bloodcells.mp4 */,
 				4C22513324B8CAA800891773 /* ContentModels.swift */,
-				4C383475263F02AE00CAFEE1 /* cholesterol.mp4 */,
 				4C22513524B8CD5200891773 /* ContentDatas.swift */,
 			);
 			path = Content;
@@ -632,7 +638,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C383476263F02AE00CAFEE1 /* cholesterol.mp4 in Resources */,
+				4C8C3A4D264A9C7B00CBA402 /* bloodcells.mp4 in Resources */,
+				4C3897712640B9FB0057E680 /* cholesterol.mp4 in Resources */,
 				4C7EB3E024EC54A200AD3C00 /* pastTests.json in Resources */,
 				4CBF947E24BB219800252DB8 /* messages.json in Resources */,
 				4C502EC524F283F300046C4C /* bookings.json in Resources */,
@@ -684,6 +691,7 @@
 				4C3A770C24F7A9C100679E59 /* CreditCard.swift in Sources */,
 				4CDC1A9C263F517100C2F178 /* MessageModel.swift in Sources */,
 				4C91DD4E261B30910093B604 /* DateHandler.swift in Sources */,
+				4C8C3A4B264A803500CBA402 /* BloodType.swift in Sources */,
 				4C44A3DF25C7179E00D9BCEC /* Fetch_JSON_Varios.swift in Sources */,
 				4C30183D24F071E800BDF9C7 /* BloodTestInfo.swift in Sources */,
 				4CAE637024DD823A008068CA /* ElementsModifier.swift in Sources */,

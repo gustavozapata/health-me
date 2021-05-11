@@ -13,7 +13,7 @@ struct Glucose: View {
     
     var body: some View {
         VStack {
-            Text("Glucose").font(.system(size: 20, weight: .bold))
+            Text("Glucose").font(.system(size: 25, weight: .bold))
             ZStack{
                 RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.green, .yellow]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)

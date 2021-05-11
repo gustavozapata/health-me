@@ -15,12 +15,27 @@ func bloodTypeInfo(_ type: String) -> (percentage: Int, common: String) {
     var percentage = 0
     var common = ""
     switch(type) {
+    case "O+":
+        percentage = 35
+        common = "most"
+        break;
     case "O-":
         percentage = 13
-        common = "least"
+        break;
+    case "A+":
+        percentage = 30
+        break;
+    case "A-":
+        percentage = 8
         break;
     case "B+":
         percentage = 8
+    case "B-":
+        percentage = 2
+    case "AB+":
+        percentage = 2
+    case "AB-":
+        percentage = 1
         common = "least"
     default: break
     }

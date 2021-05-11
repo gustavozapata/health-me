@@ -10,6 +10,8 @@ import UIKit
 import SwiftUI
 import Foundation
 
+// load content from JSON type files
+// most of these were used for testing purposes before pulling data from the server
 let profileData: [ProfileModel] = load("profileOptions.json")
 let messagesData: [MessagesModel] = load("messages.json")
 let pastTestsData: [BloodTestModel] = load("pastTests.json")

@@ -3,21 +3,16 @@
     {
         "id": 1,
         "name": "Account",
-        "description": "Personal details, subscription type"
+        "description": "Personal details"
     },
     {
         "id": 2,
         "name": "Settings",
-        "description": "Themes, preferences"
+        "description": "Themes, security"
     },
     {
         "id": 3,
-        "name": "Privacy",
-        "description": "Shared information, encryption"
-    },
-    {
-        "id": 4,
-        "name": "About Health Me",
-        "description": "Discover what you can do with Health Me"
+        "name": "Health Me",
+        "description": "About Health Me, credits"
     }
 ]

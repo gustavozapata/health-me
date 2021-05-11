@@ -15,7 +15,7 @@ struct Cholesterol: View {
     
     var body: some View {
         VStack {
-            Text("Cholesterol").font(.system(size: 20, weight: .bold))
+            Text("Cholesterol").font(.system(size: 25, weight: .bold))
             ZStack{
                 RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
@@ -42,6 +42,7 @@ struct Cholesterol: View {
                     showVideo.toggle()
                 }
             }
+            Text("If the level is higher than 260, this could potentially bring problems to yourlungs and heart")
             if showVideo {
                 VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "cholesterol", withExtension: "mp4")!))
                     .frame(height: 193).transition(.scale)

@@ -65,6 +65,6 @@ struct StationRow: View {
 
 struct StationRow_Previews: PreviewProvider {
     static var previews: some View {
-        StationRow(bloodStation: StationModel(_id: "4555b433", location: "Location", address: "address", postcode: "postcode", latitude: 0.0, longitude: 0.0, telephone: "02020202"), selectedStation: .constant("4555b433"))
+        StationRow(bloodStation: StationModel(_id: "4555b433", location: "Location", address: "address", postcode: "postcode", latitude: 0.0, longitude: 0.0, telephone: "02020202"), selectedStation: .constant("gg"))
     }
 }
