@@ -32,25 +32,13 @@ struct ReportView: View {
             
             //Report
             VStack {
-                BloodType(result: result)
+                BloodType(result: result).padding(.vertical, 40)
                 
-                Cholesterol(result: result)
+                Cholesterol(result: result).padding(.vertical, 40)
                 
-                Glucose(result: result)
+                Glucose(result: result).padding(.vertical, 40)
                 
-                BloodCells(result: result)
-                //Sources: https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
-                //https://ada.com/blood-test-results
-                
-                HStack {
-                    VStack {
-                        Image("vessel").resizable().frame(width: 80, height: 80).padding()
-                        Text("The blood vessels are the components of the circulatory system that transport blood throughout the human body").fontWeight(.medium).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
-                    }.padding().frame(width: 270)
-                    Spacer()
-                }.padding(.vertical, 20)
-                
-                Text("Overall your health looks pretty good!")
+                BloodCells(result: result).padding(.vertical, 40)
             }
         }.navigationBarHidden(true).navigationTitle("")
     }
@@ -58,6 +46,6 @@ struct ReportView: View {
 
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportView(result: ResultsModel(blood_type: "O+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        ReportView(result: ResultsModel(blood_type: "O+", test: "Full Blood Count", date: Date(), red_blood_cells: 2.8, whiteBloodCells: 48, cholesterolLevel: 100, glucose_level: 200, plateletCount: 90))
     }
 }

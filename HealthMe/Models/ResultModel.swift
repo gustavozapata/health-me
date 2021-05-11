@@ -13,10 +13,9 @@ struct ResultsModel: Decodable, Hashable {
     var blood_type: String
     var test: String
     var date: Date
-    var red_blood_cells: Int
-    var whiteBloodCells:Int
-    var cholesterolLevel:Int
-    var glucose_level:Int
-    var hemoglobin:Int
-    var plateletCount:Int
+    var red_blood_cells: Double
+    var whiteBloodCells: Int
+    var cholesterolLevel: Int
+    var glucose_level: Int
+    var plateletCount: Int
 }

@@ -23,7 +23,7 @@ struct ResultRow: View {
                     }
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green)
-                        Text("Overall: \(result.cholesterolLevel)").font(.system(size: 14))
+                        Text("Cholesterol: \(result.cholesterolLevel)").font(.system(size: 14))
                     }
                 }
                 Spacer()
@@ -36,6 +36,6 @@ struct ResultRow: View {
 
 struct ResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        ResultRow(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        ResultRow(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2.8, whiteBloodCells: 48, cholesterolLevel: 100, glucose_level: 200, plateletCount: 90))
     }
 }

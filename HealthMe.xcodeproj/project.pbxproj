@@ -117,6 +117,8 @@
 		4CE3336E26226EE900D83155 /* iPaymentButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE3336D26226EE900D83155 /* iPaymentButton */; };
 		4CE8437E25C8D9BE00E4F99C /* HealthMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */; };
 		4CEAF5162636A9F600221028 /* EditDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAF5152636A9F600221028 /* EditDetailsView.swift */; };
+		4CEE6DF6264B1D4F0029694D /* bloodtype.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4CEE6DF4264B1D4F0029694D /* bloodtype.mp4 */; };
+		4CEE6DF7264B1D4F0029694D /* glucose.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4CEE6DF5264B1D4F0029694D /* glucose.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +245,8 @@
 		4CE8437D25C8D9BE00E4F99C /* HealthMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMeUITests.swift; sourceTree = "<group>"; };
 		4CE8437F25C8D9BE00E4F99C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEAF5152636A9F600221028 /* EditDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailsView.swift; sourceTree = "<group>"; };
+		4CEE6DF4264B1D4F0029694D /* bloodtype.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bloodtype.mp4; sourceTree = "<group>"; };
+		4CEE6DF5264B1D4F0029694D /* glucose.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = glucose.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +517,8 @@
 			isa = PBXGroup;
 			children = (
 				4C3897702640B9FA0057E680 /* cholesterol.mp4 */,
+				4CEE6DF4264B1D4F0029694D /* bloodtype.mp4 */,
+				4CEE6DF5264B1D4F0029694D /* glucose.mp4 */,
 				4C8C3A4C264A9C7B00CBA402 /* bloodcells.mp4 */,
 				4C22513324B8CAA800891773 /* ContentModels.swift */,
 				4C22513524B8CD5200891773 /* ContentDatas.swift */,
@@ -638,6 +644,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE6DF6264B1D4F0029694D /* bloodtype.mp4 in Resources */,
+				4CEE6DF7264B1D4F0029694D /* glucose.mp4 in Resources */,
 				4C8C3A4D264A9C7B00CBA402 /* bloodcells.mp4 in Resources */,
 				4C3897712640B9FB0057E680 /* cholesterol.mp4 in Resources */,
 				4C7EB3E024EC54A200AD3C00 /* pastTests.json in Resources */,

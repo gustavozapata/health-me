@@ -24,7 +24,7 @@ struct BloodResultCard: View {
                     }
                     HStack {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(Color.green).font(.system(size: 14))
-                        Text("Sugar \(result.glucose_level)").font(.system(size: 12))
+                        Text("Glucose \(result.glucose_level)").font(.system(size: 12))
                     }
                 }
                 Spacer()
@@ -44,6 +44,6 @@ struct BloodResultCard: View {
 
 struct BloodResultCard_Previews: PreviewProvider {
     static var previews: some View {
-        BloodResultCard(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 2000, whiteBloodCells: 2400, cholesterolLevel: 100, glucose_level: 200, hemoglobin: 90, plateletCount: 90))
+        BloodResultCard(result: ResultsModel(blood_type: "B+", test: "Full Blood Count", date: Date(), red_blood_cells: 4.6, whiteBloodCells: 48, cholesterolLevel: 100, glucose_level: 200, plateletCount: 90))
     }
 }
