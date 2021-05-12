@@ -8,7 +8,6 @@
 
 import Foundation
 
-///replace for the ResultModel (without 's')
 struct ResultsModel: Decodable, Hashable {
     var blood_type: String
     var test: String

@@ -32,13 +32,16 @@ struct ReportView: View {
             
             //Report
             VStack {
-                BloodType(result: result).padding(.vertical, 40)
+                BloodType(result: result).padding(.vertical, 60)
                 
-                Cholesterol(result: result).padding(.vertical, 40)
+                Cholesterol(result: result).padding(.vertical, 60)
                 
-                Glucose(result: result).padding(.vertical, 40)
+                Glucose(result: result).padding(.vertical, 60)
                 
-                BloodCells(result: result).padding(.vertical, 40)
+                BloodCells(result: result).padding(.vertical, 60)
+                
+                Text("Have a Healthy Day :)").font(.system(size: 14, weight: .semibold)).padding(.vertical)
+                Image("healthme").padding(.bottom)
             }
         }.navigationBarHidden(true).navigationTitle("")
     }

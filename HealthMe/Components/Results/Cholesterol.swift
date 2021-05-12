@@ -11,13 +11,13 @@ import AVKit
 
 struct Cholesterol: View {
     @State var showVideo = false
-    @State var showInfo = false
+    @State var showInfo = true
     var result: ResultsModel
     
     var body: some View {
         VStack {
             Text("Cholesterol").font(.system(size: 25, weight: .bold))
-            Text("This is a type of fat found in your blood").padding(6).foregroundColor(.gray)
+            Text("This is a type of fat found in your blood").fontWeight(.semibold).padding(6).foregroundColor(.gray)
             ZStack{
                 RoundedRectangle(cornerRadius: 50.0).fill(LinearGradient(gradient:Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 16)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
@@ -26,7 +26,7 @@ struct Cholesterol: View {
                     Text("\(result.cholesterolLevel)").font(.system(size: 14, weight: .bold)).position(x: CGFloat(measureBar(result.cholesterolLevel, min: 100, max: 202)), y: 24)
                 }.frame(width: 200, height: 50)
             }.padding()
-            VStack(spacing: 10){
+            VStack(spacing: 20){
                 Text(cholesterolLevel(result.cholesterolLevel)).font(.system(size: 15, weight: .semibold))
                 HStack(alignment: .top){
                     Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange).font(.system(size: 12))
@@ -43,7 +43,7 @@ struct Cholesterol: View {
                 }
             }.padding(15)
             if showInfo {
-                Text("The normal range for overall cholesterol is less than 200 mg/dL. High total cholesterol is 240 mg/dL and above and is considered risky. And borderline high risk is in a range of 200-239 mg/dL").foregroundColor(.gray).font(.system(size: 13.5, weight: .medium)).padding(.top, 10)
+                Text("The normal range for overall cholesterol is less than 200 mg/dL. High total cholesterol is 240 mg/dL and above and is considered risky. And borderline high risk is in a range of 200-239 mg/dL").foregroundColor(.gray).font(.system(size: 13.5, weight: .medium)).padding(15).lineLimit(nil)
             }
             
             HStack {

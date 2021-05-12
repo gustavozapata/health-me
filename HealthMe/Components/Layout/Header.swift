@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// header use in every view
 struct Header: View {
     
     var title: String

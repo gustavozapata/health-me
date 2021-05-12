@@ -45,7 +45,7 @@ struct OnboardingView: View {
                         
                         ///FIXME: REMOVE onTapGesture() (development only)
                         Text("Already have an account?").foregroundColor(blueGray).onTapGesture {
-                            account.login("tavo", "123456"){
+                            account.login("tavo@mail.com", "123456"){
                                 if account.isLogged {
                                     self.showLogin.toggle() //hide login sheet
                                     self.account.showApp = true //show main app (hide start screen)

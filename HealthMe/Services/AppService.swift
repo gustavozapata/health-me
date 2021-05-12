@@ -8,10 +8,12 @@
 
 import Foundation
 
+// maps the server response and get data property
 struct ServerResponse<Model: Decodable>: Decodable {
     var data: Model
 }
 
+// all functionality involving requesting data from server
 class AppService {
     
     // compose the head and body of the request

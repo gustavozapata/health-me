@@ -39,7 +39,7 @@ struct MessagesDetail: View {
                                         ForEach(msg.options, id: \.self) { reply in
                                             Text(reply.option).padding(8).overlay(
                                                 RoundedRectangle(cornerRadius: 25)
-                                                    .stroke(Color.border, lineWidth: 1.5)).onTapGesture {
+                                                    .stroke(Color.purple, lineWidth: 1.5)).onTapGesture {
                                                         account.sendMessage(reply) {
                                                             print("message sent")
                                                         }

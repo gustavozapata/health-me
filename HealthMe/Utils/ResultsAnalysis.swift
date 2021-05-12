@@ -49,13 +49,31 @@ func bloodTypeInfo(_ type: String) -> (percentage: Int, common: String) {
  */
 func redBloodCells(_ count: Double) -> String {
     if count < 4 {
-        return "This is too low - this can cause feelings of fatigue and weakness and your body has to work harder to get enough oxygen to the cells"
+        return "Red blood cells count is too low :("
     } else if count > 6 {
-        return "This is too high - this may be a symptom of a disease or disorder"
+        return "Red blood cells count is too high, this may be a symptom of a disease or disorder"
     } else if count > 4.8 && count < 5.2 {
-        return "This looks good :)"
+        return "Red blood cells count is good :)"
     }
     return ""
+}
+
+func whiteBloodCells(_ count: Int) -> String {
+    if count < 4500 {
+        return "White blood cells count is too low :("
+    } else if count > 11000 {
+        return "White blood cells count is too high :("
+    }
+    return "White blood cells count is good :)"
+}
+
+func platelete(_ count: Int) -> String {
+    if count < 150000 {
+        return "Your platelet count is too low :("
+    } else if count > 400000 {
+        return "Your platelet count is too high :("
+    }
+    return "Your platelet count is good :)"
 }
 
 /*
@@ -65,12 +83,12 @@ func redBloodCells(_ count: Double) -> String {
  (The standard for measuring blood glucose is "mg/dL" which means milligrams per deciliter.)
  */
 func glucoseLevels(_ count: Int) -> String {
-    if count < 140 {
-        return "This is good :)"
+    if count <= 140 {
+        return "Your glucose level is good :)"
     } else if count > 200 {
-        return "This is too high - this may be a sign of diabetes"
+        return "Your glucose level is too high, this may be a sign of diabetes"
     } else if count > 140 && count < 199 {
-        return "This is high - this may be a sign of prediabetes"
+        return "Your glucose level is high, this may be a sign of prediabetes"
     }
     return ""
 }
@@ -82,11 +100,11 @@ func glucoseLevels(_ count: Int) -> String {
  */
 func cholesterolLevel(_ count: Int) -> String {
     if count < 200 {
-        return "This is good :)"
+        return "Your cholesterol level is good :)"
     } else if count > 240 {
-        return "This is too high"
+        return "Your cholesterol level is too high :("
     } else if count > 200 && count < 239 {
-        return "This is ok"
+        return "Your cholesterol level is ok"
     }
     return ""
 }
@@ -94,3 +112,11 @@ func cholesterolLevel(_ count: Int) -> String {
 func measureBar(_ count: Int, min: Int, max: Int) -> Int {
     return ((count - min) * 100) / (max - min)
 }
+/*
+ Credits:
+ https://www.walkinlab.com/blog/how-to-read-your-wellness-blood-test-results/
+ https://www.nhs.uk/conditions/blood-groups/
+ https://www.medicalnewstoday.com/articles/315133
+ https://www.medicalnewstoday.com/articles/315133#types
+ https://www.hopkinsmedicine.org/health/conditions-and-diseases/what-are-platelets-and-why-are-they-important
+ */

@@ -10,7 +10,7 @@ import SwiftUI
 import AVKit
 
 struct BloodType: View {
-    @State var showBloodTypeInfo = false
+    @State var showBloodTypeInfo = true
     @State var showVideo = false
     var result: ResultsModel
     
@@ -26,7 +26,7 @@ struct BloodType: View {
                 }
             }.padding()
             if showBloodTypeInfo {
-                Text("Group A blood must never be given to someone who has group B blood and vice versa. Group O can safely be given to any other group.").foregroundColor(.gray).font(.system(size: 13.5, weight: .medium)).padding(10)
+                Text("Group A blood must never be given to someone who has group B blood and vice versa. Group O can safely be given to any other group.").foregroundColor(.gray).font(.system(size: 13.5, weight: .medium)).padding(15)
             }
             HStack {
                 Image(systemName: "livephoto.play").foregroundColor(.green)
@@ -41,7 +41,7 @@ struct BloodType: View {
                 VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "bloodtype", withExtension: "mp4")!))
                     .frame(height: 211).transition(.scale)
             }
-        }.padding(.vertical, 25)
+        }.padding()
     }
 }
 
